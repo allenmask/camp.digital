@@ -352,63 +352,6 @@
       transform: translateY(-4px);
     }
 
-    /* ── BOTTOM PERSISTENT SWITCHER / FOOTER ── */
-    .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: clamp(16px, 3vh, 26px);
-      pointer-events: none;
-    }
-
-    .bottom-bar > * {
-      pointer-events: auto;
-    }
-
-    .design-switcher {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
-      border-radius: 9999px;
-      padding: 3px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    }
-
-    .switch-btn {
-      background: none;
-      border: none;
-      font-family: inherit;
-      font-size: 0.76rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--text-muted);
-      padding: 6px 14px;
-      border-radius: 9999px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .switch-btn.active {
-      background: var(--text);
-      color: var(--bg);
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .switch-btn:hover:not(.active) {
-      color: var(--text);
-    }
-
     .key-hint {
       position: fixed;
       bottom: 18px;
@@ -451,11 +394,11 @@
       </svg>
     </a>
 
-    <!-- Top Right: Simple vs Full Site Toggle + Perpetual Mail Icon -->
+    <!-- Top Right: TL;DR vs Full Site Toggle + Perpetual Mail Icon -->
     <div class="top-actions">
       <div class="view-toggle" role="group" aria-label="View format">
-        <span class="view-toggle-item active">Simple</span>
-        <a href="studio.html" class="view-toggle-item">Full Site &nearr;</a>
+        <span class="view-toggle-item active">TL;DR</span>
+        <a href="studio.html" class="view-toggle-item">Full Site</a>
       </div>
 
       <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
@@ -512,13 +455,6 @@
     </div>
   </main>
 
-  <!-- Bottom Switcher -->
-  <footer class="bottom-bar">
-    <nav class="design-switcher" aria-label="Site version switcher">
-      <button class="switch-btn active" id="btnVersionSpartan" aria-current="page">Simple Site</button>
-      <a href="studio.html" class="switch-btn" id="btnVersionEditorial">Full Site (Studio) &nearr;</a>
-    </nav>
-  </footer>
 
   <!-- Key hint for navigation -->
   <div class="key-hint">

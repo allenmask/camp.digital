@@ -633,59 +633,7 @@
       color: var(--text-dim);
     }
 
-    /* Floating bottom switcher */
-    .bottom-bar {
-      position: fixed;
-      bottom: 24px;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
-    }
 
-    .bottom-bar > * {
-      pointer-events: auto;
-    }
-
-    .design-switcher {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(9, 10, 13, 0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid var(--border);
-      border-radius: 9999px;
-      padding: 4px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .switch-btn {
-      background: none;
-      border: none;
-      font-family: inherit;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--text-muted);
-      padding: 7px 15px;
-      border-radius: 9999px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .switch-btn.active {
-      background: var(--text);
-      color: var(--bg);
-      font-weight: 600;
-    }
-
-    .switch-btn:hover:not(.active) {
-      color: var(--text);
-    }
   </style>
 </head>
 <body>
@@ -706,9 +654,9 @@
     </a>
 
     <div class="nav-actions">
-      <!-- Switch to Simple Spartan Site -->
+      <!-- Switch to TL;DR Spartan Site -->
       <div class="view-toggle" role="group" aria-label="View format">
-        <a href="index.html" class="view-toggle-item">&larr; Simple</a>
+        <a href="index.html" class="view-toggle-item">TL;DR</a>
         <span class="view-toggle-item active">Full Site</span>
       </div>
 
@@ -958,13 +906,6 @@
 
   </main>
 
-  <!-- Bottom Floating Switcher -->
-  <div class="bottom-bar">
-    <nav class="design-switcher" aria-label="Site version switcher">
-      <a href="index.html" class="switch-btn">&larr; Simple Site</a>
-      <button class="switch-btn active" aria-current="page">Full Site (Studio)</button>
-    </nav>
-  </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
