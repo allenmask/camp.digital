@@ -111,11 +111,6 @@
       display: block;
     }
 
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
 
     /* Full Site / Simple Site Segmented Toggle in Top Bar */
     .view-toggle {
@@ -383,9 +378,9 @@
 </head>
 <body>
 
-  <!-- Top Utility Bar -->
+  <!-- Top Utility Bar: Clean 3-part layout (Left: Flag, Center: Toggle, Right: Mail) -->
   <header class="top-bar">
-    <!-- Official Camp Digital CD Flag (Page 16 of Carly's Deck) -->
+    <!-- Left: Official Camp Digital CD Flag (Page 16 of Carly's Deck) -->
     <a href="#home" class="flag-icon-btn" id="flagBtn" aria-label="Camp Digital Home">
       <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" fill="#1a1c22" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linejoin="round"/>
@@ -394,20 +389,19 @@
       </svg>
     </a>
 
-    <!-- Top Right: TL;DR vs Full Site Toggle + Perpetual Mail Icon -->
-    <div class="top-actions">
-      <div class="view-toggle" role="group" aria-label="View format">
-        <span class="view-toggle-item active">TL;DR</span>
-        <a href="studio.html" class="view-toggle-item">Full Site</a>
-      </div>
-
-      <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
-        <svg viewBox="0 0 24 24">
-          <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-        </svg>
-      </a>
+    <!-- Center: TL;DR vs Full Site Toggle -->
+    <div class="view-toggle" role="group" aria-label="View format">
+      <span class="view-toggle-item active">TL;DR</span>
+      <a href="studio.html" class="view-toggle-item">Full Site</a>
     </div>
+
+    <!-- Right: Perpetual Mail Icon -->
+    <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+    </a>
   </header>
 
   <!-- Central Stage -->
