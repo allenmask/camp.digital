@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camp Digital — The Mighty Content Agency</title>
-  <meta name="description" content="We are the mighty Camp Digital. A boutique content agency with one objective: make social media the hardest working channel in your marketing mix." />
-  <meta property="og:title" content="Camp Digital — Creative Studio & Social Team for Brands" />
-  <meta property="og:description" content="Make social media the hardest-working channel in your marketing mix. California & Raleigh." />
+  <title>Camp Digital — Creative Studio &amp; Social Team for Brands</title>
+  <meta name="description" content="Hello, we're camp digital. A creative studio built to turn social media into a meaningful driver of brand and business growth. California & North Carolina." />
+  <meta property="og:title" content="Camp Digital — Creative Studio &amp; Social Team for Brands" />
+  <meta property="og:description" content="A creative studio built to turn social media into a meaningful driver of brand and business growth." />
   <meta property="og:url" content="https://camp.digital/studio.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -23,18 +23,17 @@
     :root {
       --bg: #090a0d;
       --bg-card: rgba(255, 255, 255, 0.035);
-      --bg-card-hover: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.09);
+      --bg-card-hover: rgba(255, 255, 255, 0.065);
+      --border: rgba(255, 255, 255, 0.08);
       --border-accent: rgba(208, 151, 61, 0.35);
       --text: #f5f6f8;
       --text-muted: #8e95a0;
       --text-dim: #555c68;
       --gold: #d0973d;
-      --gold-glow: rgba(208, 151, 61, 0.2);
+      --gold-glow: rgba(208, 151, 61, 0.18);
       --sage: #878e7e;
-      --sage-glow: rgba(135, 142, 126, 0.18);
+      --sage-glow: rgba(135, 142, 126, 0.16);
       --clay: #e6bda8;
-      --cream: #f7f4ec;
       --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-serif: 'Newsreader', Georgia, serif;
       --font-mono: 'Inconsolata', monospace;
@@ -62,7 +61,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Subtle background ambient mesh */
+    /* Ambient mesh */
     .ambient-bg {
       position: fixed;
       top: 0;
@@ -72,23 +71,23 @@
       pointer-events: none;
       z-index: 0;
       background: 
-        radial-gradient(circle at 18% 12%, var(--sage-glow) 0%, transparent 45%),
-        radial-gradient(circle at 82% 35%, var(--gold-glow) 0%, transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(230, 189, 168, 0.04) 0%, transparent 50%);
+        radial-gradient(circle at 20% 12%, var(--sage-glow) 0%, transparent 45%),
+        radial-gradient(circle at 80% 32%, var(--gold-glow) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(230, 189, 168, 0.04) 0%, transparent 50%);
     }
 
-    /* ── HEADER / NAVIGATION ── */
+    /* ── HEADER ── */
     .site-header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 100;
-      padding: clamp(16px, 3vh, 26px) clamp(20px, 4.5vw, 56px);
+      padding: clamp(14px, 2.8vh, 24px) clamp(20px, 4.5vw, 56px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(9, 10, 13, 0.76);
+      background: rgba(9, 10, 13, 0.8);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
@@ -97,17 +96,18 @@
     .brand-group {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       text-decoration: none;
       color: inherit;
     }
 
-    /* Flag with CD Cutout */
+    /* Official CD Pennant Flag */
     .brand-flag {
-      width: 34px;
-      height: 30px;
+      width: 36px;
+      height: 28px;
       color: var(--text);
       transition: transform 0.25s var(--ease), color 0.25s ease;
+      display: block;
     }
 
     .brand-group:hover .brand-flag {
@@ -116,14 +116,14 @@
     }
 
     .brand-name {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 700;
       letter-spacing: -0.025em;
     }
 
     .brand-badge {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--gold);
@@ -140,7 +140,7 @@
     }
 
     .nav-link {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 500;
       color: var(--text-muted);
       text-decoration: none;
@@ -159,8 +159,6 @@
       border: 1px solid var(--border);
       border-radius: 9999px;
       padding: 3px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     .view-toggle-item {
@@ -168,7 +166,7 @@
       font-weight: 500;
       letter-spacing: 0.02em;
       color: var(--text-muted);
-      padding: 5px 12px;
+      padding: 4px 11px;
       border-radius: 9999px;
       text-decoration: none;
       transition: all 0.2s ease;
@@ -181,20 +179,14 @@
       font-weight: 600;
     }
 
-    .view-toggle-item:hover:not(.active) {
-      color: var(--text);
-    }
-
     .btn-contact-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
       background: var(--text);
       color: var(--bg);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: -0.01em;
-      padding: 8px 16px;
+      padding: 7px 15px;
       border-radius: 9999px;
       text-decoration: none;
       transition: transform 0.2s var(--ease), opacity 0.2s ease;
@@ -205,31 +197,35 @@
       opacity: 0.95;
     }
 
-    /* ── MAIN CONTENT CONTAINER ── */
+    @media (max-width: 820px) {
+      .nav-link { display: none; }
+    }
+
+    /* ── PAGE WRAPPER ── */
     .page-wrap {
       position: relative;
       z-index: 1;
-      max-width: 1220px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: clamp(120px, 18vh, 170px) clamp(20px, 4.5vw, 56px) 100px;
+      padding: clamp(110px, 16vh, 150px) clamp(20px, 4.5vw, 56px) 100px;
     }
 
-    /* ── HERO SECTION ── */
+    /* ── HERO SECTION (Page 2 of Deck) ── */
     .hero {
-      margin-bottom: clamp(60px, 12vh, 110px);
+      margin-bottom: clamp(60px, 12vh, 100px);
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 22px;
     }
 
     .hero-meta .mono-tag {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--sage);
@@ -243,12 +239,12 @@
     }
 
     .hero-title {
-      font-size: clamp(2.8rem, 7.5vw, 5.8rem);
+      font-size: clamp(2.8rem, 7.5vw, 5.4rem);
       font-weight: 700;
       letter-spacing: -0.04em;
-      line-height: 1.02;
-      margin-bottom: 28px;
-      max-width: 1050px;
+      line-height: 1.04;
+      margin-bottom: 24px;
+      max-width: 1000px;
     }
 
     .hero-title span.serif {
@@ -259,28 +255,28 @@
     }
 
     .hero-lead {
-      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
       font-weight: 400;
       letter-spacing: -0.015em;
       color: var(--text-muted);
       line-height: 1.45;
       max-width: 820px;
-      margin-bottom: 42px;
+      margin-bottom: 38px;
     }
 
     .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .btn-hero-primary {
       background: var(--text);
       color: var(--bg);
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      padding: 14px 26px;
+      padding: 13px 26px;
       border-radius: 9999px;
       text-decoration: none;
       display: inline-flex;
@@ -298,15 +294,14 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 500;
-      padding: 14px 24px;
+      padding: 13px 24px;
       border-radius: 9999px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      backdrop-filter: blur(12px);
       transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
     }
 
@@ -316,10 +311,10 @@
       transform: translateY(-2px);
     }
 
-    /* ── CREDENTIAL / CLIENT MARQUEE ── */
+    /* ── CLIENT LOGO ROSTER (Page 5 of Deck) ── */
     .roster-band {
-      margin-bottom: clamp(70px, 14vh, 120px);
-      padding: 28px 0;
+      margin-bottom: clamp(70px, 13vh, 110px);
+      padding: 32px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -330,74 +325,84 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dim);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+    }
+
+    .roster-lead {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin-bottom: 28px;
+      line-height: 1.5;
     }
 
     .roster-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 18px 24px;
       align-items: center;
     }
 
     .roster-item {
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       font-weight: 600;
       letter-spacing: -0.02em;
-      color: var(--text-muted);
-      transition: color 0.2s ease;
+      color: var(--text);
+      opacity: 0.82;
+      transition: opacity 0.2s ease, color 0.2s ease;
     }
 
     .roster-item:hover {
-      color: var(--text);
+      opacity: 1;
+      color: var(--gold);
     }
 
-    /* ── 3 CORE OFFERINGS (CARDS) ── */
+    /* ── SECTION HEADERS ── */
     .section-head {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .section-label {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 10px;
+      display: block;
     }
 
     .section-title {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
       font-weight: 700;
       letter-spacing: -0.035em;
       line-height: 1.1;
     }
 
-    .offerings-grid {
+    /* ── 4 SERVICES (Page 2 of Deck) ── */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
       margin-bottom: clamp(70px, 14vh, 120px);
     }
 
-    .offering-card {
+    .service-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 36px 30px;
+      border-radius: 18px;
+      padding: 32px 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      transition: transform 0.3s var(--ease), border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .offering-card::before {
+    .service-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -406,190 +411,139 @@
       height: 3px;
       background: linear-gradient(90deg, var(--gold), transparent);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
     }
 
-    .offering-card:hover {
+    .service-card:hover {
       transform: translateY(-4px);
       border-color: var(--border-accent);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
     }
 
-    .offering-card:hover::before {
+    .service-card:hover::before {
       opacity: 1;
     }
 
     .card-num {
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-dim);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .card-title {
-      font-size: 1.55rem;
+      font-size: 1.38rem;
       font-weight: 700;
       letter-spacing: -0.025em;
-      line-height: 1.2;
-      margin-bottom: 14px;
+      line-height: 1.25;
+      margin-bottom: 12px;
     }
 
     .card-body {
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 24px;
     }
 
-    .card-tags {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .card-tags li {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.02em;
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    /* ── CAMPAIGN & PORTFOLIO VIGNETTES ── */
-    .portfolio-section {
-      margin-bottom: clamp(70px, 14vh, 120px);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .portfolio-tile {
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s var(--ease), border-color 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .portfolio-tile:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-accent);
-    }
-
-    .tile-visual {
-      aspect-ratio: 4/5;
-      background: #14171d;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .visual-art-1 {
-      background: linear-gradient(135deg, #1b2820 0%, #0d1410 100%);
-    }
-    .visual-art-2 {
-      background: linear-gradient(135deg, #2b1f1a 0%, #15100d 100%);
-    }
-    .visual-art-3 {
-      background: linear-gradient(135deg, #22221b 0%, #11110c 100%);
-    }
-
-    .tile-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 8px;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 4px;
-      color: #ffffff;
-      backdrop-filter: blur(8px);
-    }
-
-    .tile-info {
-      padding: 18px 20px;
-    }
-
-    .tile-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      margin-bottom: 4px;
-    }
-
-    .tile-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ── ENGAGEMENT / PHILOSOPHY BLOCK ── */
-    .credo-box {
+    /* ── WHY CAMP DIGITAL (Page 3 of Deck) ── */
+    .why-section {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: clamp(36px, 6vw, 64px);
       margin-bottom: clamp(70px, 14vh, 120px);
+    }
+
+    .why-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 36px;
     }
 
-    @media (max-width: 800px) {
-      .credo-box {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .credo-title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3.8vw, 2.7rem);
-      font-weight: 400;
-      line-height: 1.2;
+    .why-item-title {
+      font-size: 1.25rem;
+      font-weight: 600;
       letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .credo-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .credo-text {
-      font-size: 1.05rem;
+    .why-item-body {
+      font-size: 0.98rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* ── BIG CLOSING CALL TO ACTION ── */
-    .cta-banner {
+    /* ── CAMP CREW TEAM GRID (Page 4 of Deck) ── */
+    .crew-section {
+      margin-bottom: clamp(70px, 14vh, 120px);
+    }
+
+    .crew-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 36px;
+      line-height: 1.55;
+    }
+
+    .crew-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .crew-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.2s var(--ease), border-color 0.2s ease;
+    }
+
+    .crew-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-accent);
+    }
+
+    .crew-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .crew-role {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1.35;
+    }
+
+    .crew-subrole {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── CLOSING CREDO & CTA BANNER (Page 16 of Deck) ── */
+    .closing-banner {
       text-align: center;
-      padding: clamp(60px, 10vh, 100px) 20px;
+      padding: clamp(60px, 10vh, 90px) 24px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 28px;
       position: relative;
       overflow: hidden;
+      margin-bottom: 60px;
     }
 
-    .cta-banner::after {
+    .closing-banner::after {
       content: '';
       position: absolute;
       bottom: -150px;
@@ -602,19 +556,38 @@
       pointer-events: none;
     }
 
-    .cta-title {
-      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.1;
+    .closing-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
       margin-bottom: 18px;
+      display: inline-block;
     }
 
-    .cta-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    .closing-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .closing-title span.serif {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--clay);
+    }
+
+    .closing-lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 36px;
+      max-width: 650px;
+      margin: 0 auto 34px;
+      line-height: 1.55;
     }
 
     .btn-mail-large {
@@ -623,13 +596,12 @@
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: -0.01em;
-      padding: 16px 34px;
+      padding: 15px 32px;
       border-radius: 9999px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       transition: transform 0.2s var(--ease), opacity 0.2s ease;
     }
 
@@ -640,8 +612,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-      margin-top: 80px;
-      padding-top: 40px;
+      padding-top: 32px;
       border-top: 1px solid var(--border);
       display: flex;
       flex-wrap: wrap;
@@ -662,7 +633,7 @@
       color: var(--text-dim);
     }
 
-    /* Floating bottom version switcher */
+    /* Floating bottom switcher */
     .bottom-bar {
       position: fixed;
       bottom: 24px;
@@ -681,7 +652,7 @@
     .design-switcher {
       display: inline-flex;
       align-items: center;
-      background: rgba(9, 10, 13, 0.82);
+      background: rgba(9, 10, 13, 0.85);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border: 1px solid var(--border);
@@ -719,38 +690,32 @@
 </head>
 <body>
 
-  <!-- Ambient Light Effect -->
   <div class="ambient-bg"></div>
 
   <!-- Header -->
   <header class="site-header">
     <a href="studio.html" class="brand-group">
-      <!-- Camp Digital Flag with 'CD' in the flag -->
-      <svg class="brand-flag" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <mask id="cdNavFlagCutout">
-            <rect width="36" height="32" fill="white"/>
-            <path d="M15.8 9.2c-2.4 0-4 1.7-4 4.3 0 2.6 1.6 4.3 4 4.3 1.4 0 2.4-.6 3-1.5l-1.3-.9c-.4.6-1 .9-1.7.9-1.4 0-2.4-1.1-2.4-2.8s1-2.8 2.4-2.8c.7 0 1.3.3 1.7.9l1.3-.9c-.6-.9-1.6-1.5-3-1.5z" fill="black"/>
-            <path d="M19.8 9.4h3.3c2.4 0 4.1 1.6 4.1 4.1 0 2.5-1.7 4.1-4.1 4.1h-3.3V9.4zm1.7 6.6h1.5c1.4 0 2.4-.9 2.4-2.5 0-1.6-1-2.5-2.4-2.5h-1.5v5z" fill="black"/>
-          </mask>
-        </defs>
-        <line x1="6" y1="4" x2="6" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="6" cy="3.5" r="1.3" fill="currentColor"/>
-        <path d="M7 5.5h26l-4.5 7.5 4.5 7.5H7V5.5z" fill="currentColor" mask="url(#cdNavFlagCutout)"/>
+      <!-- Official CD Pennant Flag from Page 16 -->
+      <svg class="brand-flag" viewBox="0 0 903 699" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M42 45 C42 30 54 20 70 23 L850 168 C868 171 878 190 868 206 L700 350 L868 494 C878 510 868 529 850 532 L70 677 C54 680 42 670 42 655 Z" stroke="currentColor" stroke-width="38" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M340 310 C325 285 296 270 255 270 C190 270 142 322 142 390 C142 458 190 510 255 510 C296 510 325 495 340 470 L308 440 C296 458 278 470 255 470 C212 470 182 434 182 390 C182 346 212 310 255 310 C278 310 296 322 308 340 Z" fill="currentColor"/>
+        <path d="M528 195 H488 V300 C468 280 440 270 410 270 C345 270 298 322 298 390 C298 458 345 510 410 510 C440 510 468 500 488 480 V510 H528 Z M413 470 C370 470 338 434 338 390 C338 346 370 310 413 310 C456 310 488 346 488 390 C488 434 456 470 413 470 Z" fill="currentColor"/>
       </svg>
       <span class="brand-name">camp digital</span>
       <span class="brand-badge">Boutique Agency</span>
     </a>
 
     <div class="nav-actions">
-      <!-- Switch back to Simple / Spartan Site -->
+      <!-- Switch to Simple Spartan Site -->
       <div class="view-toggle" role="group" aria-label="View format">
         <a href="index.html" class="view-toggle-item">&larr; Simple</a>
         <span class="view-toggle-item active">Full Site</span>
       </div>
 
-      <a href="#offerings" class="nav-link">Offerings</a>
-      <a href="#portfolio" class="nav-link">Work</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#crew" class="nav-link">Camp Crew</a>
+      <a href="#clients" class="nav-link">Clients</a>
       <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram &rarr;</a>
 
       <!-- Contact Pill -->
@@ -763,23 +728,23 @@
   <!-- Main Wrap -->
   <main class="page-wrap">
 
-    <!-- HERO -->
+    <!-- HERO SECTION (Page 2 of Deck) -->
     <section class="hero">
       <div class="hero-meta">
-        <span class="mono-tag">California &amp; Raleigh</span>
+        <span class="mono-tag">North Carolina &amp; California</span>
         <span class="dot"></span>
-        <span class="mono-tag">Female-Led &amp; Black-Owned</span>
+        <span class="mono-tag">Boutique Creative Studio</span>
         <span class="dot"></span>
         <span class="mono-tag">The Social Team for Brands</span>
       </div>
 
       <h1 class="hero-title">
-        We are the mighty <br />
-        <span class="serif">Camp Digital.</span>
+        Hello, we’re <br />
+        <span class="serif">camp digital.</span>
       </h1>
 
       <p class="hero-lead">
-        A boutique creative content agency with one objective: make social media the hardest-working channel in your marketing mix.
+        A creative studio built to turn social media into a meaningful driver of brand and business growth.
       </p>
 
       <div class="hero-cta-row">
@@ -794,129 +759,184 @@
       </div>
     </section>
 
-    <!-- CREDENTIALS BAND -->
-    <section class="roster-band">
-      <div class="roster-header">Trusted by founders &amp; world-class brands</div>
+    <!-- CLIENT LOGO ROSTER (Page 5 of Deck) -->
+    <section class="roster-band" id="clients">
+      <div class="roster-header">Clients &amp; Brand Partners</div>
+      <p class="roster-lead">
+        From first-time founders to the Fortune 500, we’re humbled to compound the creativity of the world’s most admired brands, including:
+      </p>
       <div class="roster-grid">
         <div class="roster-item">Nike</div>
         <div class="roster-item">Spotify</div>
+        <div class="roster-item">Google</div>
+        <div class="roster-item">Airbnb</div>
+        <div class="roster-item">The New York Times</div>
+        <div class="roster-item">Sonos</div>
+        <div class="roster-item">American Express</div>
+        <div class="roster-item">Orbitz</div>
+        <div class="roster-item">StubHub</div>
         <div class="roster-item">Lime</div>
-        <div class="roster-item">Apple Alumni</div>
-        <div class="roster-item">Airbnb Alumni</div>
-        <div class="roster-item">Emerging DTC</div>
+        <div class="roster-item">Apple</div>
+        <div class="roster-item">P.F. Flyers</div>
+        <div class="roster-item">Parachute Home</div>
+        <div class="roster-item">Rosewood Hotels</div>
+        <div class="roster-item">Hotel Californian</div>
+        <div class="roster-item">Bumble</div>
       </div>
     </section>
 
-    <!-- 3 CORE OFFERINGS -->
-    <section class="section-head" id="offerings">
-      <span class="section-label">01 / Offerings</span>
-      <h2 class="section-title">Hire us for:</h2>
+    <!-- 4 CORE SERVICES (Page 2 of Deck) -->
+    <section class="section-head" id="services">
+      <span class="section-label">01 / Capabilities</span>
+      <h2 class="section-title">Services</h2>
     </section>
 
-    <div class="offerings-grid">
-      <!-- Card 1 -->
-      <article class="offering-card">
+    <div class="services-grid">
+      <!-- 1 -->
+      <article class="service-card">
         <div>
-          <div class="card-num">01 / STRATEGY &amp; OPS</div>
-          <h3 class="card-title">Social media management</h3>
+          <div class="card-num">01 / PRODUCTION</div>
+          <h3 class="card-title">Content creation and production</h3>
           <p class="card-body">
-            Full-service account orchestration, daily publishing cadences, community architecture, and channel compounding to turn casual scrollers into lifelong brand advocates.
+            Onsite &amp; on-location lifestyle photography, thumb-stopping Reels and short-form video, art direction, and net-new graphic assets designed to win the feed.
           </p>
         </div>
-        <ul class="card-tags">
-          <li>Full-service management</li>
-          <li>Community engagement</li>
-          <li>Audience compounding</li>
-        </ul>
       </article>
 
-      <!-- Card 2 -->
-      <article class="offering-card">
+      <!-- 2 -->
+      <article class="service-card">
         <div>
-          <div class="card-num">02 / STUDIO &amp; PRODUCTION</div>
-          <h3 class="card-title">Creative development &amp; production</h3>
+          <div class="card-num">02 / MANAGEMENT</div>
+          <h3 class="card-title">Full-service social media account management</h3>
           <p class="card-body">
-            Multi-channel creative development, thumb-stopping short-form reels and cinema, editorial photography, and art direction that commands attention on any feed.
+            Daily publishing cadences, copywriting, scheduling, community architecture, 24-hour DM management, and continuous channel compounding across platforms.
           </p>
         </div>
-        <ul class="card-tags">
-          <li>Reels &amp; Short-form</li>
-          <li>Editorial photography</li>
-          <li>Surreal social cinema</li>
-        </ul>
       </article>
 
-      <!-- Card 3 -->
-      <article class="offering-card">
+      <!-- 3 -->
+      <article class="service-card">
         <div>
-          <div class="card-num">03 / CREATOR NETWORK</div>
-          <h3 class="card-title">Influencer campaigns</h3>
+          <div class="card-num">03 / CREATORS</div>
+          <h3 class="card-title">Influencer marketing and UGC programming</h3>
           <p class="card-body">
-            Curated creator discovery, high-affinity talent casting, authentic product seeding, and performance-backed influencer activations that drive measurable conversions.
+            End-to-end creator scouting, high-affinity talent casting, authentic product seeding, contract negotiation, and customer UGC sourcing &amp; amplification.
           </p>
         </div>
-        <ul class="card-tags">
-          <li>Talent casting</li>
-          <li>Product seeding</li>
-          <li>Creator partnerships</li>
-        </ul>
+      </article>
+
+      <!-- 4 -->
+      <article class="service-card">
+        <div>
+          <div class="card-num">04 / GROWTH</div>
+          <h3 class="card-title">Paid ads, SEO &amp; AEO</h3>
+          <p class="card-body">
+            Targeted paid social advertising layered in for scale, social search engine optimization (SEO), and AI Engine Optimization (AEO) across modern search channels.
+          </p>
+        </div>
       </article>
     </div>
 
-    <!-- PHILOSOPHY / CREDO BOX -->
-    <section class="credo-box">
-      <div class="credo-title">
-        "From first-time founders to the Fortune 500, we’re humbled to <em>compound the creativity</em> of the world’s most admired brands."
+    <!-- WHY CAMP DIGITAL (Page 3 of Deck) -->
+    <section class="why-section" id="why">
+      <div class="section-head" style="margin-bottom: 12px;">
+        <span class="section-label">02 / Philosophy</span>
+        <h2 class="section-title">Why camp digital?</h2>
       </div>
-      <div class="credo-text">
-        Available for a variety of simple, flexible, and affordable engagement models that deliver the efficacy of a boutique agency and the efficiency of an internal art department.
+
+      <div class="why-grid">
+        <div>
+          <h3 class="why-item-title">Extension of your internal team</h3>
+          <p class="why-item-body">
+            Think of us as an extension of your internal team. We’re a partner, not a traditional agency, bringing big-brand experience with boutique agility.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="why-item-title">Elevated brand storytelling</h3>
+          <p class="why-item-body">
+            We specialize in elevated brand storytelling, real-time content, and community-building for growing consumer brands that refuse to look generic.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="why-item-title">Built for founder-led brands</h3>
+          <p class="why-item-body">
+            Our work is especially suited for founder-led brands scaling up, extending a strong in-house creative foundation with dedicated social strategy, execution, and community support.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO / VIGNETTES -->
-    <section class="section-head" id="portfolio">
-      <span class="section-label">02 / Visual Direction</span>
-      <h2 class="section-title">Selected work &amp; stories</h2>
+    <!-- CAMP CREW TEAM GRID (Page 4 of Deck) -->
+    <section class="crew-section" id="crew">
+      <div class="section-head" style="margin-bottom: 16px;">
+        <span class="section-label">03 / The Team</span>
+        <h2 class="section-title">Camp Crew</h2>
+      </div>
+      <p class="crew-lead">
+        A North Carolina and California-based creative studio with one objective: Make social media the hardest-working channel in your marketing mix.
+      </p>
+
+      <div class="crew-grid">
+        <div class="crew-card">
+          <div class="crew-name">Carly Mask</div>
+          <div class="crew-role">Chief Creative &bull; Co-Founder</div>
+          <div class="crew-subrole">Leadership &amp; Creative Direction</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Shelby Spencer</div>
+          <div class="crew-role">Content Creator &bull; Brand Strategist</div>
+          <div class="crew-subrole">Photographer</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Blake Pease</div>
+          <div class="crew-role">Paid Ads Specialist</div>
+          <div class="crew-subrole">SEO &amp; AEO Management</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Molly Edwards</div>
+          <div class="crew-role">Stylist &bull; Brand Strategist</div>
+          <div class="crew-subrole">Visual Architecture</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Shay Stifelman</div>
+          <div class="crew-role">Creative Director &bull; Videographer</div>
+          <div class="crew-subrole">Cinema &amp; Motion Direction</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Maggie Mae</div>
+          <div class="crew-role">Photographer</div>
+          <div class="crew-subrole">Production Assistant</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Michee Zodulua</div>
+          <div class="crew-role">Production Assistant</div>
+          <div class="crew-subrole">Photographer</div>
+        </div>
+
+        <div class="crew-card">
+          <div class="crew-name">Maggie Lytle</div>
+          <div class="crew-role">Production Assistant</div>
+          <div class="crew-subrole">Photographer</div>
+        </div>
+      </div>
     </section>
 
-    <div class="portfolio-grid">
-      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
-        <div class="tile-visual visual-art-1">
-          <span class="tile-badge">Social Cinema</span>
-        </div>
-        <div class="tile-info">
-          <h4 class="tile-title">High-Impact Brand Storytelling</h4>
-          <p class="tile-sub">Editorial Reels &amp; Motion Direction</p>
-        </div>
-      </a>
-
-      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
-        <div class="tile-visual visual-art-2">
-          <span class="tile-badge">Creator Seeding</span>
-        </div>
-        <div class="tile-info">
-          <h4 class="tile-title">Influencer &amp; Culture Marketing</h4>
-          <p class="tile-sub">High-Affinity Creator Partnerships</p>
-        </div>
-      </a>
-
-      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
-        <div class="tile-visual visual-art-3">
-          <span class="tile-badge">Brand Architecture</span>
-        </div>
-        <div class="tile-info">
-          <h4 class="tile-title">Full-Funnel Social Management</h4>
-          <p class="tile-sub">Compounding Everyday Growth</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- CTA BANNER -->
-    <div style="height: clamp(60px, 10vh, 90px);"></div>
-    <section class="cta-banner">
-      <h2 class="cta-title">Ready to work together?</h2>
-      <p class="cta-subtitle">
-        Let’s make social media the hardest-working channel in your marketing mix.
+    <!-- CLOSING CREDO & CTA BANNER (Page 16 of Deck) -->
+    <section class="closing-banner">
+      <span class="closing-badge">Powering the creative needs of change-making brands</span>
+      <h2 class="closing-title">
+        We believe the best work happens when <span class="serif">strategy, creativity, and trust</span> work together.
+      </h2>
+      <p class="closing-lead">
+        We’d love to help you build what’s next.
       </p>
       <a href="mailto:hello@camp.digital" class="btn-mail-large">
         <span>Email hello@camp.digital</span>
@@ -930,26 +950,24 @@
         <span class="footer-copy">&copy; <span id="year">2026</span> Camp Digital, LLC. All rights reserved.</span>
       </div>
       <div class="footer-col">
-        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link">@camp_digital</a>
+        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link" style="display:inline;">@camp_digital</a>
         <span class="footer-copy">&bull;</span>
-        <a href="mailto:hello@camp.digital" class="nav-link">hello@camp.digital</a>
+        <a href="mailto:hello@camp.digital" class="nav-link" style="display:inline;">hello@camp.digital</a>
       </div>
     </footer>
 
   </main>
 
-  <!-- Bottom Switcher: Compare Spartan (V1) with Studio Editorial (V2) -->
+  <!-- Bottom Floating Switcher -->
   <div class="bottom-bar">
     <nav class="design-switcher" aria-label="Site version switcher">
-      <a href="index.html" class="switch-btn" id="btnVersionSpartan">&larr; Simple Site</a>
-      <button class="switch-btn active" id="btnVersionEditorial" aria-current="page">Full Site (Studio)</button>
+      <a href="index.html" class="switch-btn">&larr; Simple Site</a>
+      <button class="switch-btn active" aria-current="page">Full Site (Studio)</button>
     </nav>
   </div>
 
   <script>
-    (function () {
-      document.getElementById('year').textContent = new Date().getFullYear();
-    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

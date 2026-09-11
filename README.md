@@ -3,7 +3,7 @@
 A modern, responsive website for **camp.digital** — "The social team for brands".
 
 This repository includes two complete, distinct design directions:
-1. **Version 1: Spartan Minimalist** (`index.html`) — Sparse, distraction-free aesthetic matching the ethos of `allenmask.com` and `newberncollection.com`, featuring a 2-page smooth slider (Home & Offerings), persistent Camp Digital pennant flag mark, standalone mail icon to `hello@camp.digital`, and Instagram portfolio arrow.
+1. **Version 1: Spartan Minimalist** (`index.html`) — Sparse, distraction-free aesthetic matching the ethos of `allenmask.com` and `newberncollection.com`, featuring a 2-page smooth slider (Home & Offerings), official Camp Digital CD pennant flag mark, standalone mail icon to `hello@camp.digital`, and Instagram portfolio arrow.
 2. **Version 2: Studio Editorial** (`studio.html`) — Rich, comprehensive boutique creative agency experience informed by the `@camp_digital` pitch deck, Canva brand kit, and Instagram feed. Features the 3 core pillars in depth, client roster (Nike, Spotify, Lime, Apple & Airbnb alumni), credo, and visual campaign showcases.
 
 ---
@@ -14,7 +14,7 @@ This repository includes two complete, distinct design directions:
 - **Tagline**: *"The social team for brands"*
 - **Contact Email**: `hello@camp.digital`
 - **Instagram**: [@camp_digital](https://www.instagram.com/camp_digital/)
-- **Brand Emblem**: Pennant Flag Mark (`assets/flag.svg`)
+- **Brand Emblem**: Pennant Flag Mark with CD Cutout (`assets/flag.svg`)
 - **Favicon**: `assets/favicon.svg`
 
 ### Core Offerings / Service Architecture
@@ -27,21 +27,17 @@ This repository includes two complete, distinct design directions:
 
 ## Deployment & Hosting Workflow (GitHub Pages + Squarespace)
 
-### 1. Initialize Git & Push to GitHub
-Create repository on GitHub (e.g., `camp-digital` under `allenmask`):
+### 1. Push to GitHub
+Repository: `https://github.com/allenmask/camp.digital.git`
 
 ```bash
 cd /Users/allenmask/campdigital-site
-git init
-git add .
-git commit -m "Initial release: Camp Digital site (Spartan & Studio designs)"
-git branch -M main
-git remote add origin git@github.com:allenmask/camp-digital.git
+git remote set-url origin https://github.com/allenmask/camp.digital.git
 git push -u origin main
 ```
 
 ### 2. Enable GitHub Pages
-1. Go to your repository settings: `https://github.com/allenmask/camp-digital/settings/pages`
+1. Go to your repository settings: `https://github.com/allenmask/camp.digital/settings/pages`
 2. Under **Build and deployment**:
    - Source: **Deploy from a branch**
    - Branch: `main` / `/ (root)`

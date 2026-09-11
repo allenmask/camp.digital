@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Camp Digital — The Social Team for Brands</title>
-  <meta name="description" content="Camp Digital is the social team for brands. Full-service social media management, creative development and production, and influencer campaigns." />
+  <meta name="description" content="Camp Digital is the social team for brands. A creative studio built to turn social media into a meaningful driver of brand and business growth." />
   <meta property="og:title" content="Camp Digital — The Social Team for Brands" />
-  <meta property="og:description" content="Camp Digital is the social team for brands. Full-service social media management, creative development and production, and influencer campaigns." />
+  <meta property="og:description" content="A creative studio built to turn social media into a meaningful driver of brand and business growth." />
   <meta property="og:url" content="https://camp.digital" />
   <meta name="twitter:card" content="summary" />
 
@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -32,7 +32,6 @@
       --camp-clay: #e6bda8;
       --border-subtle: rgba(255, 255, 255, 0.09);
       --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Newsreader', Georgia, serif;
       --font-mono: 'Inconsolata', monospace;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -82,7 +81,7 @@
       pointer-events: auto;
     }
 
-    /* Camp Digital Pennant Flag Mark with 'CD' Cutout (Top Left) */
+    /* Official Camp Digital CD Pennant Flag (Top Left, from Deck Page 16) */
     .flag-icon-btn {
       background: none;
       border: none;
@@ -107,7 +106,7 @@
     }
 
     .flag-icon-btn svg {
-      width: 32px;
+      width: 36px;
       height: 28px;
       display: block;
     }
@@ -203,7 +202,7 @@
 
     .slider-track {
       width: 100%;
-      max-width: 640px;
+      max-width: 680px;
       height: 100%;
       position: relative;
       display: flex;
@@ -304,12 +303,10 @@
       color: var(--accent);
     }
 
-    /* Right arrow nudge for portfolio */
     .link-portfolio:hover .arrow {
       transform: translateX(4px);
     }
 
-    /* Down arrow nudge for offerings */
     .link-offerings:hover .arrow {
       transform: translateY(4px);
     }
@@ -320,7 +317,7 @@
       font-weight: 500;
       color: var(--text-muted);
       letter-spacing: -0.01em;
-      margin-bottom: clamp(26px, 4.5vh, 36px);
+      margin-bottom: clamp(24px, 4vh, 34px);
       user-select: none;
     }
 
@@ -329,12 +326,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: clamp(12px, 2.4vh, 18px);
-      margin-bottom: clamp(34px, 6vh, 48px);
+      gap: clamp(10px, 2.2vh, 16px);
+      margin-bottom: clamp(32px, 5.5vh, 46px);
     }
 
     .services-list li {
-      font-size: clamp(1.18rem, 3.9vw, 1.75rem);
+      font-size: clamp(1.15rem, 3.6vw, 1.65rem);
       font-weight: 500;
       letter-spacing: -0.025em;
       color: var(--text);
@@ -412,7 +409,6 @@
       color: var(--text);
     }
 
-    /* Keyboard indicator helper */
     .key-hint {
       position: fixed;
       bottom: 18px;
@@ -437,12 +433,8 @@
     }
 
     @media (max-width: 600px) {
-      .key-hint {
-        display: none;
-      }
-      .brand-title {
-        letter-spacing: -0.025em;
-      }
+      .key-hint { display: none; }
+      .brand-title { letter-spacing: -0.025em; }
     }
   </style>
 </head>
@@ -450,35 +442,22 @@
 
   <!-- Top Utility Bar -->
   <header class="top-bar">
-    <!-- Official Camp Digital Pennant Flag with 'CD' in the flag -->
+    <!-- Official Camp Digital CD Flag (Page 16 of Carly's Deck) -->
     <a href="#home" class="flag-icon-btn" id="flagBtn" aria-label="Camp Digital Home">
-      <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <mask id="cdTopFlagCutout">
-            <rect width="36" height="32" fill="white"/>
-            <!-- 'C' Cutout -->
-            <path d="M15.8 9.2c-2.4 0-4 1.7-4 4.3 0 2.6 1.6 4.3 4 4.3 1.4 0 2.4-.6 3-1.5l-1.3-.9c-.4.6-1 .9-1.7.9-1.4 0-2.4-1.1-2.4-2.8s1-2.8 2.4-2.8c.7 0 1.3.3 1.7.9l1.3-.9c-.6-.9-1.6-1.5-3-1.5z" fill="black"/>
-            <!-- 'D' Cutout -->
-            <path d="M19.8 9.4h3.3c2.4 0 4.1 1.6 4.1 4.1 0 2.5-1.7 4.1-4.1 4.1h-3.3V9.4zm1.7 6.6h1.5c1.4 0 2.4-.9 2.4-2.5 0-1.6-1-2.5-2.4-2.5h-1.5v5z" fill="black"/>
-          </mask>
-        </defs>
-        <!-- Staff & Finial -->
-        <line x1="6" y1="4" x2="6" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="6" cy="3.5" r="1.3" fill="currentColor"/>
-        <!-- Pennant Flag Field with CD Cutout -->
-        <path d="M7 5.5h26l-4.5 7.5 4.5 7.5H7V5.5z" fill="currentColor" mask="url(#cdTopFlagCutout)"/>
+      <svg viewBox="0 0 903 699" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M42 45 C42 30 54 20 70 23 L850 168 C868 171 878 190 868 206 L700 350 L868 494 C878 510 868 529 850 532 L70 677 C54 680 42 670 42 655 Z" stroke="currentColor" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M340 310 C325 285 296 270 255 270 C190 270 142 322 142 390 C142 458 190 510 255 510 C296 510 325 495 340 470 L308 440 C296 458 278 470 255 470 C212 470 182 434 182 390 C182 346 212 310 255 310 C278 310 296 322 308 340 Z" fill="currentColor"/>
+        <path d="M528 195 H488 V300 C468 280 440 270 410 270 C345 270 298 322 298 390 C298 458 345 510 410 510 C440 510 468 500 488 480 V510 H528 Z M413 470 C370 470 338 434 338 390 C338 346 370 310 413 310 C456 310 488 346 488 390 C488 434 456 470 413 470 Z" fill="currentColor"/>
       </svg>
     </a>
 
     <!-- Top Right: Simple vs Full Site Toggle + Perpetual Mail Icon -->
     <div class="top-actions">
-      <!-- Full Site / Simple Site Switcher -->
       <div class="view-toggle" role="group" aria-label="View format">
         <span class="view-toggle-item active">Simple</span>
         <a href="studio.html" class="view-toggle-item">Full Site &nearr;</a>
       </div>
 
-      <!-- Perpetual Mail Icon (Standalone stroke icon, no circle enclosure) -->
       <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
         <svg viewBox="0 0 24 24">
           <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
@@ -517,9 +496,10 @@
         <h2 class="offerings-heading">hire us for:</h2>
 
         <ul class="services-list">
-          <li>social media management</li>
-          <li>creative development and production</li>
-          <li>influencer campaigns</li>
+          <li>content creation and production</li>
+          <li>full-service social media management</li>
+          <li>influencer marketing and UGC programming</li>
+          <li>paid ads, SEO/AEO</li>
         </ul>
 
         <!-- Loop back to Home Link -->
@@ -532,7 +512,7 @@
     </div>
   </main>
 
-  <!-- Bottom Switcher: Compare Spartan (V1) with Studio Editorial (V2) -->
+  <!-- Bottom Switcher -->
   <footer class="bottom-bar">
     <nav class="design-switcher" aria-label="Site version switcher">
       <button class="switch-btn active" id="btnVersionSpartan" aria-current="page">Simple Site</button>
@@ -584,7 +564,6 @@
         showPage('home', 'up');
       });
 
-      // Handle direct URL hash
       function syncHash() {
         if (window.location.hash === '#offerings') {
           showPage('offerings', 'down');
@@ -598,7 +577,6 @@
         showPage('offerings', 'down');
       }
 
-      // Keyboard arrow shortcuts
       window.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown' || e.key === 'PageDown') {
           e.preventDefault();
@@ -609,7 +587,6 @@
         }
       });
 
-      // Wheel / scroll trigger
       let scrollCooldown = false;
       window.addEventListener('wheel', (e) => {
         if (scrollCooldown) return;
