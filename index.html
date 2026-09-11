@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Camp Digital — The Social Team for Brands</title>
+  <meta name="description" content="Camp Digital is the social team for brands. Full-service social media management, creative development and production, and influencer campaigns." />
+  <meta property="og:title" content="Camp Digital — The Social Team for Brands" />
+  <meta property="og:description" content="Camp Digital is the social team for brands. Full-service social media management, creative development and production, and influencer campaigns." />
+  <meta property="og:url" content="https://camp.digital" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #090a0d;
+      --bg-ambient: radial-gradient(circle at 50% 45%, rgba(135, 142, 126, 0.12) 0%, rgba(9, 10, 13, 0) 70%),
+                    radial-gradient(circle at 50% 10%, rgba(208, 151, 61, 0.06) 0%, transparent 60%);
+      --text: #f5f6f8;
+      --text-muted: #8e95a0;
+      --text-dim: #545b66;
+      --accent: #d0973d;
+      --camp-green: #878e7e;
+      --camp-clay: #e6bda8;
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-mono: 'Inconsolata', monospace;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      background-image: var(--bg-ambient);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font-display);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ── TOP UTILITY BAR ── */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(20px, 4.5vh, 36px) clamp(22px, 5vw, 48px);
+      pointer-events: none;
+    }
+
+    .top-bar > * {
+      pointer-events: auto;
+    }
+
+    /* Camp Digital Pennant Flag Mark with 'CD' Cutout (Top Left) */
+    .flag-icon-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 4px;
+      text-decoration: none;
+      transition: transform 0.3s var(--ease), color 0.3s ease, opacity 0.3s ease;
+      opacity: 0.95;
+    }
+
+    .flag-icon-btn:hover {
+      transform: scale(1.08);
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    .flag-icon-btn:active {
+      transform: scale(0.96);
+    }
+
+    .flag-icon-btn svg {
+      width: 32px;
+      height: 28px;
+      display: block;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Full Site / Simple Site Segmented Toggle in Top Bar */
+    .view-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 3px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .view-toggle-item {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .view-toggle-item.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .view-toggle-item:hover:not(.active) {
+      color: var(--text);
+    }
+
+    /* Minimal Perpetual Mail Icon (Standalone icon, no circle enclosure) */
+    .mail-icon-btn {
+      background: none;
+      border: none;
+      box-shadow: none;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease);
+      opacity: 0.9;
+    }
+
+    .mail-icon-btn:hover {
+      color: var(--accent);
+      transform: scale(1.15) translateY(-1px);
+      opacity: 1;
+    }
+
+    .mail-icon-btn:active {
+      transform: scale(0.96);
+    }
+
+    .mail-icon-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.65;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── VIEWPORT STAGE & PAGE SLIDER ── */
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .slider-track {
+      width: 100%;
+      max-width: 640px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Page Panels */
+    .page-panel {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(28px) scale(0.98);
+      transition: opacity 0.5s var(--ease), transform 0.55s var(--ease);
+      padding: 0 16px;
+    }
+
+    .page-panel.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+
+    .page-panel.exiting-up {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-28px) scale(0.98);
+    }
+
+    /* ── PAGE 1: HOME STYLING ── */
+    .brand-title {
+      font-size: clamp(2.4rem, 7.5vw, 3.9rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 12px;
+      user-select: none;
+    }
+
+    .brand-tagline {
+      font-size: clamp(0.98rem, 2.6vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: -0.015em;
+      margin-bottom: clamp(36px, 7vh, 50px);
+      user-select: none;
+    }
+
+    /* Navigation Links Stack */
+    .nav-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(14px, 2.5vh, 20px);
+    }
+
+    .action-link {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: clamp(1.05rem, 2.7vw, 1.28rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: color 0.25s ease, transform 0.25s var(--ease), opacity 0.25s ease;
+      opacity: 0.9;
+    }
+
+    .action-link .arrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 1.15em;
+      line-height: 1;
+      color: var(--text-muted);
+      transition: transform 0.25s var(--ease), color 0.25s ease;
+    }
+
+    .action-link:hover {
+      color: var(--text);
+      opacity: 1;
+    }
+
+    .action-link:hover .arrow {
+      color: var(--accent);
+    }
+
+    /* Right arrow nudge for portfolio */
+    .link-portfolio:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* Down arrow nudge for offerings */
+    .link-offerings:hover .arrow {
+      transform: translateY(4px);
+    }
+
+    /* ── PAGE 2: OFFERINGS STYLING ── */
+    .offerings-heading {
+      font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: -0.01em;
+      margin-bottom: clamp(26px, 4.5vh, 36px);
+      user-select: none;
+    }
+
+    .services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(12px, 2.4vh, 18px);
+      margin-bottom: clamp(34px, 6vh, 48px);
+    }
+
+    .services-list li {
+      font-size: clamp(1.18rem, 3.9vw, 1.75rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1.25;
+      text-align: center;
+      transition: color 0.2s ease, transform 0.2s var(--ease);
+      user-select: none;
+      padding: 2px 8px;
+    }
+
+    .services-list li:hover {
+      color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    /* Loop back link */
+    .link-back:hover .arrow {
+      transform: translateY(-4px);
+    }
+
+    /* ── BOTTOM PERSISTENT SWITCHER / FOOTER ── */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(16px, 3vh, 26px);
+      pointer-events: none;
+    }
+
+    .bottom-bar > * {
+      pointer-events: auto;
+    }
+
+    .design-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 3px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .switch-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .switch-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .switch-btn:hover:not(.active) {
+      color: var(--text);
+    }
+
+    /* Keyboard indicator helper */
+    .key-hint {
+      position: fixed;
+      bottom: 18px;
+      right: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .key-hint kbd {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+    }
+
+    @media (max-width: 600px) {
+      .key-hint {
+        display: none;
+      }
+      .brand-title {
+        letter-spacing: -0.025em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <header class="top-bar">
+    <!-- Official Camp Digital Pennant Flag with 'CD' in the flag -->
+    <a href="#home" class="flag-icon-btn" id="flagBtn" aria-label="Camp Digital Home">
+      <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="cdTopFlagCutout">
+            <rect width="36" height="32" fill="white"/>
+            <!-- 'C' Cutout -->
+            <path d="M15.8 9.2c-2.4 0-4 1.7-4 4.3 0 2.6 1.6 4.3 4 4.3 1.4 0 2.4-.6 3-1.5l-1.3-.9c-.4.6-1 .9-1.7.9-1.4 0-2.4-1.1-2.4-2.8s1-2.8 2.4-2.8c.7 0 1.3.3 1.7.9l1.3-.9c-.6-.9-1.6-1.5-3-1.5z" fill="black"/>
+            <!-- 'D' Cutout -->
+            <path d="M19.8 9.4h3.3c2.4 0 4.1 1.6 4.1 4.1 0 2.5-1.7 4.1-4.1 4.1h-3.3V9.4zm1.7 6.6h1.5c1.4 0 2.4-.9 2.4-2.5 0-1.6-1-2.5-2.4-2.5h-1.5v5z" fill="black"/>
+          </mask>
+        </defs>
+        <!-- Staff & Finial -->
+        <line x1="6" y1="4" x2="6" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="6" cy="3.5" r="1.3" fill="currentColor"/>
+        <!-- Pennant Flag Field with CD Cutout -->
+        <path d="M7 5.5h26l-4.5 7.5 4.5 7.5H7V5.5z" fill="currentColor" mask="url(#cdTopFlagCutout)"/>
+      </svg>
+    </a>
+
+    <!-- Top Right: Simple vs Full Site Toggle + Perpetual Mail Icon -->
+    <div class="top-actions">
+      <!-- Full Site / Simple Site Switcher -->
+      <div class="view-toggle" role="group" aria-label="View format">
+        <span class="view-toggle-item active">Simple</span>
+        <a href="studio.html" class="view-toggle-item">Full Site &nearr;</a>
+      </div>
+
+      <!-- Perpetual Mail Icon (Standalone stroke icon, no circle enclosure) -->
+      <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Central Stage -->
+  <main class="stage">
+    <div class="slider-track">
+
+      <!-- PAGE 1: HOME -->
+      <section class="page-panel active" id="pageHome" aria-label="Camp Digital Intro">
+        <h1 class="brand-title">camp digital</h1>
+        <p class="brand-tagline">the social team for brands</p>
+
+        <div class="nav-stack">
+          <!-- Portfolio Link (points to Instagram) -->
+          <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="action-link link-portfolio" id="linkPortfolio">
+            <span>portfolio</span>
+            <span class="arrow">&rarr;</span>
+          </a>
+
+          <!-- Offerings Link (navigates down to offerings) -->
+          <button type="button" class="action-link link-offerings" id="btnGoOfferings" aria-controls="pageOfferings">
+            <span>offerings</span>
+            <span class="arrow">&darr;</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- PAGE 2: OFFERINGS -->
+      <section class="page-panel" id="pageOfferings" aria-label="Camp Digital Offerings">
+        <h2 class="offerings-heading">hire us for:</h2>
+
+        <ul class="services-list">
+          <li>social media management</li>
+          <li>creative development and production</li>
+          <li>influencer campaigns</li>
+        </ul>
+
+        <!-- Loop back to Home Link -->
+        <button type="button" class="action-link link-back" id="btnGoHome" aria-controls="pageHome">
+          <span class="arrow">&uarr;</span>
+          <span>home</span>
+        </button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Switcher: Compare Spartan (V1) with Studio Editorial (V2) -->
+  <footer class="bottom-bar">
+    <nav class="design-switcher" aria-label="Site version switcher">
+      <button class="switch-btn active" id="btnVersionSpartan" aria-current="page">Simple Site</button>
+      <a href="studio.html" class="switch-btn" id="btnVersionEditorial">Full Site (Studio) &nearr;</a>
+    </nav>
+  </footer>
+
+  <!-- Key hint for navigation -->
+  <div class="key-hint">
+    <span>navigate</span>
+    <kbd>&darr;</kbd>
+    <kbd>&uarr;</kbd>
+  </div>
+
+  <script>
+    (function () {
+      const pageHome = document.getElementById('pageHome');
+      const pageOfferings = document.getElementById('pageOfferings');
+      const btnGoOfferings = document.getElementById('btnGoOfferings');
+      const btnGoHome = document.getElementById('btnGoHome');
+      const flagBtn = document.getElementById('flagBtn');
+
+      let currentPage = 'home';
+
+      function showPage(page, direction = 'down') {
+        if (page === currentPage) return;
+
+        if (page === 'offerings') {
+          pageHome.classList.remove('active');
+          pageHome.classList.add('exiting-up');
+          pageOfferings.classList.add('active');
+          pageOfferings.classList.remove('exiting-up');
+          currentPage = 'offerings';
+          window.location.hash = 'offerings';
+        } else {
+          pageOfferings.classList.remove('active');
+          pageOfferings.classList.remove('exiting-up');
+          pageHome.classList.add('active');
+          pageHome.classList.remove('exiting-up');
+          currentPage = 'home';
+          window.location.hash = 'home';
+        }
+      }
+
+      btnGoOfferings.addEventListener('click', () => showPage('offerings', 'down'));
+      btnGoHome.addEventListener('click', () => showPage('home', 'up'));
+      flagBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPage('home', 'up');
+      });
+
+      // Handle direct URL hash
+      function syncHash() {
+        if (window.location.hash === '#offerings') {
+          showPage('offerings', 'down');
+        } else {
+          showPage('home', 'up');
+        }
+      }
+
+      window.addEventListener('hashchange', syncHash);
+      if (window.location.hash === '#offerings') {
+        showPage('offerings', 'down');
+      }
+
+      // Keyboard arrow shortcuts
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+          e.preventDefault();
+          showPage('offerings', 'down');
+        } else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Escape') {
+          e.preventDefault();
+          showPage('home', 'up');
+        }
+      });
+
+      // Wheel / scroll trigger
+      let scrollCooldown = false;
+      window.addEventListener('wheel', (e) => {
+        if (scrollCooldown) return;
+        if (e.deltaY > 30 && currentPage === 'home') {
+          scrollCooldown = true;
+          showPage('offerings', 'down');
+          setTimeout(() => { scrollCooldown = false; }, 600);
+        } else if (e.deltaY < -30 && currentPage === 'offerings') {
+          scrollCooldown = true;
+          showPage('home', 'up');
+          setTimeout(() => { scrollCooldown = false; }, 600);
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

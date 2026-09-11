@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camp Digital — The Mighty Content Agency</title>
+  <meta name="description" content="We are the mighty Camp Digital. A boutique content agency with one objective: make social media the hardest working channel in your marketing mix." />
+  <meta property="og:title" content="Camp Digital — Creative Studio & Social Team for Brands" />
+  <meta property="og:description" content="Make social media the hardest-working channel in your marketing mix. California & Raleigh." />
+  <meta property="og:url" content="https://camp.digital/studio.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,300..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #090a0d;
+      --bg-card: rgba(255, 255, 255, 0.035);
+      --bg-card-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.09);
+      --border-accent: rgba(208, 151, 61, 0.35);
+      --text: #f5f6f8;
+      --text-muted: #8e95a0;
+      --text-dim: #555c68;
+      --gold: #d0973d;
+      --gold-glow: rgba(208, 151, 61, 0.2);
+      --sage: #878e7e;
+      --sage-glow: rgba(135, 142, 126, 0.18);
+      --clay: #e6bda8;
+      --cream: #f7f4ec;
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-mono: 'Inconsolata', monospace;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-display);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle background ambient mesh */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: 
+        radial-gradient(circle at 18% 12%, var(--sage-glow) 0%, transparent 45%),
+        radial-gradient(circle at 82% 35%, var(--gold-glow) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(230, 189, 168, 0.04) 0%, transparent 50%);
+    }
+
+    /* ── HEADER / NAVIGATION ── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: clamp(16px, 3vh, 26px) clamp(20px, 4.5vw, 56px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(9, 10, 13, 0.76);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Flag with CD Cutout */
+    .brand-flag {
+      width: 34px;
+      height: 30px;
+      color: var(--text);
+      transition: transform 0.25s var(--ease), color 0.25s ease;
+    }
+
+    .brand-group:hover .brand-flag {
+      color: var(--gold);
+      transform: scale(1.08);
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      background: rgba(208, 151, 61, 0.1);
+      border: 1px solid rgba(208, 151, 61, 0.25);
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    /* View Toggle */
+    .view-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .view-toggle-item {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .view-toggle-item.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .view-toggle-item:hover:not(.active) {
+      color: var(--text);
+    }
+
+    .btn-contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: var(--bg);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s var(--ease), opacity 0.2s ease;
+    }
+
+    .btn-contact-pill:hover {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+
+    /* ── MAIN CONTENT CONTAINER ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: clamp(120px, 18vh, 170px) clamp(20px, 4.5vw, 56px) 100px;
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      margin-bottom: clamp(60px, 12vh, 110px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta .mono-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    .hero-meta .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-dim);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 7.5vw, 5.8rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      margin-bottom: 28px;
+      max-width: 1050px;
+    }
+
+    .hero-title span.serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--text-muted);
+      line-height: 1.45;
+      max-width: 820px;
+      margin-bottom: 42px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-hero-primary {
+      background: var(--text);
+      color: var(--bg);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s var(--ease), opacity 0.2s ease;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-hero-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(12px);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
+    }
+
+    .btn-hero-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── CREDENTIAL / CLIENT MARQUEE ── */
+    .roster-band {
+      margin-bottom: clamp(70px, 14vh, 120px);
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .roster-header {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+
+    .roster-item {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .roster-item:hover {
+      color: var(--text);
+    }
+
+    /* ── 3 CORE OFFERINGS (CARDS) ── */
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: clamp(70px, 14vh, 120px);
+    }
+
+    .offering-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.3s var(--ease), border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offering-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .offering-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    .offering-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .card-body {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .card-tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .card-tags li {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* ── CAMPAIGN & PORTFOLIO VIGNETTES ── */
+    .portfolio-section {
+      margin-bottom: clamp(70px, 14vh, 120px);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-tile {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s var(--ease), border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .portfolio-tile:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+    }
+
+    .tile-visual {
+      aspect-ratio: 4/5;
+      background: #14171d;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-art-1 {
+      background: linear-gradient(135deg, #1b2820 0%, #0d1410 100%);
+    }
+    .visual-art-2 {
+      background: linear-gradient(135deg, #2b1f1a 0%, #15100d 100%);
+    }
+    .visual-art-3 {
+      background: linear-gradient(135deg, #22221b 0%, #11110c 100%);
+    }
+
+    .tile-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      color: #ffffff;
+      backdrop-filter: blur(8px);
+    }
+
+    .tile-info {
+      padding: 18px 20px;
+    }
+
+    .tile-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 4px;
+    }
+
+    .tile-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ── ENGAGEMENT / PHILOSOPHY BLOCK ── */
+    .credo-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: clamp(36px, 6vw, 64px);
+      margin-bottom: clamp(70px, 14vh, 120px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .credo-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .credo-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.8vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .credo-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .credo-text {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BIG CLOSING CALL TO ACTION ── */
+    .cta-banner {
+      text-align: center;
+      padding: clamp(60px, 10vh, 100px) 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 300px;
+      background: var(--gold-glow);
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
+    .cta-title {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    .btn-mail-large {
+      background: var(--text);
+      color: var(--bg);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      padding: 16px 34px;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s var(--ease), opacity 0.2s ease;
+    }
+
+    .btn-mail-large:hover {
+      transform: scale(1.04);
+      opacity: 0.95;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-col {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    /* Floating bottom version switcher */
+    .bottom-bar {
+      position: fixed;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .bottom-bar > * {
+      pointer-events: auto;
+    }
+
+    .design-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(9, 10, 13, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .switch-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: 7px 15px;
+      border-radius: 9999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .switch-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    .switch-btn:hover:not(.active) {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Effect -->
+  <div class="ambient-bg"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="studio.html" class="brand-group">
+      <!-- Camp Digital Flag with 'CD' in the flag -->
+      <svg class="brand-flag" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="cdNavFlagCutout">
+            <rect width="36" height="32" fill="white"/>
+            <path d="M15.8 9.2c-2.4 0-4 1.7-4 4.3 0 2.6 1.6 4.3 4 4.3 1.4 0 2.4-.6 3-1.5l-1.3-.9c-.4.6-1 .9-1.7.9-1.4 0-2.4-1.1-2.4-2.8s1-2.8 2.4-2.8c.7 0 1.3.3 1.7.9l1.3-.9c-.6-.9-1.6-1.5-3-1.5z" fill="black"/>
+            <path d="M19.8 9.4h3.3c2.4 0 4.1 1.6 4.1 4.1 0 2.5-1.7 4.1-4.1 4.1h-3.3V9.4zm1.7 6.6h1.5c1.4 0 2.4-.9 2.4-2.5 0-1.6-1-2.5-2.4-2.5h-1.5v5z" fill="black"/>
+          </mask>
+        </defs>
+        <line x1="6" y1="4" x2="6" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="6" cy="3.5" r="1.3" fill="currentColor"/>
+        <path d="M7 5.5h26l-4.5 7.5 4.5 7.5H7V5.5z" fill="currentColor" mask="url(#cdNavFlagCutout)"/>
+      </svg>
+      <span class="brand-name">camp digital</span>
+      <span class="brand-badge">Boutique Agency</span>
+    </a>
+
+    <div class="nav-actions">
+      <!-- Switch back to Simple / Spartan Site -->
+      <div class="view-toggle" role="group" aria-label="View format">
+        <a href="index.html" class="view-toggle-item">&larr; Simple</a>
+        <span class="view-toggle-item active">Full Site</span>
+      </div>
+
+      <a href="#offerings" class="nav-link">Offerings</a>
+      <a href="#portfolio" class="nav-link">Work</a>
+      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram &rarr;</a>
+
+      <!-- Contact Pill -->
+      <a href="mailto:hello@camp.digital" class="btn-contact-pill">
+        <span>hello@camp.digital</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Wrap -->
+  <main class="page-wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-meta">
+        <span class="mono-tag">California &amp; Raleigh</span>
+        <span class="dot"></span>
+        <span class="mono-tag">Female-Led &amp; Black-Owned</span>
+        <span class="dot"></span>
+        <span class="mono-tag">The Social Team for Brands</span>
+      </div>
+
+      <h1 class="hero-title">
+        We are the mighty <br />
+        <span class="serif">Camp Digital.</span>
+      </h1>
+
+      <p class="hero-lead">
+        A boutique creative content agency with one objective: make social media the hardest-working channel in your marketing mix.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="mailto:hello@camp.digital" class="btn-hero-primary">
+          <span>Hire the team</span>
+          <span>&rarr;</span>
+        </a>
+        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
+          <span>View Instagram (@camp_digital)</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS BAND -->
+    <section class="roster-band">
+      <div class="roster-header">Trusted by founders &amp; world-class brands</div>
+      <div class="roster-grid">
+        <div class="roster-item">Nike</div>
+        <div class="roster-item">Spotify</div>
+        <div class="roster-item">Lime</div>
+        <div class="roster-item">Apple Alumni</div>
+        <div class="roster-item">Airbnb Alumni</div>
+        <div class="roster-item">Emerging DTC</div>
+      </div>
+    </section>
+
+    <!-- 3 CORE OFFERINGS -->
+    <section class="section-head" id="offerings">
+      <span class="section-label">01 / Offerings</span>
+      <h2 class="section-title">Hire us for:</h2>
+    </section>
+
+    <div class="offerings-grid">
+      <!-- Card 1 -->
+      <article class="offering-card">
+        <div>
+          <div class="card-num">01 / STRATEGY &amp; OPS</div>
+          <h3 class="card-title">Social media management</h3>
+          <p class="card-body">
+            Full-service account orchestration, daily publishing cadences, community architecture, and channel compounding to turn casual scrollers into lifelong brand advocates.
+          </p>
+        </div>
+        <ul class="card-tags">
+          <li>Full-service management</li>
+          <li>Community engagement</li>
+          <li>Audience compounding</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="offering-card">
+        <div>
+          <div class="card-num">02 / STUDIO &amp; PRODUCTION</div>
+          <h3 class="card-title">Creative development &amp; production</h3>
+          <p class="card-body">
+            Multi-channel creative development, thumb-stopping short-form reels and cinema, editorial photography, and art direction that commands attention on any feed.
+          </p>
+        </div>
+        <ul class="card-tags">
+          <li>Reels &amp; Short-form</li>
+          <li>Editorial photography</li>
+          <li>Surreal social cinema</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="offering-card">
+        <div>
+          <div class="card-num">03 / CREATOR NETWORK</div>
+          <h3 class="card-title">Influencer campaigns</h3>
+          <p class="card-body">
+            Curated creator discovery, high-affinity talent casting, authentic product seeding, and performance-backed influencer activations that drive measurable conversions.
+          </p>
+        </div>
+        <ul class="card-tags">
+          <li>Talent casting</li>
+          <li>Product seeding</li>
+          <li>Creator partnerships</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- PHILOSOPHY / CREDO BOX -->
+    <section class="credo-box">
+      <div class="credo-title">
+        "From first-time founders to the Fortune 500, we’re humbled to <em>compound the creativity</em> of the world’s most admired brands."
+      </div>
+      <div class="credo-text">
+        Available for a variety of simple, flexible, and affordable engagement models that deliver the efficacy of a boutique agency and the efficiency of an internal art department.
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / VIGNETTES -->
+    <section class="section-head" id="portfolio">
+      <span class="section-label">02 / Visual Direction</span>
+      <h2 class="section-title">Selected work &amp; stories</h2>
+    </section>
+
+    <div class="portfolio-grid">
+      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
+        <div class="tile-visual visual-art-1">
+          <span class="tile-badge">Social Cinema</span>
+        </div>
+        <div class="tile-info">
+          <h4 class="tile-title">High-Impact Brand Storytelling</h4>
+          <p class="tile-sub">Editorial Reels &amp; Motion Direction</p>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
+        <div class="tile-visual visual-art-2">
+          <span class="tile-badge">Creator Seeding</span>
+        </div>
+        <div class="tile-info">
+          <h4 class="tile-title">Influencer &amp; Culture Marketing</h4>
+          <p class="tile-sub">High-Affinity Creator Partnerships</p>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="portfolio-tile">
+        <div class="tile-visual visual-art-3">
+          <span class="tile-badge">Brand Architecture</span>
+        </div>
+        <div class="tile-info">
+          <h4 class="tile-title">Full-Funnel Social Management</h4>
+          <p class="tile-sub">Compounding Everyday Growth</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- CTA BANNER -->
+    <div style="height: clamp(60px, 10vh, 90px);"></div>
+    <section class="cta-banner">
+      <h2 class="cta-title">Ready to work together?</h2>
+      <p class="cta-subtitle">
+        Let’s make social media the hardest-working channel in your marketing mix.
+      </p>
+      <a href="mailto:hello@camp.digital" class="btn-mail-large">
+        <span>Email hello@camp.digital</span>
+        <span>&rarr;</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-col">
+        <span class="footer-copy">&copy; <span id="year">2026</span> Camp Digital, LLC. All rights reserved.</span>
+      </div>
+      <div class="footer-col">
+        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link">@camp_digital</a>
+        <span class="footer-copy">&bull;</span>
+        <a href="mailto:hello@camp.digital" class="nav-link">hello@camp.digital</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Bottom Switcher: Compare Spartan (V1) with Studio Editorial (V2) -->
+  <div class="bottom-bar">
+    <nav class="design-switcher" aria-label="Site version switcher">
+      <a href="index.html" class="switch-btn" id="btnVersionSpartan">&larr; Simple Site</a>
+      <button class="switch-btn active" id="btnVersionEditorial" aria-current="page">Full Site (Studio)</button>
+    </nav>
+  </div>
+
+  <script>
+    (function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

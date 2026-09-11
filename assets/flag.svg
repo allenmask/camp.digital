@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 32" fill="none">
+  <!-- Camp Digital Official Pennant Flag with CD Cutout -->
+  <defs>
+    <mask id="cdFlagCutout">
+      <rect width="36" height="32" fill="white"/>
+      <!-- 'C' Cutout -->
+      <path d="M15.8 9.2c-2.4 0-4 1.7-4 4.3 0 2.6 1.6 4.3 4 4.3 1.4 0 2.4-.6 3-1.5l-1.3-.9c-.4.6-1 .9-1.7.9-1.4 0-2.4-1.1-2.4-2.8s1-2.8 2.4-2.8c.7 0 1.3.3 1.7.9l1.3-.9c-.6-.9-1.6-1.5-3-1.5z" fill="black"/>
+      <!-- 'D' Cutout -->
+      <path d="M19.8 9.4h3.3c2.4 0 4.1 1.6 4.1 4.1 0 2.5-1.7 4.1-4.1 4.1h-3.3V9.4zm1.7 6.6h1.5c1.4 0 2.4-.9 2.4-2.5 0-1.6-1-2.5-2.4-2.5h-1.5v5z" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Mast & Finial -->
+  <line x1="6" y1="4" x2="6" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="6" cy="3.5" r="1.3" fill="currentColor"/>
+
+  <!-- Pennant Flag Field with CD Cutout -->
+  <path d="M7 5.5h26l-4.5 7.5 4.5 7.5H7V5.5z" fill="currentColor" mask="url(#cdFlagCutout)"/>
+</svg>
