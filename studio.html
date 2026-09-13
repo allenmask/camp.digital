@@ -4,42 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camp Digital — The Social Team for Brands</title>
-  <meta name="description" content="Hello, we're camp digital. A creative studio built to turn social media into a meaningful driver of brand and business growth." />
+  <meta name="description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth. Big-brand firepower, boutique agility." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Camp Digital — The Social Team for Brands" />
-  <meta property="og:description" content="The social team for brands. A creative studio built to turn social media into a meaningful driver of brand and business growth." />
+  <meta property="og:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
   <meta property="og:url" content="https://camp.digital/studio.html" />
+  <meta property="og:image" content="assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Camp Digital — The Social Team for Brands" />
+  <meta name="twitter:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
+  <meta name="twitter:image" content="assets/og-image.svg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="alternate icon" href="assets/favicon.svg" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,300..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Tokens & Licensed Type -->
+  <link rel="stylesheet" href="tokens.css" />
 
   <style>
-    :root {
-      --bg: #090a0d;
-      --bg-card: rgba(255, 255, 255, 0.035);
-      --bg-card-hover: rgba(255, 255, 255, 0.065);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(208, 151, 61, 0.35);
-      --text: #f5f6f8;
-      --text-muted: #8e95a0;
-      --text-dim: #555c68;
-      --gold: #d0973d;
-      --gold-glow: rgba(208, 151, 61, 0.18);
-      --sage: #878e7e;
-      --sage-glow: rgba(135, 142, 126, 0.16);
-      --clay: #e6bda8;
-      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-mono: 'Inconsolata', monospace;
-      --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -49,31 +34,17 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: var(--surface);
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      background-color: var(--surface);
+      color: var(--text-primary);
       font-family: var(--font-display);
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Ambient mesh */
-    .ambient-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      pointer-events: none;
-      z-index: 0;
-      background: 
-        radial-gradient(circle at 20% 12%, var(--sage-glow) 0%, transparent 45%),
-        radial-gradient(circle at 80% 32%, var(--gold-glow) 0%, transparent 40%),
-        radial-gradient(circle at 50% 85%, rgba(230, 189, 168, 0.04) 0%, transparent 50%);
     }
 
     /* ── HEADER ── */
@@ -83,849 +54,1480 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: clamp(14px, 2.5vh, 22px) clamp(20px, 4.5vw, 48px);
+      padding: clamp(14px, 2.8vh, 22px) clamp(20px, 4.5vw, 48px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(9, 10, 13, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(249, 249, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    /* Official CD Pennant Flag (Top Left) */
+    /* CD Pennant Flag */
     .flag-icon-btn {
       background: none;
       border: none;
-      color: var(--text);
+      color: var(--ink);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       padding: 4px;
       text-decoration: none;
-      transition: transform 0.3s var(--ease), color 0.3s ease;
+      transition: transform 0.25s var(--ease), opacity 0.2s ease;
       opacity: 0.95;
     }
 
     .flag-icon-btn:hover {
-      transform: scale(1.08);
-      color: var(--gold);
+      transform: scale(1.06);
       opacity: 1;
     }
 
+    .flag-icon-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--radius-sm);
+    }
+
     .flag-icon-btn svg {
-      width: 36px;
-      height: 28px;
+      width: 38px;
+      height: 29px;
       display: block;
     }
 
-    /* View Toggle (Centered) */
+    /* Segmented View Toggle */
     .view-toggle {
       display: inline-flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 9999px;
+      background: rgba(29, 36, 33, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
       padding: 3px;
     }
 
     .view-toggle-item {
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
       color: var(--text-muted);
-      padding: 5px 13px;
-      border-radius: 9999px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
       text-decoration: none;
       transition: all 0.2s ease;
       white-space: nowrap;
     }
 
     .view-toggle-item.active {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--text);
-      font-weight: 600;
+      background: var(--surface-card);
+      color: var(--text-primary);
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(29, 36, 33, 0.08);
     }
 
     .view-toggle-item:hover:not(.active) {
-      color: var(--text);
+      color: var(--text-primary);
     }
 
-    /* Minimal Perpetual Mail Icon (Top Right) */
+    .view-toggle-item:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    /* Standalone Mail Icon */
     .mail-icon-btn {
       background: none;
       border: none;
-      box-shadow: none;
-      color: var(--text);
+      color: var(--ink);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.25s var(--ease);
-      opacity: 0.9;
+      transition: transform 0.25s var(--ease), color 0.2s ease, opacity 0.2s ease;
+      opacity: 0.88;
     }
 
     .mail-icon-btn:hover {
-      color: var(--gold);
-      transform: scale(1.15) translateY(-1px);
+      color: var(--accent);
+      transform: scale(1.12) translateY(-1px);
       opacity: 1;
     }
 
-    .mail-icon-btn:active {
-      transform: scale(0.96);
+    .mail-icon-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--radius-sm);
     }
 
     .mail-icon-btn svg {
       width: 22px;
       height: 22px;
       stroke: currentColor;
-      stroke-width: 1.65;
+      stroke-width: 1.7;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    /* ── PAGE WRAPPER ── */
+    /* ── MAIN LAYOUT WRAPPER ── */
     .page-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: clamp(80px, 12vh, 110px) clamp(20px, 4.5vw, 56px) 60px;
+      padding: clamp(90px, 14vh, 130px) clamp(20px, 4.5vw, 48px) 80px;
     }
 
-    /* ── HERO SECTION (Page 2 of Deck) ── */
-    .hero {
-      margin-bottom: clamp(36px, 6vh, 52px);
+    /* ── SECTION COMMON STYLES ── */
+    section {
+      padding: clamp(48px, 9vh, 84px) 0;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 22px;
+    section:last-of-type {
+      border-bottom: none;
     }
 
-    .hero-meta .mono-tag {
+    .section-eyebrow {
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      font-weight: 700;
       text-transform: uppercase;
-      color: var(--sage);
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .hero-meta .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-dim);
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      max-width: 880px;
+    }
+
+    .section-lead {
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    /* ── 1. HERO SECTION ── */
+    .hero {
+      padding-top: clamp(24px, 5vh, 48px);
+      padding-bottom: clamp(40px, 7vh, 64px);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: clamp(0.74rem, 1.5vw, 0.85rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 18px;
     }
 
     .hero-title {
-      font-size: clamp(2.8rem, 7.5vw, 5.4rem);
+      font-size: clamp(2.8rem, 7.8vw, 5.2rem);
       font-weight: 700;
       letter-spacing: -0.04em;
-      line-height: 1.04;
+      line-height: 1.02;
+      color: var(--text-primary);
       margin-bottom: 24px;
-      max-width: 1000px;
+      max-width: 960px;
     }
 
-    .hero-title span.serif {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--clay);
-    }
-
-    .hero-lead {
-      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    .hero-subhead {
+      font-size: clamp(1.18rem, 2.5vw, 1.55rem);
       font-weight: 400;
       letter-spacing: -0.015em;
       color: var(--text-muted);
       line-height: 1.45;
-      max-width: 820px;
-      margin-bottom: 24px;
+      max-width: 740px;
+      margin-bottom: 36px;
     }
 
-    .hero-cta-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+      margin-bottom: clamp(48px, 8vh, 72px);
     }
 
-    .btn-hero-primary {
-      background: var(--text);
-      color: var(--bg);
-      font-size: 0.98rem;
+    .btn {
+      font-family: inherit;
+      font-size: 1rem;
       font-weight: 600;
-      padding: 13px 26px;
-      border-radius: 9999px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: transform 0.2s var(--ease), opacity 0.2s ease;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s var(--ease);
+      cursor: pointer;
+      border: 1px solid transparent;
     }
 
-    .btn-hero-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+    .btn-primary {
+      background: var(--ink);
+      color: var(--cream);
     }
 
-    .btn-hero-secondary {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.98rem;
-      font-weight: 500;
-      padding: 13px 24px;
-      border-radius: 9999px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
+    .btn-primary:hover {
+      background: #000000;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(29, 36, 33, 0.15);
     }
 
-    .btn-hero-secondary:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-accent);
-      transform: translateY(-2px);
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--text-primary);
+      border-color: var(--border-medium);
     }
 
-    /* ── CLIENT LOGO ROSTER (Page 5 of Deck) ── */
-    .roster-band {
-      margin-bottom: clamp(40px, 7vh, 60px);
-      padding: 24px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    .btn-secondary:hover {
+      background: var(--surface-card);
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
     }
 
-    .roster-header {
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    /* ── 2. GLOBAL LOGO GARDEN (Directly below hero) ── */
+    .logo-garden-stage {
+      padding: 24px 0 32px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .logo-garden-header {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
-      color: var(--text-dim);
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+      margin-bottom: 22px;
+    }
+
+    .logo-garden {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(20px, 4vw, 38px);
+    }
+
+    .logo-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      opacity: 0.58;
+      transition: opacity 0.25s ease, transform 0.25s var(--ease);
+      height: 30px;
+    }
+
+    .logo-item:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .logo-item svg {
+      height: 100%;
+      width: auto;
+      max-height: 28px;
+      max-width: 90px;
+      display: block;
+      fill: currentColor;
+    }
+
+    /* ── 3. POSITIONING / WHY CAMP DIGITAL ── */
+    .positioning {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(32px, 6vh, 56px) clamp(24px, 5vw, 56px);
+      box-shadow: 0 4px 28px rgba(29, 36, 33, 0.03);
+      margin: clamp(36px, 6vh, 56px) 0;
+    }
+
+    .brand-anchor {
+      font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--accent);
       margin-bottom: 16px;
     }
 
-    .roster-lead {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      max-width: 760px;
+    .positioning-lead {
+      font-size: clamp(1.8rem, 4.4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
       margin-bottom: 20px;
+    }
+
+    .positioning-body {
+      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 860px;
+      margin-bottom: 40px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(20px, 3.5vw, 32px);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 32px;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .pillar-card p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
       line-height: 1.5;
     }
 
-    .roster-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 18px 24px;
-      align-items: center;
-    }
-
-    .roster-item {
-      font-size: 1.18rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      opacity: 0.82;
-      transition: opacity 0.2s ease, color 0.2s ease;
-    }
-
-    .roster-item:hover {
-      opacity: 1;
-      color: var(--gold);
-    }
-
-    /* ── SECTION HEADERS ── */
-    .section-head {
-      margin-bottom: 20px;
-    }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4.2vw, 3.2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.1;
-    }
-
-    /* ── 4 SERVICES (Page 2 of Deck) ── */
+    /* ── 4. SERVICES ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: clamp(36px, 6vh, 56px);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 44px;
     }
 
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: clamp(24px, 4vh, 32px);
+      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.25s ease;
+      justify-content: space-between;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-accent);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+      border-color: var(--border-medium);
+      box-shadow: 0 8px 30px rgba(29, 36, 33, 0.06);
     }
 
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-num {
+    .service-num {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.06em;
-      color: var(--text-dim);
-      margin-bottom: 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
     }
 
-    .card-title {
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Engagement & Affordability Block */
+    .affordability-block {
+      background: var(--surface-warm);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: clamp(26px, 4.5vh, 38px) clamp(22px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .affordability-meta h4 {
       font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
     }
 
-    .card-body {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
+    .affordability-meta span {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    @media (max-width: 992px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-    }
-
-    @media (max-width: 580px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-    }
-
-    /* ── WHY CAMP DIGITAL (Page 3 of Deck) ── */
-    .why-section {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: clamp(28px, 4.5vw, 48px);
-      margin-bottom: clamp(36px, 6vh, 56px);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 24px;
-    }
-
-    .why-item-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .why-item-body {
+    .affordability-body {
       font-size: 0.98rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* ── CAMP CREW TEAM GRID (Page 4 of Deck) ── */
-    .crew-section {
-      margin-bottom: clamp(36px, 6vh, 56px);
+    /* ── 5. THE WORK (Global Heritage + Local Majority) ── */
+    .work-section {
+      padding-top: clamp(48px, 9vh, 84px);
     }
 
-    .crew-lead {
-      font-size: 1.08rem;
+    .work-header {
+      margin-bottom: 40px;
+    }
+
+    /* Body 1: Global Heritage */
+    .work-subheading {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .work-subheading .badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: rgba(29, 36, 33, 0.06);
+      color: var(--text-primary);
+    }
+
+    .global-heritage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .global-case-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: transform 0.25s var(--ease), border-color 0.25s ease;
+    }
+
+    .global-case-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-medium);
+    }
+
+    .global-case-card .client-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .global-case-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .global-case-card p {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      max-width: 720px;
-      margin-bottom: 22px;
-      line-height: 1.55;
+      line-height: 1.5;
+    }
+
+    /* Body 2: Close to Home (The Triangle / NC Local Majority) */
+    .local-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .gallery-item {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(29, 36, 33, 0.05);
+      border-color: var(--border-medium);
+    }
+
+    /* Gallery Media Placeholder (On-brand warm frames) */
+    .media-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--surface-warm);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      user-select: none;
+    }
+
+    .media-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(29, 36, 33, 0.12);
+      border-radius: var(--radius-sm);
+      pointer-events: none;
+    }
+
+    .media-placeholder .placeholder-mark {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+      margin-bottom: 6px;
+    }
+
+    .media-placeholder .placeholder-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .gallery-content {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .gallery-client-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .gallery-client-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+    }
+
+    .gallery-client-cat {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .gallery-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── RESULTS STRIP & CASE STUDIES PROOF ── */
+    .results-strip {
+      background: var(--surface-warm);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 5vh, 44px) clamp(24px, 5vw, 48px);
+      margin-bottom: 40px;
+    }
+
+    .results-strip-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(20px, 3.5vw, 36px);
+      text-align: center;
+    }
+
+    .stat-item .stat-metric {
+      font-family: var(--font-mono);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .stat-item .stat-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Featured 3 Proof Case Cards */
+    .case-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .case-proof-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .case-proof-metric {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(151, 75, 57, 0.08);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .case-proof-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .case-proof-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .feed-link-box {
+      text-align: center;
+      padding: 16px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .feed-link-box a {
+      color: var(--text-primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .feed-link-box a:hover {
+      color: var(--accent);
+    }
+
+    /* ── 6. PEOPLE: FOUNDER + CREW ── */
+    .founder-block {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 5vh, 48px);
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: clamp(24px, 4vw, 44px);
+      align-items: center;
+    }
+
+    .founder-portrait {
+      aspect-ratio: 1 / 1;
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .founder-portrait span {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .founder-portrait-label {
+      position: absolute;
+      bottom: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    .founder-info h3 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .founder-role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .founder-bio {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .founder-actions a {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-medium);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .founder-actions a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Crew Block */
+    .crew-header {
+      margin-bottom: 28px;
+    }
+
+    .crew-objective {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 820px;
     }
 
     .crew-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
     }
 
     .crew-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 22px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      align-items: center;
+      gap: 14px;
       transition: transform 0.2s var(--ease), border-color 0.2s ease;
     }
 
     .crew-card:hover {
       transform: translateY(-2px);
-      border-color: var(--border-accent);
+      border-color: var(--border-medium);
     }
 
-    .crew-avatar-wrap {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      background: rgba(255, 255, 255, 0.07);
-      margin-bottom: 14px;
-      flex-shrink: 0;
+    .crew-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-warm);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: border-color 0.25s ease, transform 0.25s var(--ease), background 0.25s ease;
-    }
-
-    .crew-card:hover .crew-avatar-wrap {
-      border-color: var(--gold);
-      background: rgba(255, 255, 255, 0.12);
-      transform: scale(1.05);
-    }
-
-    .crew-name {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .crew-role {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--gold);
-      line-height: 1.35;
-    }
-
-    .crew-subrole {
-      font-size: 0.82rem;
-      color: var(--text-dim);
       font-family: var(--font-mono);
-      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      flex-shrink: 0;
     }
 
-    /* ── CLOSING CREDO & CTA BANNER (Page 16 of Deck) ── */
-    .closing-banner {
+    .crew-card-body h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .crew-card-body .department {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    /* ── 7. CLOSING & CONTACT ── */
+    .closing {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(36px, 7vh, 64px) clamp(24px, 5vw, 60px);
       text-align: center;
-      padding: clamp(40px, 6vh, 64px) 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      position: relative;
-      overflow: hidden;
+      margin-top: 48px;
+    }
+
+    .closing h2 {
+      font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      color: var(--text-primary);
+      max-width: 780px;
+      margin: 0 auto 28px;
+    }
+
+    .closing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
       margin-bottom: 40px;
     }
 
-    .closing-banner::after {
-      content: '';
-      position: absolute;
-      bottom: -150px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 500px;
-      height: 300px;
-      background: var(--gold-glow);
-      filter: blur(100px);
-      pointer-events: none;
-    }
-
-    .closing-badge {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 18px;
-      display: inline-block;
-    }
-
-    .closing-title {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-      max-width: 800px;
-      margin: 0 auto 20px;
-    }
-
-    .closing-title span.serif {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--clay);
-    }
-
-    .closing-lead {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 24px;
-      line-height: 1.55;
-    }
-
-    .btn-mail-large {
-      background: var(--text);
-      color: var(--bg);
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      padding: 15px 32px;
-      border-radius: 9999px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      transition: transform 0.2s var(--ease), opacity 0.2s ease;
-    }
-
-    .btn-mail-large:hover {
-      transform: scale(1.04);
-      opacity: 0.95;
-    }
-
-    /* ── FOOTER ── */
     .site-footer {
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 14px;
+      font-size: 0.84rem;
+      color: var(--text-faint);
     }
 
-    .footer-col {
+    .footer-left {
       display: flex;
       align-items: center;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
       gap: 16px;
     }
 
-    .footer-copy {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-dim);
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
 
+    .camp-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── RESPONSIVE BREAKPOINTS ── */
+    @media (max-width: 820px) {
+      .founder-block {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+      .founder-portrait {
+        width: 120px;
+        height: 120px;
+      }
+      .affordability-block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo-garden {
+        justify-content: center;
+        gap: 18px 24px;
+      }
+      .logo-item svg {
+        max-height: 22px;
+      }
+      .site-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+      }
+      .footer-left {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
-<body>
+<body id="top">
 
-  <div class="ambient-bg"></div>
-
-  <!-- Header: Clean 3-part layout (Left: Flag, Center: Toggle, Right: Mail) -->
+  <!-- Top Utility Header: Flag | View Toggle | Mail -->
   <header class="site-header">
-    <!-- Left: Official CD Pennant Flag -->
-    <a href="studio.html" class="flag-icon-btn" aria-label="Camp Digital Home">
-      <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" fill="#1a1c22" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M 24.2 23.4 C 22.9 20.8 20.4 19.3 17.2 19.3 C 12.1 19.3 8.3 23.2 8.3 28.5 C 8.3 33.8 12.1 37.7 17.2 37.7 C 20.4 37.7 22.9 36.2 24.2 33.6 L 20.4 32.0 C 19.6 33.4 18.3 34.1 17.1 34.1 C 14.2 34.1 12.2 31.8 12.2 28.5 C 12.2 25.2 14.2 22.9 17.1 22.9 C 18.3 22.9 19.6 23.6 20.4 25.0 Z" fill="#f5f6f8"/>
-        <path d="M 45.3 13.0 H 41.6 V 20.4 C 40.2 19.5 38.5 19.1 36.5 19.1 C 31.4 19.1 27.6 23.0 27.6 28.5 C 27.6 34.0 31.4 37.9 36.5 37.9 C 38.5 37.9 40.2 37.5 41.6 36.6 V 37.5 H 45.3 Z M 36.5 34.3 C 33.6 34.3 31.5 31.9 31.5 28.5 C 31.5 25.1 33.6 22.7 36.5 22.7 C 39.4 22.7 41.6 25.1 41.6 28.5 C 41.6 31.9 39.4 34.3 36.5 34.3 Z" fill="#f5f6f8"/>
+    <a href="#top" class="flag-icon-btn" aria-label="Camp Digital home">
+      <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" 
+              fill="#1D2421" stroke="rgba(29,36,33,0.18)" stroke-width="1.2" stroke-linejoin="round" />
+        <path d="M 24.2 23.4 C 22.9 20.8 20.4 19.3 17.2 19.3 C 12.1 19.3 8.3 23.2 8.3 28.5 C 8.3 33.8 12.1 37.7 17.2 37.7 C 20.4 37.7 22.9 36.2 24.2 33.6 L 20.4 32.0 C 19.6 33.4 18.3 34.1 17.1 34.1 C 14.2 34.1 12.2 31.8 12.2 28.5 C 12.2 25.2 14.2 22.9 17.1 22.9 C 18.3 22.9 19.6 23.6 20.4 25.0 Z" 
+              fill="#F9F9F0" />
+        <path d="M 45.3 13.0 H 41.6 V 20.4 C 40.2 19.5 38.5 19.1 36.5 19.1 C 31.4 19.1 27.6 23.0 27.6 28.5 C 27.6 34.0 31.4 37.9 36.5 37.9 C 38.5 37.9 40.2 37.5 41.6 36.6 V 37.5 H 45.3 Z M 36.5 34.3 C 33.6 34.3 31.5 31.9 31.5 28.5 C 31.5 25.1 33.6 22.7 36.5 22.7 C 39.4 22.7 41.6 25.1 41.6 28.5 C 41.6 31.9 39.4 34.3 36.5 34.3 Z" 
+              fill="#F9F9F0" />
       </svg>
     </a>
 
-    <!-- Center: TL;DR vs Full Site Toggle -->
-    <div class="view-toggle" role="group" aria-label="View format">
+    <!-- View Toggle: TL;DR vs Full Site (active) -->
+    <nav class="view-toggle" aria-label="Site view selection">
       <a href="index.html" class="view-toggle-item">TL;DR</a>
-      <span class="view-toggle-item active">Full Site</span>
-    </div>
+      <span class="view-toggle-item active" aria-current="page">Full Site</span>
+    </nav>
 
-    <!-- Right: Perpetual Mail Icon -->
+    <!-- Standalone Mail Trigger -->
     <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
       </svg>
     </a>
   </header>
 
-  <!-- Main Wrap -->
-  <main class="page-wrap">
+  <!-- Page Wrapper -->
+  <div class="page-wrap">
 
-    <!-- HERO SECTION (Page 2 of Deck) -->
-    <section class="hero">
-      <div class="hero-meta">
-        <span class="mono-tag">The Social Team for Brands</span>
-      </div>
-
-      <h1 class="hero-title">
-        Hello, we’re <br />
-        <span class="serif">camp digital.</span>
-      </h1>
-
-      <p class="hero-lead">
-        A creative studio built to turn social media into a meaningful driver of brand and business growth.
+    <!-- 1. HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-eyebrow">The social team for brands</div>
+      <h1 class="hero-title">Hello, we're camp digital.</h1>
+      <p class="hero-subhead">
+        A boutique creative studio turning social media into your most powerful engine for brand and business growth.
       </p>
 
-      <div class="hero-cta-row">
-        <a href="mailto:hello@camp.digital" class="btn-hero-primary">
-          <span>Give us a shout</span>
+      <div class="hero-actions">
+        <a href="mailto:hello@camp.digital" class="btn btn-primary">
+          <span>Say hello</span>
           <span>&rarr;</span>
         </a>
-        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
-          <span>Check out our work</span>
-          <span>&rarr;</span>
+        <a href="#work" class="btn btn-secondary">
+          <span>Explore our work</span>
+          <span>&darr;</span>
         </a>
       </div>
+
+      <!-- 2. GLOBAL LOGO GARDEN (Directly below Hero) -->
+      <div class="logo-garden-stage" aria-label="Global client pedigree">
+        <div class="logo-garden-header">Trusted by global icons</div>
+        <div class="logo-garden">
+          <!-- Nike -->
+          <div class="logo-item" title="Nike">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg>
+          </div>
+          <!-- Apple -->
+          <div class="logo-item" title="Apple">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Apple"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+          </div>
+          <!-- Spotify -->
+          <div class="logo-item" title="Spotify">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <!-- Google -->
+          <div class="logo-item" title="Google">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Google"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+          </div>
+          <!-- The New York Times -->
+          <div class="logo-item" title="The New York Times">
+            <svg viewBox="0 0 24 24" role="img" aria-label="The New York Times"><path d="M21.272,14.815h-0.098c-0.747,2.049-2.335,3.681-4.363,4.483v-4.483l2.444-2.182l-2.444-2.182V7.397 c2.138,0.006,3.885-1.703,3.927-3.84c0-2.629-2.509-3.556-3.927-3.556c-0.367-0.007-0.734,0.033-1.091,0.12v0.131h0.556 c0.801-0.141,1.565,0.394,1.706,1.195C17.99,1.491,17.996,1.537,18,1.583c-0.033,0.789-0.7,1.401-1.488,1.367 c-0.02-0.001-0.041-0.002-0.061-0.004c-2.444,0-5.323-1.985-8.454-1.985C5.547,0.83,3.448,2.692,3.284,5.139 C3.208,6.671,4.258,8.031,5.76,8.346v-0.12C5.301,7.931,5.041,7.407,5.084,6.862c0.074-1.015,0.957-1.779,1.973-1.705 C7.068,5.159,7.08,5.16,7.091,5.161c2.629,0,6.872,2.182,9.501,2.182h0.098v3.142l-2.444,2.182l2.444,2.182v4.549 c-0.978,0.322-2.003,0.481-3.033,0.469c-1.673,0.084-3.318-0.456-4.614-1.516l4.429-1.985V7.451l-6.196,2.727 c0.592-1.75,1.895-3.168,3.589-3.905V6.175c-4.516,1.004-8.138,4.243-8.138,8.705c0,5.193,4.025,9.12,9.818,9.12 c6.011,0,8.727-4.363,8.727-8.814V14.815z M8.858,18.186c-1.363-1.362-2.091-3.235-2.007-5.16c-0.016-0.88,0.109-1.756,0.371-2.596 l2.051-0.938v8.476L8.858,18.186z"/></svg>
+          </div>
+          <!-- American Express -->
+          <div class="logo-item" title="American Express">
+            <svg viewBox="0 0 24 24" role="img" aria-label="American Express"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0z"/></svg>
+          </div>
+          <!-- Airbnb -->
+          <div class="logo-item" title="Airbnb">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Airbnb"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CLIENT LOGO ROSTER (Page 5 of Deck) -->
-    <section class="roster-band" id="clients">
-      <div class="roster-header">Clients &amp; Brand Partners</div>
-      <p class="roster-lead">
-        From first-time founders to the Fortune 500, we’re humbled to compound the creativity of the world’s most admired brands, including:
+    <!-- 3. POSITIONING / WHY CAMP DIGITAL -->
+    <section class="positioning" id="why">
+      <div class="brand-anchor">We are the mighty Camp Digital.</div>
+      <h2 class="positioning-lead">Big-brand firepower. Boutique agility.</h2>
+      <p class="positioning-body">
+        We aren't a traditional agency — we're your agile, embedded partner. Think of us as a seamless extension of your internal team, delivering elevated storytelling, real-time content, and community building that moves culturally, commercially, and creatively.
       </p>
-      <div class="roster-grid">
-        <div class="roster-item">Nike</div>
-        <div class="roster-item">Spotify</div>
-        <div class="roster-item">Google</div>
-        <div class="roster-item">Airbnb</div>
-        <div class="roster-item">The New York Times</div>
-        <div class="roster-item">Sonos</div>
-        <div class="roster-item">American Express</div>
-        <div class="roster-item">Orbitz</div>
-        <div class="roster-item">StubHub</div>
-        <div class="roster-item">Lime</div>
-        <div class="roster-item">Apple</div>
-        <div class="roster-item">P.F. Flyers</div>
-        <div class="roster-item">Parachute Home</div>
-        <div class="roster-item">Rosewood Hotels</div>
-        <div class="roster-item">Bumble</div>
-      </div>
-    </section>
 
-    <!-- 4 CORE SERVICES (Page 2 of Deck) -->
-    <section class="section-head" id="services">
-      <span class="section-label">01 / Capabilities</span>
-      <h2 class="section-title">Services</h2>
-    </section>
-
-    <div class="services-grid">
-      <!-- 1 -->
-      <article class="service-card">
-        <div>
-          <div class="card-num">01 / PRODUCTION</div>
-          <h3 class="card-title">Content creation and production</h3>
-          <p class="card-body">
-            Onsite &amp; on-location lifestyle photography, thumb-stopping Reels and short-form video, art direction, and net-new graphic assets designed to win the feed.
-          </p>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h3>Extension of your internal team</h3>
+          <p>A partner, not a traditional agency. Big-brand experience paired with nimble boutique agility.</p>
         </div>
-      </article>
-
-      <!-- 2 -->
-      <article class="service-card">
-        <div>
-          <div class="card-num">02 / MANAGEMENT</div>
-          <h3 class="card-title">Full-service social media account management</h3>
-          <p class="card-body">
-            Daily publishing cadences, copywriting, scheduling, community architecture, 24-hour DM management, and continuous channel compounding across platforms.
-          </p>
+        <div class="pillar-card">
+          <h3>Elevated brand storytelling</h3>
+          <p>Real-time content and community-building for consumer brands that refuse to look generic.</p>
         </div>
-      </article>
-
-      <!-- 3 -->
-      <article class="service-card">
-        <div>
-          <div class="card-num">03 / CREATORS</div>
-          <h3 class="card-title">Influencer marketing and UGC programming</h3>
-          <p class="card-body">
-            End-to-end creator scouting, high-affinity talent casting, authentic product seeding, contract negotiation, and customer UGC sourcing &amp; amplification.
-          </p>
-        </div>
-      </article>
-
-      <!-- 4 -->
-      <article class="service-card">
-        <div>
-          <div class="card-num">04 / GROWTH</div>
-          <h3 class="card-title">Paid ads, SEO &amp; AEO</h3>
-          <p class="card-body">
-            Targeted paid social advertising layered in for scale, social search engine optimization (SEO), and AI Engine Optimization (AEO) across modern search channels.
-          </p>
-        </div>
-      </article>
-    </div>
-
-    <!-- WHY CAMP DIGITAL (Page 3 of Deck) -->
-    <section class="why-section" id="why">
-      <div class="section-head" style="margin-bottom: 12px;">
-        <span class="section-label">02 / Philosophy</span>
-        <h2 class="section-title">Why camp digital?</h2>
-      </div>
-
-      <div class="why-grid">
-        <div>
-          <h3 class="why-item-title">Extension of your internal team</h3>
-          <p class="why-item-body">
-            Think of us as an extension of your internal team. We’re a partner, not a traditional agency, bringing big-brand experience with nimble agility.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="why-item-title">Elevated brand storytelling</h3>
-          <p class="why-item-body">
-            We specialize in elevated brand storytelling, real-time content, and community-building for growing consumer brands that refuse to look generic.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="why-item-title">Built for founder-led brands</h3>
-          <p class="why-item-body">
-            Our work is especially suited for founder-led brands scaling up, extending a strong in-house creative foundation with dedicated social strategy, execution, and community support.
-          </p>
+        <div class="pillar-card">
+          <h3>Built for founder-led brands</h3>
+          <p>Extending a strong in-house creative foundation with dedicated social strategy, execution, and community.</p>
         </div>
       </div>
     </section>
 
-    <!-- CAMP CREW TEAM GRID (Page 4 of Deck) -->
-    <section class="crew-section" id="crew">
-      <div class="section-head" style="margin-bottom: 16px;">
-        <span class="section-label">03 / The Team</span>
-        <h2 class="section-title">Camp Crew</h2>
-      </div>
-      <p class="crew-lead">
-        With one objective: Make social media the hardest-working channel in your marketing mix.
+    <!-- 4. SERVICES & ENGAGEMENT -->
+    <section id="services">
+      <div class="section-eyebrow">What we do</div>
+      <h2 class="section-title">Strategy-led. Social-first. Built to perform.</h2>
+      <p class="section-lead">
+        Four core disciplines designed to turn social channels into compounding drivers of brand equity and commercial revenue.
       </p>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div>
+            <div class="service-num">01</div>
+            <h3>Creative &amp; Production</h3>
+            <p>Onsite lifestyle photography, thumb-stopping Reels and short-form video, art direction, and net-new graphic assets designed to win the feed.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div>
+            <div class="service-num">02</div>
+            <h3>Social Operations</h3>
+            <p>Full-service strategy, daily publishing, copywriting, community architecture, and 24-hour DM management across platforms.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div>
+            <div class="service-num">03</div>
+            <h3>Influence &amp; UGC</h3>
+            <p>End-to-end creator scouting, high-affinity casting, authentic product seeding, and customer UGC sourcing &amp; amplification.</p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div>
+            <div class="service-num">04</div>
+            <h3>Growth &amp; Performance</h3>
+            <p>Paid social built for scale, plus social search (SEO) and AI Engine Optimization (AEO) across modern search channels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lean Model / Affordability Proof -->
+      <div class="affordability-block">
+        <div class="affordability-meta">
+          <span>How we work</span>
+          <h4>Fortune-grade work, right-sized for you.</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); margin-top:4px;">Retained · Project-based · Hourly<br />Onsite or remote.</p>
+        </div>
+        <div class="affordability-body">
+          We run lean by design — a proprietary network of locations, equipment, and talent, multiplied by a deep bench of trusted subcontractors: the efficacy of a boutique agency with the efficiency of an internal art department. Minimal overhead means Fortune-grade counsel and craft at a price point built for scale-ups, startups, and small businesses.
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THE WORK: GLOBAL HERITAGE + LOCAL MAJORITY -->
+    <section class="work-section" id="work">
+      <div class="work-header">
+        <div class="section-eyebrow">Our Work</div>
+        <h2 class="section-title">Global reach, local roots.</h2>
+        <p class="section-lead">
+          Two distinct bodies of work reflecting who we are: world-class brand pedigree on the global stage, and deep community craft close to home.
+        </p>
+      </div>
+
+      <!-- BODY 1: GLOBAL HERITAGE -->
+      <h3 class="work-subheading">
+        <span>Global Heritage</span>
+        <span class="badge">Logo-led</span>
+      </h3>
+      <div class="global-heritage-grid">
+        <div class="global-case-card">
+          <div class="client-tag">Nike</div>
+          <h4>The New Game Players</h4>
+          <p>Integrated storytelling and athlete lifestyle production built for social-first launch moments.</p>
+        </div>
+        <div class="global-case-card">
+          <div class="client-tag">Spotify</div>
+          <h4>Cultural Audio Activations</h4>
+          <p>Social capture and creator amplification capturing the pulse of modern music communities.</p>
+        </div>
+        <div class="global-case-card">
+          <div class="client-tag">Apple Alumni Pedigree</div>
+          <h4>Precision Go-to-Market</h4>
+          <p>Founded by early Apple San Francisco creative leadership, bringing world-class discipline to every engagement.</p>
+        </div>
+      </div>
+
+      <!-- BODY 2: CLOSE TO HOME (LOCAL MAJORITY) -->
+      <h3 class="work-subheading">
+        <span>Close to Home — The Triangle</span>
+        <span class="badge">Work-led · Raleigh / Durham / Chapel Hill</span>
+      </h3>
+      <p style="font-size:0.98rem; color:var(--text-muted); margin-bottom:24px; max-width:760px;">
+        The heart of our studio today. Deep community roots, cultural intimacy, and boots-on-the-ground production across North Carolina's most iconic brands.
+      </p>
+
+      <div class="local-gallery-grid">
+        <!-- Brand 1: Bida Manda -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Bida Manda social campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Bida Manda</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Bida Manda</h4>
+              <span class="gallery-client-cat">Hospitality / Dining</span>
+            </div>
+            <p class="gallery-desc">Acclaimed Laotian restaurant in Downtown Raleigh. Editorial photography and sensory short-form Reels capturing culinary craft.</p>
+          </div>
+        </article>
+
+        <!-- Brand 2: Boulted Bread -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Boulted Bread social campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Boulted Bread</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Boulted Bread</h4>
+              <span class="gallery-client-cat">Artisan Bakery</span>
+            </div>
+            <p class="gallery-desc">Beloved craft bakery. Daily publishing rhythm, flour-dusted process capture, and authentic morning community building.</p>
+          </div>
+        </article>
+
+        <!-- Brand 3: Chick-fil-A -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Chick-fil-A campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Chick-fil-A</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Chick-fil-A</h4>
+              <span class="gallery-client-cat">QSR Brand Strategy</span>
+            </div>
+            <p class="gallery-desc">High-touch regional social execution and localized community storytelling for the nation's premier quick-service brand.</p>
+          </div>
+        </article>
+
+        <!-- Brand 4: A Place At The Table -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="A Place At The Table campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">A Place At The Table</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">A Place At The Table</h4>
+              <span class="gallery-client-cat">Nonprofit Café</span>
+            </div>
+            <p class="gallery-desc">Downtown Raleigh's pay-what-you-can café. Mission-driven documentary social capture driving volunteer enrollment and donations.</p>
+          </div>
+        </article>
+
+        <!-- Brand 5: SkinPharm -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="SkinPharm campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">SkinPharm</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">SkinPharm</h4>
+              <span class="gallery-client-cat">Beauty &amp; Aesthetics</span>
+            </div>
+            <p class="gallery-desc">Modern cosmetic dermatology and skincare. High-aesthetic clinical storytelling and creator-led Reels.</p>
+          </div>
+        </article>
+
+        <!-- Brand 6: Copper Line Plants -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Copper Line Plants campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Copper Line Plants</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Copper Line Plants</h4>
+              <span class="gallery-client-cat">Lifestyle Retail</span>
+            </div>
+            <p class="gallery-desc">Botanical boutique and community hub. Vibrant plant-care educational carousels and in-store retail activations.</p>
+          </div>
+        </article>
+
+        <!-- Brand 7: Church on Morgan -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Church on Morgan campaign visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Church on Morgan</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Church on Morgan</h4>
+              <span class="gallery-client-cat">Community &amp; Faith</span>
+            </div>
+            <p class="gallery-desc">Contemporary downtown gathering space. Human-centric weekend event photography and warm community outreach.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- RESULTS STRIP & PROOF -->
+      <div class="results-strip">
+        <h3 class="results-strip-heading">Proof, not just portfolio.</h3>
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-metric">[+140% GROWTH]</div>
+            <div class="stat-desc">Average organic community lift across retained partner brands.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-metric">[50M+ VIEWS]</div>
+            <div class="stat-desc">Organic short-form video reach driven across creator &amp; brand channels.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-metric">[15+ LAUNCHES]</div>
+            <div class="stat-desc">Integrated multi-channel go-to-market activations executed onsite &amp; remote.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Featured Case Studies Pairing Visual + Hard Metric -->
+      <div class="case-proof-grid">
+        <div class="case-proof-card">
+          <div class="case-proof-metric">[+34% UGC engagement]</div>
+          <h4>Artisan Hospitality Activation</h4>
+          <p>Turned dining patrons into brand advocates with authentic creator seeding and community DM architecture.</p>
+        </div>
+        <div class="case-proof-card">
+          <div class="case-proof-metric">[-15% CAC paid social]</div>
+          <h4>Founder-Led DTC Brand Scale</h4>
+          <p>Lowered customer acquisition costs through thumb-stopping organic-style Reels deployed directly into performance ads.</p>
+        </div>
+        <div class="case-proof-card">
+          <div class="case-proof-metric">[3.8x Blended ROAS]</div>
+          <h4>Omnichannel Retail Refresh</h4>
+          <p>Combined onsite lifestyle photography with hyper-targeted paid social and AI engine optimization.</p>
+        </div>
+      </div>
+
+      <div class="feed-link-box">
+        For real-time daily work, campaigns, and behind-the-scenes in motion, visit our live feed on Instagram: 
+        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer">@camp_digital &rarr;</a>
+      </div>
+    </section>
+
+    <!-- 6. PEOPLE: FOUNDER + CREW -->
+    <section id="people">
+      <div class="section-eyebrow">People</div>
+      <h2 class="section-title">Strategy and craft, led from the top.</h2>
+
+      <!-- FOUNDER BLOCK (Leads the people section) -->
+      <div class="founder-block">
+        <div class="founder-portrait" aria-label="Carly Mask portrait placeholder">
+          <span>CM</span>
+          <div class="founder-portrait-label">Founder</div>
+        </div>
+        <div class="founder-info">
+          <h3>Carly Mask</h3>
+          <div class="founder-role">Managing Partner, Creative Director, and Founder</div>
+          <p class="founder-bio">
+            Carly Mask is Managing Partner, Creative Director, and Founder of Camp Digital. A Hearst Award-winning photographer who began her career at Apple in San Francisco, she spent a decade leading go-to-market teams at the intersection of travel, fashion, entertainment, and culture before building Camp Digital from the ground up. She partners with global icons — Nike, Spotify, The New York Times, American Express — to build strategy-led, social-first work that demands attention. Carly holds a B.A. in Journalism and Mass Communication from UNC-Chapel Hill and lives in Downtown Raleigh with her husband and two boys, her favorite creative collaborators.
+          </p>
+          <div class="founder-actions">
+            <a href="mailto:carly@camp.digital">Connect directly: carly@camp.digital &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREW BLOCK: The Eight -->
+      <div class="crew-header">
+        <div class="section-eyebrow">Crew</div>
+        <p class="crew-objective">
+          A North Carolina and California-based creative studio with one objective: make social media the hardest-working channel in your marketing mix.
+        </p>
+      </div>
 
       <div class="crew-grid">
+        <!-- 1. Patrick Hill -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Carly Mask</div>
-          <div class="crew-role">Chief Creative &bull; Co-Founder</div>
-          <div class="crew-subrole">Leadership &amp; Creative Direction</div>
+          <div class="crew-avatar">PH</div>
+          <div class="crew-card-body">
+            <h4>Patrick Hill</h4>
+            <div class="department">Paid Growth</div>
+          </div>
         </div>
-
+        <!-- 2. Shelby Spencer -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Shelby Spencer</div>
-          <div class="crew-role">Content Creator &bull; Brand Strategist</div>
-          <div class="crew-subrole">Photographer</div>
+          <div class="crew-avatar">SS</div>
+          <div class="crew-card-body">
+            <h4>Shelby Spencer</h4>
+            <div class="department">Content</div>
+          </div>
         </div>
-
+        <!-- 3. Doug Smith -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Blake Pease</div>
-          <div class="crew-role">Paid Ads Specialist</div>
-          <div class="crew-subrole">SEO &amp; AEO Management</div>
+          <div class="crew-avatar">DS</div>
+          <div class="crew-card-body">
+            <h4>Doug Smith</h4>
+            <div class="department">Creative</div>
+          </div>
         </div>
-
+        <!-- 4. Shay Stifelman -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Molly Edwards</div>
-          <div class="crew-role">Stylist &bull; Brand Strategist</div>
-          <div class="crew-subrole">Visual Architecture</div>
+          <div class="crew-avatar">SS</div>
+          <div class="crew-card-body">
+            <h4>Shay Stifelman</h4>
+            <div class="department">Creative</div>
+          </div>
         </div>
-
+        <!-- 5. Molly Edwards -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Shay Stifelman</div>
-          <div class="crew-role">Creative Director &bull; Videographer</div>
-          <div class="crew-subrole">Cinema &amp; Motion Direction</div>
+          <div class="crew-avatar">ME</div>
+          <div class="crew-card-body">
+            <h4>Molly Edwards</h4>
+            <div class="department">Production</div>
+          </div>
         </div>
-
+        <!-- 6. Maggie Lytle -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Maggie Mae</div>
-          <div class="crew-role">Photographer</div>
-          <div class="crew-subrole">Production Assistant</div>
+          <div class="crew-avatar">ML</div>
+          <div class="crew-card-body">
+            <h4>Maggie Lytle</h4>
+            <div class="department">Production</div>
+          </div>
         </div>
-
+        <!-- 7. Maggie Mae -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Michee Zodulua</div>
-          <div class="crew-role">Production Assistant</div>
-          <div class="crew-subrole">Photographer</div>
+          <div class="crew-avatar">MM</div>
+          <div class="crew-card-body">
+            <h4>Maggie Mae</h4>
+            <div class="department">Production</div>
+          </div>
         </div>
-
+        <!-- 8. Michee Zodulua -->
         <div class="crew-card">
-          <div class="crew-avatar-wrap" aria-hidden="true"></div>
-          <div class="crew-name">Maggie Lytle</div>
-          <div class="crew-role">Production Assistant</div>
-          <div class="crew-subrole">Photographer</div>
+          <div class="crew-avatar">MZ</div>
+          <div class="crew-card-body">
+            <h4>Michee Zodulua</h4>
+            <div class="department">Production</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CLOSING CREDO & CTA BANNER (Page 16 of Deck) -->
-    <section class="closing-banner">
-      <span class="closing-badge">Powering the creative needs of change-making brands</span>
-      <h2 class="closing-title">
-        We believe the best work happens when <span class="serif">strategy, creativity, and trust</span> work together.
+    <!-- 7. CLOSING & CONTACT -->
+    <section class="closing" id="contact">
+      <div class="section-eyebrow" style="justify-content:center;">What's next</div>
+      <h2>
+        We believe the best work happens when strategy, creativity, and trust work together. We'd love to help you build what's next.
       </h2>
-      <p class="closing-lead">
-        We’d love to help you build what’s next.
-      </p>
-      <a href="mailto:hello@camp.digital" class="btn-mail-large">
-        <span>Email hello@camp.digital</span>
-        <span>&rarr;</span>
-      </a>
+
+      <div class="closing-actions">
+        <a href="mailto:hello@camp.digital" class="btn btn-primary">
+          <span>Start a project: hello@camp.digital</span>
+          <span>&rarr;</span>
+        </a>
+        <a href="mailto:carly@camp.digital" class="btn btn-secondary">
+          <span>Founder inquiry: carly@camp.digital</span>
+        </a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-left">
+          <span class="camp-badge">est. 2016 · raleigh, nc</span>
+          <span>&copy; 2026 camp digital llc. All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer">@camp_digital</a>
+          <a href="https://www.instagram.com/carlymask/" target="_blank" rel="noopener noreferrer">@carlymask</a>
+          <a href="#top">&uarr; Top</a>
+        </div>
+      </footer>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-col">
-        <span class="footer-copy">&copy; <span id="year">2026</span> Camp Digital, LLC. All rights reserved.</span>
-      </div>
-      <div class="footer-col">
-        <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="nav-link" style="display:inline;">@camp_digital</a>
-        <span class="footer-copy">&bull;</span>
-        <a href="mailto:hello@camp.digital" class="nav-link" style="display:inline;">hello@camp.digital</a>
-      </div>
-    </footer>
+  </div>
 
-  </main>
-
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

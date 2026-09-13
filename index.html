@@ -3,39 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Camp Digital — The Social Team for Brands</title>
-  <meta name="description" content="Camp Digital is the social team for brands. A creative studio built to turn social media into a meaningful driver of brand and business growth." />
-  <meta property="og:title" content="Camp Digital — The Social Team for Brands" />
-  <meta property="og:description" content="A creative studio built to turn social media into a meaningful driver of brand and business growth." />
+  <title>camp digital — the social team for brands</title>
+  <meta name="description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="camp digital — the social team for brands" />
+  <meta property="og:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
   <meta property="og:url" content="https://camp.digital" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="camp digital — the social team for brands" />
+  <meta name="twitter:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
+  <meta name="twitter:image" content="assets/og-image.svg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="alternate icon" href="assets/favicon.svg" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Tokens & Licensed Type -->
+  <link rel="stylesheet" href="tokens.css" />
 
   <style>
-    :root {
-      --bg: #090a0d;
-      --bg-ambient: radial-gradient(circle at 50% 45%, rgba(135, 142, 126, 0.12) 0%, rgba(9, 10, 13, 0) 70%),
-                    radial-gradient(circle at 50% 10%, rgba(208, 151, 61, 0.06) 0%, transparent 60%);
-      --text: #f5f6f8;
-      --text-muted: #8e95a0;
-      --text-dim: #545b66;
-      --accent: #d0973d;
-      --camp-green: #878e7e;
-      --camp-clay: #e6bda8;
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'Inconsolata', monospace;
-      --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -47,10 +36,8 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: var(--bg);
-      background-image: var(--bg-ambient);
-      background-attachment: fixed;
-      color: var(--text);
+      background-color: var(--surface);
+      color: var(--text-primary);
       font-family: var(--font-display);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -73,7 +60,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: clamp(20px, 4.5vh, 36px) clamp(22px, 5vw, 48px);
+      padding: clamp(16px, 3.5vh, 28px) clamp(20px, 4.5vw, 44px);
       pointer-events: none;
     }
 
@@ -81,102 +68,109 @@
       pointer-events: auto;
     }
 
-    /* Official Camp Digital CD Pennant Flag (Top Left, from Deck Page 16) */
+    /* CD Pennant Flag (Top Left) */
     .flag-icon-btn {
       background: none;
       border: none;
-      color: var(--text);
+      color: var(--ink);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      padding: 8px 4px;
+      padding: 4px;
       text-decoration: none;
-      transition: transform 0.3s var(--ease), color 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.25s var(--ease), opacity 0.2s ease;
       opacity: 0.95;
     }
 
     .flag-icon-btn:hover {
-      transform: scale(1.08);
-      color: var(--accent);
+      transform: scale(1.06);
       opacity: 1;
     }
 
-    .flag-icon-btn:active {
-      transform: scale(0.96);
+    .flag-icon-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--radius-sm);
     }
 
     .flag-icon-btn svg {
-      width: 36px;
-      height: 28px;
+      width: 38px;
+      height: 29px;
       display: block;
     }
 
-
-    /* Full Site / Simple Site Segmented Toggle in Top Bar */
+    /* Segmented View Toggle (TL;DR vs Full Site) */
     .view-toggle {
       display: inline-flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(29, 36, 33, 0.05);
       border: 1px solid var(--border-subtle);
-      border-radius: 9999px;
+      border-radius: var(--radius-full);
       padding: 3px;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
 
     .view-toggle-item {
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
       color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 9999px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
       text-decoration: none;
       transition: all 0.2s ease;
       white-space: nowrap;
     }
 
     .view-toggle-item.active {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--text);
-      font-weight: 600;
+      background: var(--surface-card);
+      color: var(--text-primary);
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(29, 36, 33, 0.08);
     }
 
     .view-toggle-item:hover:not(.active) {
-      color: var(--text);
+      color: var(--text-primary);
     }
 
-    /* Minimal Perpetual Mail Icon (Standalone icon, no circle enclosure) */
+    .view-toggle-item:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    /* Standalone Perpetual Mail Icon */
     .mail-icon-btn {
       background: none;
       border: none;
-      box-shadow: none;
-      color: var(--text);
+      color: var(--ink);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.25s var(--ease);
-      opacity: 0.9;
+      transition: transform 0.25s var(--ease), color 0.2s ease, opacity 0.2s ease;
+      opacity: 0.88;
     }
 
     .mail-icon-btn:hover {
       color: var(--accent);
-      transform: scale(1.15) translateY(-1px);
+      transform: scale(1.12) translateY(-1px);
       opacity: 1;
     }
 
-    .mail-icon-btn:active {
-      transform: scale(0.96);
+    .mail-icon-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--radius-sm);
     }
 
     .mail-icon-btn svg {
       width: 22px;
       height: 22px;
       stroke: currentColor;
-      stroke-width: 1.65;
+      stroke-width: 1.7;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -192,12 +186,12 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 24px;
+      padding: clamp(20px, 4vh, 36px) 24px;
     }
 
     .slider-track {
       width: 100%;
-      max-width: 680px;
+      max-width: 760px;
       height: 100%;
       position: relative;
       display: flex;
@@ -216,9 +210,9 @@
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transform: translateY(28px) scale(0.98);
-      transition: opacity 0.5s var(--ease), transform 0.55s var(--ease);
-      padding: 0 16px;
+      transform: translateY(24px) scale(0.985);
+      transition: opacity 0.45s var(--ease), transform 0.5s var(--ease);
+      padding: 0 12px;
     }
 
     .page-panel.active {
@@ -230,232 +224,421 @@
     .page-panel.exiting-up {
       opacity: 0;
       pointer-events: none;
-      transform: translateY(-28px) scale(0.98);
+      transform: translateY(-24px) scale(0.985);
     }
 
     /* ── PAGE 1: HOME STYLING ── */
-    .brand-title {
-      font-size: clamp(2.4rem, 7.5vw, 3.9rem);
-      font-weight: 600;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
-      color: var(--text);
+    .brand-eyebrow {
+      font-family: var(--font-mono);
+      font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
       margin-bottom: 12px;
+    }
+
+    .brand-title {
+      font-size: clamp(2.7rem, 8.2vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: var(--text-primary);
+      margin-bottom: 14px;
       user-select: none;
     }
 
-    .brand-tagline {
-      font-size: clamp(0.98rem, 2.6vw, 1.25rem);
+    .brand-subhead {
+      font-size: clamp(1.05rem, 2.3vw, 1.28rem);
       font-weight: 400;
       color: var(--text-muted);
       letter-spacing: -0.015em;
-      margin-bottom: clamp(36px, 7vh, 50px);
-      user-select: none;
+      line-height: 1.44;
+      max-width: 580px;
+      margin: 0 auto clamp(24px, 4.5vh, 34px);
     }
 
-    /* Navigation Links Stack */
-    .nav-stack {
+    /* Navigation Actions Row */
+    .nav-actions {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
-      gap: clamp(14px, 2.5vh, 20px);
+      justify-content: center;
+      gap: clamp(10px, 2vw, 16px);
+      margin-bottom: clamp(28px, 5vh, 40px);
     }
 
-    .action-link {
+    .action-btn {
       background: none;
       border: none;
-      color: var(--text);
       font-family: inherit;
-      font-size: clamp(1.05rem, 2.7vw, 1.28rem);
-      font-weight: 400;
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+      font-weight: 500;
       letter-spacing: -0.01em;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       cursor: pointer;
-      padding: 6px 14px;
-      border-radius: 8px;
-      transition: color 0.25s ease, transform 0.25s var(--ease), opacity 0.25s ease;
-      opacity: 0.9;
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s ease, transform 0.2s var(--ease), background 0.2s ease;
+      color: var(--text-primary);
     }
 
-    .action-link .arrow {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 1.15em;
-      line-height: 1;
-      color: var(--text-muted);
-      transition: transform 0.25s var(--ease), color 0.25s ease;
+    .action-btn.btn-primary {
+      background: var(--ink);
+      color: var(--cream);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
     }
 
-    .action-link:hover {
-      color: var(--text);
-      opacity: 1;
+    .action-btn.btn-primary:hover {
+      transform: translateY(-1px);
+      background: #000000;
     }
 
-    .action-link:hover .arrow {
+    .action-btn.btn-ghost {
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .action-btn.btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.9);
       color: var(--accent);
+      border-color: var(--border-medium);
     }
 
-    .link-portfolio:hover .arrow {
-      transform: translateX(4px);
+    .action-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
-    .link-offerings:hover .arrow {
-      transform: translateY(4px);
+    .action-btn .arrow {
+      font-family: var(--font-mono);
+      font-size: 1.1em;
+      line-height: 1;
+      transition: transform 0.2s var(--ease);
+    }
+
+    .action-btn:hover .arrow {
+      transform: translateY(2px);
+    }
+    .action-btn.btn-ghost:hover .arrow {
+      transform: translateX(2px);
+    }
+
+    /* ── GLOBAL LOGO GARDEN (Quiet, single-ink monochrome) ── */
+    .logo-garden-wrap {
+      width: 100%;
+      max-width: 660px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .logo-garden-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+    }
+
+    .logo-garden {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(18px, 3.5vw, 32px);
+    }
+
+    .logo-garden-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      opacity: 0.55;
+      transition: opacity 0.25s ease, transform 0.25s var(--ease);
+      height: 24px;
+    }
+
+    .logo-garden-item:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .logo-garden-item svg {
+      height: 100%;
+      width: auto;
+      max-height: 22px;
+      max-width: 78px;
+      display: block;
+      fill: currentColor;
     }
 
     /* ── PAGE 2: OFFERINGS STYLING ── */
+    .offerings-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(26px, 4.5vh, 40px) clamp(22px, 5vw, 48px);
+      box-shadow: 0 4px 24px rgba(29, 36, 33, 0.04);
+      width: 100%;
+      max-width: 620px;
+    }
+
     .offerings-heading {
-      font-size: clamp(1.05rem, 2.8vw, 1.3rem);
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: -0.01em;
-      margin-bottom: clamp(24px, 4vh, 34px);
-      user-select: none;
+      font-size: clamp(1.25rem, 3vw, 1.55rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: clamp(18px, 3vh, 26px);
+      text-align: center;
     }
 
     .services-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: clamp(10px, 2.2vh, 16px);
-      margin-bottom: clamp(32px, 5.5vh, 46px);
+      gap: clamp(10px, 2vh, 15px);
+      margin-bottom: clamp(22px, 3.5vh, 30px);
+      text-align: left;
     }
 
     .services-list li {
-      font-size: clamp(1.15rem, 3.6vw, 1.65rem);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: clamp(1rem, 2.2vw, 1.16rem);
       font-weight: 500;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      line-height: 1.25;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .services-list .bullet-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .offerings-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+      margin-bottom: 24px;
       text-align: center;
-      transition: color 0.2s ease, transform 0.2s var(--ease);
-      user-select: none;
-      padding: 2px 8px;
+      line-height: 1.5;
     }
 
-    .services-list li:hover {
-      color: var(--accent);
-      transform: scale(1.02);
+    .offerings-note strong {
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    /* Loop back link */
-    .link-back:hover .arrow {
-      transform: translateY(-4px);
+    .offerings-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
     }
 
+    /* Key Hint for Navigation */
     .key-hint {
       position: fixed;
       bottom: 18px;
       right: 24px;
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      color: var(--text-dim);
+      color: var(--text-faint);
       display: flex;
       align-items: center;
       gap: 6px;
       user-select: none;
       pointer-events: none;
-      opacity: 0.7;
+      opacity: 0.85;
     }
 
     .key-hint kbd {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(29, 36, 33, 0.05);
       border: 1px solid var(--border-subtle);
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.68rem;
+      color: var(--text-primary);
+    }
+
+    /* No-JS graceful fallback */
+    noscript .stage {
+      overflow-y: auto;
+      height: auto;
+      min-height: 100vh;
+    }
+    noscript .page-panel {
+      position: relative !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: none !important;
+      margin-bottom: 60px;
     }
 
     @media (max-width: 600px) {
       .key-hint { display: none; }
-      .brand-title { letter-spacing: -0.025em; }
+      .brand-title { letter-spacing: -0.03em; }
+      .logo-garden { gap: 16px 20px; }
+      .logo-garden-item svg { max-height: 18px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Utility Bar: Clean 3-part layout (Left: Flag, Center: Toggle, Right: Mail) -->
+  <!-- Top Utility Bar: Left Flag | Center Toggle | Right Mail -->
   <header class="top-bar">
-    <!-- Left: Official Camp Digital CD Flag (Page 16 of Carly's Deck) -->
-    <a href="#home" class="flag-icon-btn" id="flagBtn" aria-label="Camp Digital Home">
-      <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" fill="#1a1c22" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M 24.2 23.4 C 22.9 20.8 20.4 19.3 17.2 19.3 C 12.1 19.3 8.3 23.2 8.3 28.5 C 8.3 33.8 12.1 37.7 17.2 37.7 C 20.4 37.7 22.9 36.2 24.2 33.6 L 20.4 32.0 C 19.6 33.4 18.3 34.1 17.1 34.1 C 14.2 34.1 12.2 31.8 12.2 28.5 C 12.2 25.2 14.2 22.9 17.1 22.9 C 18.3 22.9 19.6 23.6 20.4 25.0 Z" fill="#f5f6f8"/>
-        <path d="M 45.3 13.0 H 41.6 V 20.4 C 40.2 19.5 38.5 19.1 36.5 19.1 C 31.4 19.1 27.6 23.0 27.6 28.5 C 27.6 34.0 31.4 37.9 36.5 37.9 C 38.5 37.9 40.2 37.5 41.6 36.6 V 37.5 H 45.3 Z M 36.5 34.3 C 33.6 34.3 31.5 31.9 31.5 28.5 C 31.5 25.1 33.6 22.7 36.5 22.7 C 39.4 22.7 41.6 25.1 41.6 28.5 C 41.6 31.9 39.4 34.3 36.5 34.3 Z" fill="#f5f6f8"/>
+    <a href="#home" class="flag-icon-btn" id="flagBtn" aria-label="camp digital home">
+      <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" 
+              fill="#1D2421" stroke="rgba(29,36,33,0.18)" stroke-width="1.2" stroke-linejoin="round" />
+        <path d="M 24.2 23.4 C 22.9 20.8 20.4 19.3 17.2 19.3 C 12.1 19.3 8.3 23.2 8.3 28.5 C 8.3 33.8 12.1 37.7 17.2 37.7 C 20.4 37.7 22.9 36.2 24.2 33.6 L 20.4 32.0 C 19.6 33.4 18.3 34.1 17.1 34.1 C 14.2 34.1 12.2 31.8 12.2 28.5 C 12.2 25.2 14.2 22.9 17.1 22.9 C 18.3 22.9 19.6 23.6 20.4 25.0 Z" 
+              fill="#F9F9F0" />
+        <path d="M 45.3 13.0 H 41.6 V 20.4 C 40.2 19.5 38.5 19.1 36.5 19.1 C 31.4 19.1 27.6 23.0 27.6 28.5 C 27.6 34.0 31.4 37.9 36.5 37.9 C 38.5 37.9 40.2 37.5 41.6 36.6 V 37.5 H 45.3 Z M 36.5 34.3 C 33.6 34.3 31.5 31.9 31.5 28.5 C 31.5 25.1 33.6 22.7 36.5 22.7 C 39.4 22.7 41.6 25.1 41.6 28.5 C 41.6 31.9 39.4 34.3 36.5 34.3 Z" 
+              fill="#F9F9F0" />
       </svg>
     </a>
 
-    <!-- Center: TL;DR vs Full Site Toggle -->
-    <div class="view-toggle" role="group" aria-label="View format">
-      <span class="view-toggle-item active">TL;DR</span>
+    <!-- View Toggle: TL;DR (active) vs Full Site -->
+    <nav class="view-toggle" aria-label="Site view selection">
+      <span class="view-toggle-item active" aria-current="page">TL;DR</span>
       <a href="studio.html" class="view-toggle-item">Full Site</a>
-    </div>
+    </nav>
 
-    <!-- Right: Perpetual Mail Icon -->
-    <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email Camp Digital at hello@camp.digital">
-      <svg viewBox="0 0 24 24">
+    <!-- Standalone Mail Trigger -->
+    <a href="mailto:hello@camp.digital" class="mail-icon-btn" aria-label="Email camp digital at hello@camp.digital">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="3.5"></rect>
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
       </svg>
     </a>
   </header>
 
-  <!-- Central Stage -->
-  <main class="stage">
+  <!-- Central Viewport Stage -->
+  <main class="stage" id="mainStage">
     <div class="slider-track">
 
-      <!-- PAGE 1: HOME -->
-      <section class="page-panel active" id="pageHome" aria-label="Camp Digital Intro">
+      <!-- PAGE 1: PITCH & OVERVIEW -->
+      <section class="page-panel active" id="pageHome" aria-label="Intro Overview">
+        <div class="brand-eyebrow">the social team for brands</div>
         <h1 class="brand-title">camp digital</h1>
-        <p class="brand-tagline">the social team for brands</p>
+        <p class="brand-subhead">
+          A boutique creative studio turning social media into your most powerful engine for brand and business growth.
+        </p>
 
-        <div class="nav-stack">
-          <!-- Portfolio Link (points to Instagram) -->
-          <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer" class="action-link link-portfolio" id="linkPortfolio">
-            <span>portfolio</span>
-            <span class="arrow">&rarr;</span>
-          </a>
-
-          <!-- Offerings Link (navigates down to offerings) -->
-          <button type="button" class="action-link link-offerings" id="btnGoOfferings" aria-controls="pageOfferings">
+        <div class="nav-actions">
+          <button type="button" class="action-btn btn-primary" id="btnGoOfferings" aria-controls="pageOfferings">
             <span>offerings</span>
             <span class="arrow">&darr;</span>
           </button>
+          <a href="studio.html" class="action-btn btn-ghost">
+            <span>full studio</span>
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Curated Single-Ink Monochrome Global Logo Garden -->
+        <div class="logo-garden-wrap" aria-label="Global brands trusted by Camp Digital">
+          <div class="logo-garden-label">trusted by global icons</div>
+          <div class="logo-garden">
+            <!-- Nike -->
+            <div class="logo-garden-item" title="Nike">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg>
+            </div>
+            <!-- Apple -->
+            <div class="logo-garden-item" title="Apple">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Apple"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            </div>
+            <!-- Spotify -->
+            <div class="logo-garden-item" title="Spotify">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            </div>
+            <!-- Google -->
+            <div class="logo-garden-item" title="Google">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Google"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+            </div>
+            <!-- The New York Times -->
+            <div class="logo-garden-item" title="The New York Times">
+              <svg viewBox="0 0 24 24" role="img" aria-label="The New York Times"><path d="M21.272,14.815h-0.098c-0.747,2.049-2.335,3.681-4.363,4.483v-4.483l2.444-2.182l-2.444-2.182V7.397 c2.138,0.006,3.885-1.703,3.927-3.84c0-2.629-2.509-3.556-3.927-3.556c-0.367-0.007-0.734,0.033-1.091,0.12v0.131h0.556 c0.801-0.141,1.565,0.394,1.706,1.195C17.99,1.491,17.996,1.537,18,1.583c-0.033,0.789-0.7,1.401-1.488,1.367 c-0.02-0.001-0.041-0.002-0.061-0.004c-2.444,0-5.323-1.985-8.454-1.985C5.547,0.83,3.448,2.692,3.284,5.139 C3.208,6.671,4.258,8.031,5.76,8.346v-0.12C5.301,7.931,5.041,7.407,5.084,6.862c0.074-1.015,0.957-1.779,1.973-1.705 C7.068,5.159,7.08,5.16,7.091,5.161c2.629,0,6.872,2.182,9.501,2.182h0.098v3.142l-2.444,2.182l2.444,2.182v4.549 c-0.978,0.322-2.003,0.481-3.033,0.469c-1.673,0.084-3.318-0.456-4.614-1.516l4.429-1.985V7.451l-6.196,2.727 c0.592-1.75,1.895-3.168,3.589-3.905V6.175c-4.516,1.004-8.138,4.243-8.138,8.705c0,5.193,4.025,9.12,9.818,9.12 c6.011,0,8.727-4.363,8.727-8.814V14.815z M8.858,18.186c-1.363-1.362-2.091-3.235-2.007-5.16c-0.016-0.88,0.109-1.756,0.371-2.596 l2.051-0.938v8.476L8.858,18.186z"/></svg>
+            </div>
+            <!-- American Express -->
+            <div class="logo-garden-item" title="American Express">
+              <svg viewBox="0 0 24 24" role="img" aria-label="American Express"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0z"/></svg>
+            </div>
+            <!-- Airbnb -->
+            <div class="logo-garden-item" title="Airbnb">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Airbnb"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- PAGE 2: OFFERINGS -->
-      <section class="page-panel" id="pageOfferings" aria-label="Camp Digital Offerings">
-        <h2 class="offerings-heading">hire us for:</h2>
+      <!-- PAGE 2: CAPABILITIES / HIRE US FOR -->
+      <section class="page-panel" id="pageOfferings" aria-label="Capabilities and Offerings">
+        <div class="offerings-card">
+          <div class="brand-eyebrow">capabilities</div>
+          <h2 class="offerings-heading">hire us for:</h2>
 
-        <ul class="services-list">
-          <li>content creation and production</li>
-          <li>full-service social media management</li>
-          <li>influencer marketing and UGC programming</li>
-          <li>paid ads, SEO/AEO</li>
-        </ul>
+          <ul class="services-list">
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Creative &amp; Production</strong> — Onsite lifestyle photo, thumb-stopping short-form video &amp; art direction.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Social Operations</strong> — Full-service strategy, publishing, community architecture &amp; DM care.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Influence &amp; UGC</strong> — Talent scouting, high-affinity casting, seeding &amp; customer amplification.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Growth &amp; Performance</strong> — Paid social built for scale, social search (SEO) &amp; AI engine optimization.</span>
+            </li>
+          </ul>
 
-        <!-- Loop back to Home Link -->
-        <button type="button" class="action-link link-back" id="btnGoHome" aria-controls="pageHome">
-          <span class="arrow">&uarr;</span>
-          <span>home</span>
-        </button>
+          <div class="offerings-note">
+            <strong>Retained · Project · Hourly</strong> · Onsite or remote.<br />
+            Fortune-grade craft, right-sized for scale-ups and founder-led brands.
+          </div>
+
+          <div class="offerings-actions">
+            <button type="button" class="action-btn btn-ghost" id="btnGoHome" aria-controls="pageHome">
+              <span class="arrow">&uarr;</span>
+              <span>home</span>
+            </button>
+            <a href="studio.html" class="action-btn btn-primary">
+              <span>explore full studio</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
       </section>
 
     </div>
   </main>
 
-
-  <!-- Key hint for navigation -->
-  <div class="key-hint">
+  <!-- Key navigation hint for desktop -->
+  <aside class="key-hint" aria-hidden="true">
     <span>navigate</span>
     <kbd>&darr;</kbd>
     <kbd>&uarr;</kbd>
-  </div>
+  </aside>
 
   <script>
     (function () {
@@ -476,23 +659,29 @@
           pageOfferings.classList.add('active');
           pageOfferings.classList.remove('exiting-up');
           currentPage = 'offerings';
-          window.location.hash = 'offerings';
+          if (history.replaceState) {
+            history.replaceState(null, '', '#offerings');
+          }
         } else {
           pageOfferings.classList.remove('active');
           pageOfferings.classList.remove('exiting-up');
           pageHome.classList.add('active');
           pageHome.classList.remove('exiting-up');
           currentPage = 'home';
-          window.location.hash = 'home';
+          if (history.replaceState) {
+            history.replaceState(null, '', '#home');
+          }
         }
       }
 
-      btnGoOfferings.addEventListener('click', () => showPage('offerings', 'down'));
-      btnGoHome.addEventListener('click', () => showPage('home', 'up'));
-      flagBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showPage('home', 'up');
-      });
+      if (btnGoOfferings) btnGoOfferings.addEventListener('click', () => showPage('offerings', 'down'));
+      if (btnGoHome) btnGoHome.addEventListener('click', () => showPage('home', 'up'));
+      if (flagBtn) {
+        flagBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          showPage('home', 'up');
+        });
+      }
 
       function syncHash() {
         if (window.location.hash === '#offerings') {
@@ -520,14 +709,32 @@
       let scrollCooldown = false;
       window.addEventListener('wheel', (e) => {
         if (scrollCooldown) return;
-        if (e.deltaY > 30 && currentPage === 'home') {
+        if (e.deltaY > 25 && currentPage === 'home') {
           scrollCooldown = true;
           showPage('offerings', 'down');
-          setTimeout(() => { scrollCooldown = false; }, 600);
-        } else if (e.deltaY < -30 && currentPage === 'offerings') {
+          setTimeout(() => { scrollCooldown = false; }, 550);
+        } else if (e.deltaY < -25 && currentPage === 'offerings') {
           scrollCooldown = true;
           showPage('home', 'up');
-          setTimeout(() => { scrollCooldown = false; }, 600);
+          setTimeout(() => { scrollCooldown = false; }, 550);
+        }
+      }, { passive: true });
+
+      // Touch swipe support for mobile
+      let touchStartY = 0;
+      window.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      window.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const diff = touchStartY - touchEndY;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0 && currentPage === 'home') {
+            showPage('offerings', 'down');
+          } else if (diff < 0 && currentPage === 'offerings') {
+            showPage('home', 'up');
+          }
         }
       }, { passive: true });
     })();

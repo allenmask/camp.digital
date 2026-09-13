@@ -1,0 +1,166 @@
+/* ============================================================
+   Camp Digital — Design Tokens
+   Palette locked from CampDigital_BrandColors_Release.ase
+   Source of truth for color + type.
+   ============================================================ */
+
+:root {
+  /* --- Brand palette (canonical) --- */
+  --cream:   #F9F9F0; /* primary background / warm off-white */
+  --ink:     #1D2421; /* primary type — warm near-black         */
+  --sage:    #7B9C78; /* muted olive green                      */
+  --rust:    #974B39; /* terracotta / rust brown                */
+  --mustard: #D58C1F; /* ochre / mustard                        */
+  --rose:    #ED99BD; /* pink / blush                           */
+  --peach:   #E8BAB0; /* warm peach / nude                      */
+
+  /* --- Semantic roles --- */
+  --surface:        var(--cream);
+  --surface-card:   #FFFFFF;
+  --surface-warm:   #F3F3E8;
+  --surface-tint:   rgba(249, 249, 240, 0.92);
+  --text-primary:   var(--ink);
+  --text-muted:     rgba(29, 36, 33, 0.70);
+  --text-faint:     rgba(29, 36, 33, 0.48);
+  --accent:         var(--rust);
+
+  /* --- Borders & hair lines --- */
+  --border-subtle:  rgba(29, 36, 33, 0.09);
+  --border-medium:  rgba(29, 36, 33, 0.18);
+  --border-strong:  rgba(29, 36, 33, 0.32);
+  --focus-ring:     0 0 0 3px rgba(151, 75, 57, 0.35);
+
+  /* --- Layout & motion --- */
+  --max-width:      1160px;
+  --max-narrow:     820px;
+  --ease:           cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --radius-full:    9999px;
+
+  /* NOTE: These are CMYK-derived brand values. Any pairing that puts
+     text on --sage / --rose / --peach / --mustard MUST be verified for
+     WCAG 2.2 AA (>=4.5:1 body, >=3:1 large). When a color can't carry
+     legible text, text goes on --ink or --cream and the color frames. */
+
+  /* --- Type families --- */
+  --font-display: "GT Walsheim Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Inconsolata", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ------------------------------------------------------------
+   Fonts — LICENSED (Grilli Type web license, order #124999).
+   Self-hosted from ./fonts/ . These are the production files.
+   GT Walsheim family maps to weights: Regular 400, Medium 500,
+   Bold 700, Black 900 (+ obliques). Inconsolata is OFL (open).
+   Licensed production font files only.
+   ------------------------------------------------------------ */
+
+/* GT Walsheim — upright */
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Regular.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Medium.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Bold.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Black.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Black.woff") format("woff");
+}
+
+/* GT Walsheim — oblique */
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 400;
+  font-style: oblique;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Regular-Oblique.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Regular-Oblique.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 500;
+  font-style: oblique;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Medium-Oblique.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Medium-Oblique.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 700;
+  font-style: oblique;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Bold-Oblique.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Bold-Oblique.woff") format("woff");
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  font-weight: 900;
+  font-style: oblique;
+  font-display: swap;
+  src: url("fonts/GT-Walsheim-Black-Oblique.woff2") format("woff2"),
+       url("fonts/GT-Walsheim-Black-Oblique.woff") format("woff");
+}
+
+/* Inconsolata — mono accent (labels/eyebrows only) */
+@font-face {
+  font-family: "Inconsolata";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/Inconsolata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolata";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/Inconsolata-Bold.ttf") format("truetype");
+}
+
+/* Baseline Typography Utilities */
+body {
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.eyebrow, .mono-label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
