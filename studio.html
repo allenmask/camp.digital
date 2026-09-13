@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camp Digital — The Social Team for Brands</title>
-  <meta name="description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth. Big-brand firepower, boutique agility." />
+  <title>Camp Digital: The Social Team for Brands</title>
+  <meta name="description" content="A creative studio making social the hardest-working channel in your marketing mix. Big-brand firepower, boutique agility." />
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Camp Digital — The Social Team for Brands" />
-  <meta property="og:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
+  <meta property="og:title" content="Camp Digital: The Social Team for Brands" />
+  <meta property="og:description" content="A creative studio making social the hardest-working channel in your marketing mix." />
   <meta property="og:url" content="https://camp.digital/studio.html" />
   <meta property="og:image" content="assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Camp Digital — The Social Team for Brands" />
-  <meta name="twitter:description" content="A boutique creative studio turning social media into your most powerful engine for brand and business growth." />
+  <meta name="twitter:title" content="Camp Digital: The Social Team for Brands" />
+  <meta name="twitter:description" content="A creative studio making social the hardest-working channel in your marketing mix." />
   <meta name="twitter:image" content="assets/og-image.svg" />
 
   <!-- Favicon -->
@@ -208,6 +208,7 @@
       color: var(--text-primary);
       margin-bottom: 20px;
       max-width: 880px;
+      text-wrap: balance;
     }
 
     .section-lead {
@@ -217,6 +218,7 @@
       line-height: 1.5;
       max-width: 760px;
       margin-bottom: 36px;
+      text-wrap: pretty;
     }
 
     /* ── 1. HERO SECTION ── */
@@ -243,6 +245,7 @@
       color: var(--text-primary);
       margin-bottom: 24px;
       max-width: 960px;
+      text-wrap: balance;
     }
 
     .hero-subhead {
@@ -253,6 +256,7 @@
       line-height: 1.45;
       max-width: 740px;
       margin-bottom: 36px;
+      text-wrap: pretty;
     }
 
     .hero-actions {
@@ -380,6 +384,7 @@
       line-height: 1.15;
       color: var(--text-primary);
       margin-bottom: 20px;
+      text-wrap: balance;
     }
 
     .positioning-body {
@@ -389,6 +394,7 @@
       line-height: 1.6;
       max-width: 860px;
       margin-bottom: 40px;
+      text-wrap: pretty;
     }
 
     .pillars-grid {
@@ -411,21 +417,34 @@
       font-size: 0.96rem;
       color: var(--text-muted);
       line-height: 1.5;
+      text-wrap: pretty;
     }
 
     /* ── 4. SERVICES ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
       margin-bottom: 44px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .service-card {
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: clamp(24px, 4vh, 32px);
+      padding: clamp(20px, 3.2vh, 28px);
       transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
@@ -443,22 +462,24 @@
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .service-card h3 {
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 1.4vw, 1.25rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       color: var(--text-primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       line-height: 1.25;
+      text-wrap: balance;
     }
 
     .service-card p {
-      font-size: 0.98rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
+      text-wrap: pretty;
     }
 
     /* Engagement & Affordability Block */
@@ -494,6 +515,7 @@
       font-size: 0.98rem;
       color: var(--text-muted);
       line-height: 1.6;
+      text-wrap: pretty;
     }
 
     /* ── 5. THE WORK (Global Heritage + Local Majority) ── */
@@ -515,6 +537,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      text-wrap: balance;
     }
 
     .work-subheading .badge {
@@ -564,20 +587,34 @@
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 8px;
+      text-wrap: balance;
     }
 
     .global-case-card p {
       font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.5;
+      text-wrap: pretty;
     }
 
     /* Body 2: Close to Home (The Triangle / NC Local Majority) */
     .local-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-bottom: 56px;
+    }
+
+    @media (max-width: 900px) {
+      .local-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .local-gallery-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .gallery-item {
@@ -790,9 +827,9 @@
 
     .founder-portrait {
       aspect-ratio: 1 / 1;
-      background: var(--peach);
+      background: rgba(123, 156, 120, 0.16);
       border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(123, 156, 120, 0.32);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -841,6 +878,7 @@
       color: var(--text-muted);
       line-height: 1.65;
       margin-bottom: 20px;
+      text-wrap: pretty;
     }
 
     .founder-actions a {
@@ -872,6 +910,7 @@
       color: var(--text-muted);
       line-height: 1.5;
       max-width: 820px;
+      text-wrap: pretty;
     }
 
     .crew-grid {
@@ -947,6 +986,7 @@
       color: var(--text-primary);
       max-width: 780px;
       margin: 0 auto 28px;
+      text-wrap: balance;
     }
 
     .closing-actions {
@@ -1073,9 +1113,9 @@
     <!-- 1. HERO -->
     <section class="hero" id="hero">
       <div class="hero-eyebrow">The social team for brands</div>
-      <h1 class="hero-title">Hello, we're camp digital.</h1>
+      <h1 class="hero-title">Hello, we're Camp Digital.</h1>
       <p class="hero-subhead">
-        A boutique creative studio turning social media into your most powerful engine for brand and business growth.
+        A creative studio making social the hardest-working channel in your marketing&nbsp;mix.
       </p>
 
       <div class="hero-actions">
@@ -1130,7 +1170,7 @@
       <div class="brand-anchor">We are the mighty Camp Digital.</div>
       <h2 class="positioning-lead">Big-brand firepower. Boutique agility.</h2>
       <p class="positioning-body">
-        We aren't a traditional agency — we're your agile, embedded partner. Think of us as a seamless extension of your internal team, delivering elevated storytelling, real-time content, and community building that moves culturally, commercially, and creatively.
+        We are not a traditional agency. We are an agile, embedded creative partner. Consider us an extension of your internal team: delivering thoughtful storytelling, real-time content, and community engagement that moves culturally, commercially, and creatively.
       </p>
 
       <div class="pillars-grid">
@@ -1163,23 +1203,23 @@
           <div>
             <div class="service-num">01</div>
             <h3>Creative &amp; Production</h3>
-            <p>Onsite lifestyle photography, thumb-stopping Reels and short-form video, art direction, and net-new graphic assets designed to win the feed.</p>
+            <p>Onsite lifestyle photography, short-form video, art direction, and net-new brand assets crafted to stop the scroll.</p>
           </div>
         </div>
         <!-- Service 2 -->
         <div class="service-card">
           <div>
             <div class="service-num">02</div>
-            <h3>Social Operations</h3>
-            <p>Full-service strategy, daily publishing, copywriting, community architecture, and 24-hour DM management across platforms.</p>
+            <h3>Channel Management</h3>
+            <p>Full-service daily publishing, channel strategy, community architecture, and attentive DM management across platforms.</p>
           </div>
         </div>
         <!-- Service 3 -->
         <div class="service-card">
           <div>
             <div class="service-num">03</div>
-            <h3>Influence &amp; UGC</h3>
-            <p>End-to-end creator scouting, high-affinity casting, authentic product seeding, and customer UGC sourcing &amp; amplification.</p>
+            <h3>Influencer &amp; UGC</h3>
+            <p>End-to-end creator scouting, high-affinity casting, thoughtful product gifting, and authentic customer amplification.</p>
           </div>
         </div>
         <!-- Service 4 -->
@@ -1187,7 +1227,7 @@
           <div>
             <div class="service-num">04</div>
             <h3>Growth &amp; Performance</h3>
-            <p>Paid social built for scale, plus social search (SEO) and AI Engine Optimization (AEO) across modern search channels.</p>
+            <p>Paid social built for sustainable scale, search-optimized social (SEO), and AI engine discoverability.</p>
           </div>
         </div>
       </div>
@@ -1196,11 +1236,11 @@
       <div class="affordability-block">
         <div class="affordability-meta">
           <span>How we work</span>
-          <h4>Fortune-grade work, right-sized for you.</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); margin-top:4px;">Retained · Project-based · Hourly<br />Onsite or remote.</p>
+          <h4>Silicon Valley and Wall Street craft, right-sized for you.</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); margin-top:4px;">Retained, project-based, or hourly.<br />Onsite or remote.</p>
         </div>
         <div class="affordability-body">
-          We run lean by design — a proprietary network of locations, equipment, and talent, multiplied by a deep bench of trusted subcontractors: the efficacy of a boutique agency with the efficiency of an internal art department. Minimal overhead means Fortune-grade counsel and craft at a price point built for scale-ups, startups, and small businesses.
+          We run lean by design. With a network of production spaces, gear, and trusted talent, we operate with the efficacy of an agency and the agility of an internal studio. Low overhead means Silicon Valley and Wall Street grade counsel and craft at a price point built for scale-ups, startups, and founder-led businesses.
         </div>
       </div>
     </section>
@@ -1240,11 +1280,11 @@
 
       <!-- BODY 2: CLOSE TO HOME (LOCAL MAJORITY) -->
       <h3 class="work-subheading">
-        <span>Close to Home — The Triangle</span>
-        <span class="badge">Work-led · Raleigh / Durham / Chapel Hill</span>
+        <span>Close to Home: The Triangle</span>
+        <span class="badge">Raleigh / Durham / Chapel Hill</span>
       </h3>
-      <p style="font-size:0.98rem; color:var(--text-muted); margin-bottom:24px; max-width:760px;">
-        The heart of our studio today. Deep community roots, cultural intimacy, and boots-on-the-ground production across North Carolina's most iconic brands.
+      <p style="font-size:0.98rem; color:var(--text-muted); margin-bottom:24px; max-width:760px; text-wrap: pretty;">
+        The heart of our studio today. Deep community roots, cultural intimacy, and boots-on-the-ground production across RDU's most iconic&nbsp;brands.
       </p>
 
       <div class="local-gallery-grid">
@@ -1323,22 +1363,7 @@
           </div>
         </article>
 
-        <!-- Brand 6: Copper Line Plants -->
-        <article class="gallery-item">
-          <div class="media-placeholder" aria-label="Copper Line Plants campaign visual placeholder">
-            <div class="placeholder-mark">[Work visual]</div>
-            <div class="placeholder-title">Copper Line Plants</div>
-          </div>
-          <div class="gallery-content">
-            <div class="gallery-client-header">
-              <h4 class="gallery-client-name">Copper Line Plants</h4>
-              <span class="gallery-client-cat">Lifestyle Retail</span>
-            </div>
-            <p class="gallery-desc">Botanical boutique and community hub. Vibrant plant-care educational carousels and in-store retail activations.</p>
-          </div>
-        </article>
-
-        <!-- Brand 7: Church on Morgan -->
+        <!-- Brand 6: Church on Morgan -->
         <article class="gallery-item">
           <div class="media-placeholder" aria-label="Church on Morgan campaign visual placeholder">
             <div class="placeholder-mark">[Work visual]</div>
@@ -1413,7 +1438,7 @@
           <h3>Carly Mask</h3>
           <div class="founder-role">Managing Partner, Creative Director, and Founder</div>
           <p class="founder-bio">
-            Carly Mask is Managing Partner, Creative Director, and Founder of Camp Digital. A Hearst Award-winning photographer who began her career at Apple in San Francisco, she spent a decade leading go-to-market teams at the intersection of travel, fashion, entertainment, and culture before building Camp Digital from the ground up. She partners with global icons — Nike, Spotify, The New York Times, American Express — to build strategy-led, social-first work that demands attention. Carly holds a B.A. in Journalism and Mass Communication from UNC-Chapel Hill and lives in Downtown Raleigh with her husband and two boys, her favorite creative collaborators.
+            Carly Mask is Managing Partner, Creative Director, and Founder of Camp Digital. A Hearst Award-winning photographer who began her career at Apple in San Francisco, she spent a decade leading go-to-market teams at the intersection of travel, fashion, entertainment, and culture before building Camp Digital from the ground up. She collaborates with global icons including Nike, Spotify, The New York Times, and American Express to build strategy-led, social-first work that connects with real audiences. Carly holds a B.A. in Journalism and Mass Communication from UNC-Chapel Hill and lives in Downtown Raleigh with her husband and two boys, her favorite creative collaborators.
           </p>
           <div class="founder-actions">
             <a href="mailto:carly@camp.digital">Connect directly: carly@camp.digital &rarr;</a>
@@ -1425,7 +1450,7 @@
       <div class="crew-header">
         <div class="section-eyebrow">Crew</div>
         <p class="crew-objective">
-          A North Carolina and California-based creative studio with one objective: make social media the hardest-working channel in your marketing mix.
+          A bicoastal leadership team with a blend of in-house and agency experience.
         </p>
       </div>
 
@@ -1470,12 +1495,12 @@
             <div class="department">Production</div>
           </div>
         </div>
-        <!-- 6. Maggie Lytle -->
+        <!-- 6. Rebecca Dougal -->
         <div class="crew-card">
-          <div class="crew-avatar">ML</div>
+          <div class="crew-avatar">RD</div>
           <div class="crew-card-body">
-            <h4>Maggie Lytle</h4>
-            <div class="department">Production</div>
+            <h4>Rebecca Dougal</h4>
+            <div class="department">Channel</div>
           </div>
         </div>
         <!-- 7. Maggie Mae -->
@@ -1501,7 +1526,7 @@
     <section class="closing" id="contact">
       <div class="section-eyebrow" style="justify-content:center;">What's next</div>
       <h2>
-        We believe the best work happens when strategy, creativity, and trust work together. We'd love to help you build what's next.
+        We believe the best work happens when we can embed ourselves in your organization. Let's find your next&nbsp;story.
       </h2>
 
       <div class="closing-actions">
@@ -1517,11 +1542,10 @@
       <footer class="site-footer">
         <div class="footer-left">
           <span class="camp-badge">est. 2016 · raleigh, nc</span>
-          <span>&copy; 2026 camp digital llc. All rights reserved.</span>
+          <span>&copy; 2026 Camp Digital LLC. All rights reserved.</span>
         </div>
         <div class="footer-links">
           <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer">@camp_digital</a>
-          <a href="https://www.instagram.com/carlymask/" target="_blank" rel="noopener noreferrer">@carlymask</a>
           <a href="#top">&uarr; Top</a>
         </div>
       </footer>
