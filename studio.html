@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camp Digital: The Social Team for Brands</title>
-  <meta name="description" content="A creative studio making social the hardest-working channel in your marketing mix. Big-brand firepower, boutique agility." />
+  <meta name="description" content="A creative studio making social the hardest-working channel in your marketing mix. Blue-chip firepower, boutique agility." />
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
@@ -381,13 +381,13 @@
     }
 
     .logo-item[title="StubHub"] svg {
-      max-height: 14px;
-      max-width: 84px;
+      max-height: 19px;
+      max-width: 96px;
     }
 
     .logo-item[title="American Express"] svg {
-      max-height: 18px;
-      max-width: 72px;
+      max-height: 20px;
+      max-width: 76px;
     }
 
     .brand-heavy {
@@ -507,9 +507,10 @@
     .model-retainer-banner {
       background: var(--surface-card);
       border: 1px solid var(--border-medium);
+      border-left: 4px solid var(--accent);
       border-radius: var(--radius-md);
       padding: clamp(18px, 3vh, 24px) clamp(20px, 3.5vw, 28px);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -558,10 +559,10 @@
       line-height: 1.5;
     }
 
-    /* Project-Based SOW Row */
+    /* Project-Based SOW Row (Content & Production are larger pillars; Growth is smaller connector) */
     .model-sow-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.15fr 0.9fr 1.15fr;
       gap: 16px;
       margin-bottom: 20px;
     }
@@ -572,6 +573,20 @@
       border-radius: var(--radius-md);
       padding: clamp(16px, 2.5vh, 22px) clamp(16px, 2.5vw, 22px);
       transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .model-sow-col.pillar-content {
+      border-top: 3px solid var(--rust);
+    }
+
+    .model-sow-col.connector-growth {
+      border-top: 3px solid var(--mustard);
+      background: rgba(213, 140, 31, 0.03);
+    }
+
+    .model-sow-col.pillar-production {
+      border-top: 3px solid var(--sage);
     }
 
     .model-sow-col:hover {
@@ -586,9 +601,12 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--sage);
       margin-bottom: 8px;
     }
+
+    .pillar-content .model-sow-badge { color: var(--rust); }
+    .connector-growth .model-sow-badge { color: var(--mustard); }
+    .pillar-production .model-sow-badge { color: var(--sage); }
 
     /* Accountability Bar */
     .model-accountability-bar {
@@ -629,6 +647,11 @@
       font-weight: 700;
       color: var(--ink);
     }
+
+    .acc-metric:nth-child(1) .metric-dot { background: var(--rust); }
+    .acc-metric:nth-child(2) .metric-dot { background: var(--mustard); }
+    .acc-metric:nth-child(3) .metric-dot { background: var(--sage); }
+    .acc-metric:nth-child(4) .metric-dot { background: var(--rose); }
 
     .acc-metric .metric-dot {
       width: 6px;
@@ -1358,12 +1381,9 @@
     <!-- 1. HERO -->
     <section class="hero" id="hero">
       <div class="hero-eyebrow">The social team for brands</div>
-      <h1 class="hero-title">Hello, we're Camp Digital.</h1>
+      <h1 class="hero-title"><span class="brand-heavy">We are the mighty Camp Digital.</span></h1>
       <p class="hero-subhead">
         A creative studio making social the hardest-working channel in your marketing&nbsp;mix.
-      </p>
-      <p class="hero-bridge">
-        Big-brand craft for local legends. Boots-on-the-ground cultural agility for global brands. One embedded team, minus the agency bloat.
       </p>
 
       <div class="hero-actions">
@@ -1411,24 +1431,23 @@
 
     <!-- 3. POSITIONING / WHY CAMP DIGITAL -->
     <section class="positioning" id="why">
-      <div class="brand-anchor">We are the mighty Camp Digital.</div>
-      <h2 class="positioning-lead">Big-brand firepower. Boutique agility.</h2>
+      <h2 class="positioning-lead">Blue-chip firepower. Boutique agility.</h2>
       <p class="positioning-body">
-        Not a traditional agency: an embedded social desk. We sit in your Slack, plug into your team and your tools, and ship daily. Big-brand experience, boutique agility, none of the agency bloat.
+        We're your outsourced social desk, a force multiplier for your in-house leadership team. We sit in your Slack, amplify your team and your tools, and ship daily. None of the big-agency bloat or overhead.
       </p>
 
       <div class="pillars-grid">
         <div class="pillar-card">
-          <h3>Extension of your internal team</h3>
-          <p>A partner, not a traditional agency. Big-brand experience paired with nimble boutique agility.</p>
+          <h3>Extend your team</h3>
+          <p>An embedded social desk that amplifies your in-house leadership.</p>
         </div>
         <div class="pillar-card">
-          <h3>Distinct brand storytelling</h3>
-          <p>Real-time content and community-building for consumer brands that refuse to look generic.</p>
+          <h3>A full in-house team, on demand</h3>
+          <p>Strategy, content, production, growth, and channel under one roof.</p>
         </div>
         <div class="pillar-card">
-          <h3>From first-time founders to the Fortune 500</h3>
-          <p>And the local legends in between. Extending your creative foundation with dedicated social strategy, execution, and community.</p>
+          <h3>A network of studios and partners</h3>
+          <p>A proprietary network of locations, equipment, and talent, plus a deep bench of trusted collaborators.</p>
         </div>
       </div>
     </section>
@@ -1436,16 +1455,16 @@
     <!-- 4. THE MODEL (§4) -->
     <section class="model-section" id="services" aria-label="The Model">
       <div class="section-eyebrow">The Model</div>
-      <h2 class="section-title"><span class="brand-heavy">Built for unit economics.</span></h2>
+      <h2 class="section-title"><span class="brand-heavy">Drive sustainable, profitable growth.</span></h2>
       <p class="services-creed">We measure our work in <em>mileage for your business</em>, not our portfolio.</p>
 
-      <!-- Unit Economics Centerpiece -->
+      <!-- Centerpiece: SOW first, Retainer second, Metrics third -->
       <div class="model-centerpiece">
         <!-- Objective & Method Header -->
         <div class="model-thesis-grid">
           <div class="model-thesis-box">
             <span class="model-kicker">Objective</span>
-            <p class="model-thesis-text">Increase conversion and improve unit economics.</p>
+            <p class="model-thesis-text">Drive sustainable, profitable growth.</p>
           </div>
           <div class="model-thesis-box">
             <span class="model-kicker">Method</span>
@@ -1453,7 +1472,26 @@
           </div>
         </div>
 
-        <!-- Monthly Retainer Banner: Channel (Always-On Base) -->
+        <!-- Project-Based SOW Row (First): Content, Growth, Production -->
+        <div class="model-sow-row">
+          <div class="model-sow-col pillar-content">
+            <div class="model-sow-badge">Project SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Content</span></h3>
+            <p class="model-pillar-desc">Concept development, content planning, and brand identity.</p>
+          </div>
+          <div class="model-sow-col connector-growth">
+            <div class="model-sow-badge">Connector SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Growth</span></h3>
+            <p class="model-pillar-desc">Paid &amp; organic campaigns and initiatives.</p>
+          </div>
+          <div class="model-sow-col pillar-production">
+            <div class="model-sow-badge">Project SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Production</span></h3>
+            <p class="model-pillar-desc">Creative production, experience design, and talent operations.</p>
+          </div>
+        </div>
+
+        <!-- Monthly Retainer Banner (Second): Channel (Always-On Base) -->
         <div class="model-retainer-banner">
           <div class="model-banner-header">
             <span class="model-banner-label">Monthly Retainer</span>
@@ -1463,39 +1501,20 @@
           <p class="model-pillar-desc">End-to-end channel and community management, 24-hour response.</p>
         </div>
 
-        <!-- Project-Based SOW Row: Content, Growth, Production -->
-        <div class="model-sow-row">
-          <div class="model-sow-col">
-            <div class="model-sow-badge">Project SOW</div>
-            <h3 class="model-pillar-title"><span class="brand-heavy">Content</span></h3>
-            <p class="model-pillar-desc">Concept development, content planning, and brand identity.</p>
-          </div>
-          <div class="model-sow-col">
-            <div class="model-sow-badge">Project SOW</div>
-            <h3 class="model-pillar-title"><span class="brand-heavy">Growth</span></h3>
-            <p class="model-pillar-desc">Paid &amp; organic campaigns and initiatives.</p>
-          </div>
-          <div class="model-sow-col">
-            <div class="model-sow-badge">Project SOW</div>
-            <h3 class="model-pillar-title"><span class="brand-heavy">Production</span></h3>
-            <p class="model-pillar-desc">Creative production, experience design, and talent operations.</p>
-          </div>
-        </div>
-
-        <!-- Accountability Bar -->
+        <!-- Accountability Bar (Third) -->
         <div class="model-accountability-bar" aria-label="Accountability metrics">
           <span class="accountability-label">Accountability metrics:</span>
           <div class="accountability-pills">
-            <span class="acc-metric"><span class="metric-dot"></span>Engagement</span>
-            <span class="acc-metric"><span class="metric-dot"></span>Exposure</span>
-            <span class="acc-metric"><span class="metric-dot"></span>Audience</span>
-            <span class="acc-metric"><span class="metric-dot"></span>Conversions</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Engagement (reactions, comments)</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Exposure (impressions, mentions)</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Audience (followers, sentiment)</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Conversions (sales, adoption)</span>
           </div>
         </div>
 
         <!-- Flexible Engagement Note -->
         <div class="model-footer-note">
-          <strong>Flexible engagement</strong>: retained monthly base or modular project-based SOW, scoped to your size, onsite or remote. Big-brand craft, right-sized for scale-ups, founders, and local legends.
+          <strong>Flexible engagement</strong>: retained monthly base or modular project-based SOW, scoped to your size, onsite or remote. Blue-chip craft, right-sized for scale-ups, founders, and local legends.
         </div>
       </div>
     </section>
