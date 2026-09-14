@@ -380,6 +380,20 @@
       fill: currentColor;
     }
 
+    .logo-item[title="StubHub"] svg {
+      max-height: 14px;
+      max-width: 84px;
+    }
+
+    .logo-item[title="American Express"] svg {
+      max-height: 18px;
+      max-width: 72px;
+    }
+
+    .brand-heavy {
+      font-weight: 900;
+    }
+
     /* ── 3. POSITIONING / WHY CAMP DIGITAL ── */
     .positioning {
       background: var(--surface-card);
@@ -441,102 +455,212 @@
       text-wrap: pretty;
     }
 
-    /* ── 4. SERVICES ── */
-    .services-grid {
+    /* ── 4. THE MODEL (§4) ── */
+    .model-section {
+      padding: clamp(36px, 6vh, 60px) 0;
+    }
+
+    .model-centerpiece {
+      background: var(--surface-warm);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 4.5vh, 44px) clamp(20px, 4vw, 44px);
+      box-shadow: 0 4px 28px rgba(29, 36, 33, 0.04);
+      margin-top: 28px;
+    }
+
+    /* Thesis: Objective & Method */
+    .model-thesis-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-bottom: 44px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 1024px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .service-card {
+    .model-thesis-box {
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: clamp(20px, 3.2vh, 28px);
-      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 18px 22px;
     }
 
-    .service-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--border-medium);
-      box-shadow: 0 8px 30px rgba(29, 36, 33, 0.06);
-    }
-
-    .service-num {
+    .model-kicker {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: var(--accent);
-      margin-bottom: 14px;
+      display: block;
+      margin-bottom: 6px;
     }
 
-    .service-card h3 {
-      font-size: clamp(1.1rem, 1.4vw, 1.25rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
+    .model-thesis-text {
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 10px;
-      line-height: 1.25;
-      text-wrap: balance;
-    }
-
-    .service-card p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.4;
       text-wrap: pretty;
     }
 
-    /* Engagement & Affordability Block */
-    .affordability-block {
-      background: var(--surface-warm);
-      border: 1px solid var(--border-subtle);
+    /* Monthly Retainer Banner */
+    .model-retainer-banner {
+      background: var(--surface-card);
+      border: 1px solid var(--border-medium);
       border-radius: var(--radius-md);
-      padding: clamp(26px, 4.5vh, 38px) clamp(22px, 4vw, 40px);
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 28px;
-      align-items: center;
+      padding: clamp(18px, 3vh, 24px) clamp(20px, 3.5vw, 28px);
+      margin-bottom: 18px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .affordability-meta h4 {
-      font-size: 1.15rem;
+    .model-retainer-banner:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(151, 75, 57, 0.08);
+    }
+
+    .model-banner-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .model-banner-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
       font-weight: 700;
-      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    .model-pill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(151, 75, 57, 0.12);
+      color: var(--accent);
+    }
+
+    .model-pillar-title {
+      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
       color: var(--text-primary);
       margin-bottom: 6px;
     }
 
-    .affordability-meta span {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .affordability-body {
+    .model-pillar-desc {
       font-size: 0.98rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.5;
+    }
+
+    /* Project-Based SOW Row */
+    .model-sow-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .model-sow-col {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: clamp(16px, 2.5vh, 22px) clamp(16px, 2.5vw, 22px);
+      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .model-sow-col:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-medium);
+      box-shadow: 0 6px 20px rgba(29, 36, 33, 0.05);
+    }
+
+    .model-sow-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+      margin-bottom: 8px;
+    }
+
+    /* Accountability Bar */
+    .model-accountability-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      padding: 12px 18px;
+      background: rgba(123, 156, 120, 0.12);
+      border: 1px solid rgba(123, 156, 120, 0.28);
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+    }
+
+    .accountability-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    .accountability-pills {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .acc-metric {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .acc-metric .metric-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    .model-footer-note {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 18px;
+      line-height: 1.55;
+      text-align: center;
       text-wrap: pretty;
+    }
+
+    .model-footer-note strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .model-thesis-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .model-sow-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
     }
 
     /* ── 5. THE WORK (Global Heritage + Local Majority) ── */
@@ -640,10 +764,26 @@
 
     .challenger-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
-      gap: 8px 14px;
+      gap: 8px clamp(10px, 1.8vw, 22px);
+      overflow-x: auto;
+    }
+
+    @media (max-width: 820px) {
+      .challenger-list {
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+    }
+
+    .region-subhead-text {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      max-width: 760px;
+      text-wrap: pretty;
     }
 
     .challenger-item {
@@ -1101,7 +1241,8 @@
 
     .footer-links {
       display: flex;
-      gap: 16px;
+      align-items: center;
+      gap: 18px;
     }
 
     .footer-links a {
@@ -1112,6 +1253,27 @@
 
     .footer-links a:hover {
       color: var(--text-primary);
+    }
+
+    .footer-ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-ig-link:hover {
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .footer-ig-link svg {
+      width: 15px;
+      height: 15px;
+      display: block;
+      color: inherit;
     }
 
     .camp-badge {
@@ -1233,7 +1395,7 @@
           </div>
           <!-- American Express -->
           <div class="logo-item" title="American Express">
-            <svg viewBox="0 0 24 24" role="img" aria-label="American Express"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0z"/></svg>
+            <svg viewBox="0 8.7 24 7.8" role="img" aria-label="American Express"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.082.106.082.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg>
           </div>
           <!-- Airbnb -->
           <div class="logo-item" title="Airbnb">
@@ -1241,7 +1403,7 @@
           </div>
           <!-- StubHub -->
           <div class="logo-item" title="StubHub">
-            <svg viewBox="0 0 24 24" role="img" aria-label="StubHub"><path d="M23.78 6.566L.21 8.148c-.116.008-.21.107-.21.227V8.4l.725 6.884v.004c.003.036.006.07.006.11 0 .123-.016.243-.048.347L.344 16.84c-.04.122.026.182.146.134l1.805-.75c.002 0 .004 0 .006-.002h.003c.13-.05.27-.076.418-.076h.036l20.04 1.29c.127 0 .23-.097.243-.222L24 6.784v-.02c0-.11-.09-.198-.2-.198h-.02zm-19.245 3.68h.053c.823 0 1.25.304 1.275.892v.045h-.516l-.006-.04c-.027-.26-.273-.386-.753-.386h-.045c-.48.008-.717.152-.717.434v.08c.005.055.03.102.07.136.052.048.117.087.19.11l1.204.403-.007-.005.01.004c.18.057.34.163.46.306.108.138.175.313.175.502v.117c0 .287-.14.54-.36.695-.235.18-.575.268-.997.268s-.75-.093-.99-.268v-.002c-.218-.155-.36-.41-.36-.7v-.07h.516v.05c0 .146.063.255.21.346s.358.137.628.137.49-.048.637-.136.22-.2.22-.346v-.072c0-.167-.098-.277-.3-.344L3.935 12c-.195-.062-.35-.157-.45-.28-.1-.12-.16-.274-.16-.444v-.084c0-.616.403-.935 1.21-.943zm8.292.08h.518v1.448h1.588v-1.447h.52v3.47h-.522v-1.52h-1.585v1.52h-.518v-3.47zm-6.495.007h.5v.945h.535v.51h-.535v.89c0 .208.056.37.168.487l-.002.004c.087.09.202.15.334.17h.035v.485l-.047-.004h-.004c-.265-.016-.504-.13-.68-.308-.203-.21-.305-.492-.305-.834v-2.346zm11.913 0h.5v1.12c.155-.157.367-.24.633-.24.755 0 1.14.395 1.142 1.175v.283c0 .342-.103.624-.305.835s-.486.316-.836.316-.628-.105-.83-.315-.306-.494-.306-.834v-2.337zm-8.084.002h.5v1.12c.156-.16.368-.243.634-.243.76 0 1.14.396 1.144 1.176v.283c0 .342-.105.624-.307.835s-.483.316-.833.316-.627-.105-.83-.315-.307-.494-.307-.834v-2.335zm-2.395.945h.492v1.367c0 .258.04.442.113.545.07.095.204.146.387.146h.016c.185 0 .31-.047.385-.146s.115-.287.115-.545H9.27V11.28h.49v1.367c0 .417-.08.72-.23.902-.146.173-.385.264-.71.272h-.115c-.325-.008-.564-.098-.71-.273-.156-.18-.23-.486-.23-.903V11.28zm8.077 0h.492v1.367c0 .258.04.442.115.545.07.095.2.146.384.146h.025c.18 0 .306-.05.378-.146.075-.104.115-.287.115-.545h-.004V11.28h.49v1.367c0 .417-.083.728-.23.902s-.384.264-.71.272h-.12c-.324-.008-.563-.098-.71-.273-.155-.18-.228-.486-.228-.903V11.28zm-4.548.422c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.062.366.17.486s.26.182.464.182c.203 0 .357-.056.47-.18s.17-.28.17-.488v-.283c0-.247-.056-.423-.163-.53s-.266-.16-.476-.16zm8.083 0c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.06.366.166.486s.267.182.467.182.355-.06.47-.18.17-.285.17-.488v-.283c0-.247-.056-.423-.163-.53s-.267-.16-.477-.16z"/></svg>
+            <svg viewBox="3.1 10.1 17.5 3.8" role="img" aria-label="StubHub"><path d="M4.535 10.246h.053c.823 0 1.25.304 1.275.892v.045h-.516l-.006-.04c-.027-.26-.273-.386-.753-.386h-.045c-.48.008-.717.152-.717.434v.08c.005.055.03.102.07.136.052.048.117.087.19.11l1.204.403-.007-.005.01.004c.18.057.34.163.46.306.108.138.175.313.175.502v.117c0 .287-.14.54-.36.695-.235.18-.575.268-.997.268s-.75-.093-.99-.268v-.002c-.218-.155-.36-.41-.36-.7v-.07h.516v.05c0 .146.063.255.21.346s.358.137.628.137.49-.048.637-.136.22-.2.22-.346v-.072c0-.167-.098-.277-.3-.344L3.935 12c-.195-.062-.35-.157-.45-.28-.1-.12-.16-.274-.16-.444v-.084c0-.616.403-.935 1.21-.943zm8.292.08h.518v1.448h1.588v-1.447h.52v3.47h-.522v-1.52h-1.585v1.52h-.518v-3.47zm-6.495.007h.5v.945h.535v.51h-.535v.89c0 .208.056.37.168.487l-.002.004c.087.09.202.15.334.17h.035v.485l-.047-.004h-.004c-.265-.016-.504-.13-.68-.308-.203-.21-.305-.492-.305-.834v-2.346zm11.913 0h.5v1.12c.155-.157.367-.24.633-.24.755 0 1.14.395 1.142 1.175v.283c0 .342-.103.624-.305.835s-.486.316-.836.316-.628-.105-.83-.315-.306-.494-.306-.834v-2.337zm-8.084.002h.5v1.12c.156-.16.368-.243.634-.243.76 0 1.14.396 1.144 1.176v.283c0 .342-.105.624-.307.835s-.483.316-.833.316-.627-.105-.83-.315-.307-.494-.307-.834v-2.335zm-2.395.945h.492v1.367c0 .258.04.442.113.545.07.095.204.146.387.146h.016c.185 0 .31-.047.385-.146s.115-.287.115-.545H9.27V11.28h.49v1.367c0 .417-.08.72-.23.902-.146.173-.385.264-.71.272h-.115c-.325-.008-.564-.098-.71-.273-.156-.18-.23-.486-.23-.903V11.28zm8.077 0h.492v1.367c0 .258.04.442.115.545.07.095.2.146.384.146h.025c.18 0 .306-.05.378-.146.075-.104.115-.287.115-.545h-.004V11.28h.49v1.367c0 .417-.083.728-.23.902s-.384.264-.71.272h-.12c-.324-.008-.563-.098-.71-.273-.155-.18-.228-.486-.228-.903V11.28zm-4.548.422c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.062.366.17.486s.26.182.464.182c.203 0 .357-.056.47-.18s.17-.28.17-.488v-.283c0-.247-.056-.423-.163-.53s-.266-.16-.476-.16zm8.083 0c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.06.366.166.486s.267.182.467.182.355-.06.47-.18.17-.285.17-.488v-.283c0-.247-.056-.423-.163-.53s-.267-.16-.477-.16z"/></svg>
           </div>
         </div>
       </div>
@@ -1252,7 +1414,7 @@
       <div class="brand-anchor">We are the mighty Camp Digital.</div>
       <h2 class="positioning-lead">Big-brand firepower. Boutique agility.</h2>
       <p class="positioning-body">
-        Not a traditional agency — an embedded social desk. We sit in your Slack, run your channels, manage your DMs, and ship daily. Big-brand experience, boutique agility, none of the agency bloat.
+        Not a traditional agency: an embedded social desk. We sit in your Slack, plug into your team and your tools, and ship daily. Big-brand experience, boutique agility, none of the agency bloat.
       </p>
 
       <div class="pillars-grid">
@@ -1261,7 +1423,7 @@
           <p>A partner, not a traditional agency. Big-brand experience paired with nimble boutique agility.</p>
         </div>
         <div class="pillar-card">
-          <h3>Elevated brand storytelling</h3>
+          <h3>Distinct brand storytelling</h3>
           <p>Real-time content and community-building for consumer brands that refuse to look generic.</p>
         </div>
         <div class="pillar-card">
@@ -1271,59 +1433,69 @@
       </div>
     </section>
 
-    <!-- 4. SERVICES & ENGAGEMENT -->
-    <section id="services">
-      <div class="section-eyebrow">What we do</div>
-      <h2 class="section-title">Strategy-led. Social-first. Built to perform.</h2>
-      <p class="services-creed">We measure our work in mileage for your business, not our portfolio.</p>
-      <p class="section-lead">
-        Four core disciplines designed to turn social channels into compounding drivers of brand equity and commercial revenue.
-      </p>
+    <!-- 4. THE MODEL (§4) -->
+    <section class="model-section" id="services" aria-label="The Model">
+      <div class="section-eyebrow">The Model</div>
+      <h2 class="section-title"><span class="brand-heavy">Built for unit economics.</span></h2>
+      <p class="services-creed">We measure our work in <em>mileage for your business</em>, not our portfolio.</p>
 
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div>
-            <div class="service-num">01</div>
-            <h3>Creative &amp; Production</h3>
-            <p>Onsite lifestyle photography, short-form video, art direction, and net-new brand assets crafted to stop the scroll.</p>
+      <!-- Unit Economics Centerpiece -->
+      <div class="model-centerpiece">
+        <!-- Objective & Method Header -->
+        <div class="model-thesis-grid">
+          <div class="model-thesis-box">
+            <span class="model-kicker">Objective</span>
+            <p class="model-thesis-text">Increase conversion and improve unit economics.</p>
+          </div>
+          <div class="model-thesis-box">
+            <span class="model-kicker">Method</span>
+            <p class="model-thesis-text">Strategic and creative use of social marketing to drive action, lower CAC, grow LTV.</p>
           </div>
         </div>
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div>
-            <div class="service-num">02</div>
-            <h3>Channel Management</h3>
-            <p>Full-service daily publishing, channel strategy, community architecture, and attentive DM management across platforms.</p>
-          </div>
-        </div>
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div>
-            <div class="service-num">03</div>
-            <h3>Influencer &amp; UGC</h3>
-            <p>End-to-end creator scouting, high-affinity casting, thoughtful product gifting, and authentic customer amplification.</p>
-          </div>
-        </div>
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div>
-            <div class="service-num">04</div>
-            <h3>Growth &amp; Performance</h3>
-            <p>Paid social built for scale, social search (SEO), and answer-engine optimization (AEO) — so you're found in both algorithmic feeds and AI-generated answers.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Lean Model / Affordability Proof -->
-      <div class="affordability-block">
-        <div class="affordability-meta">
-          <span>How we work</span>
-          <h4>Big-brand craft, right-sized for you.</h4>
-          <p style="font-size:0.86rem; color:var(--text-muted); margin-top:4px;">Flexible engagement — retained, project, or hourly — scoped to your size, onsite or remote.</p>
+        <!-- Monthly Retainer Banner: Channel (Always-On Base) -->
+        <div class="model-retainer-banner">
+          <div class="model-banner-header">
+            <span class="model-banner-label">Monthly Retainer</span>
+            <span class="model-pill">Always-On Base</span>
+          </div>
+          <h3 class="model-pillar-title"><span class="brand-heavy">Channel</span></h3>
+          <p class="model-pillar-desc">End-to-end channel and community management, 24-hour response.</p>
         </div>
-        <div class="affordability-body">
-          We run lean by design — a proprietary network of production spaces, gear, and trusted talent, plus a deep bench of collaborators. That gives us the efficacy of a boutique agency with the efficiency of an internal art department: an expert team of operators trained by Fortune brands, blue-chip startups, and award-winning agencies — at a price point that works for scale-ups, founders, and local legends alike.
+
+        <!-- Project-Based SOW Row: Content, Growth, Production -->
+        <div class="model-sow-row">
+          <div class="model-sow-col">
+            <div class="model-sow-badge">Project SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Content</span></h3>
+            <p class="model-pillar-desc">Concept development, content planning, and brand identity.</p>
+          </div>
+          <div class="model-sow-col">
+            <div class="model-sow-badge">Project SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Growth</span></h3>
+            <p class="model-pillar-desc">Paid &amp; organic campaigns and initiatives.</p>
+          </div>
+          <div class="model-sow-col">
+            <div class="model-sow-badge">Project SOW</div>
+            <h3 class="model-pillar-title"><span class="brand-heavy">Production</span></h3>
+            <p class="model-pillar-desc">Creative production, experience design, and talent operations.</p>
+          </div>
+        </div>
+
+        <!-- Accountability Bar -->
+        <div class="model-accountability-bar" aria-label="Accountability metrics">
+          <span class="accountability-label">Accountability metrics:</span>
+          <div class="accountability-pills">
+            <span class="acc-metric"><span class="metric-dot"></span>Engagement</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Exposure</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Audience</span>
+            <span class="acc-metric"><span class="metric-dot"></span>Conversions</span>
+          </div>
+        </div>
+
+        <!-- Flexible Engagement Note -->
+        <div class="model-footer-note">
+          <strong>Flexible engagement</strong>: retained monthly base or modular project-based SOW, scoped to your size, onsite or remote. Big-brand craft, right-sized for scale-ups, founders, and local legends.
         </div>
       </div>
     </section>
@@ -1355,9 +1527,9 @@
           <p>Social capture and creator amplification capturing the pulse of modern music communities.</p>
         </div>
         <div class="global-case-card">
-          <div class="client-tag">Piaggio Fast Forward</div>
-          <h4>When the Force met the feed</h4>
-          <p>Global launch content for the Grogu gitamini, created alongside Star Wars and Disney — proof you don't have to be in New York or LA to make content for global brands.</p>
+          <div class="client-tag">Affirm</div>
+          <h4>Transparent Commerce</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [Copy placeholder awaiting real asset]</p>
         </div>
       </div>
 
@@ -1366,8 +1538,6 @@
         <div class="challenger-label">Scaling challenger brands</div>
         <div class="challenger-list">
           <span class="challenger-item">Bumble</span>
-          <span class="challenger-sep">&bull;</span>
-          <span class="challenger-item">Affirm</span>
           <span class="challenger-sep">&bull;</span>
           <span class="challenger-item">Parachute Home</span>
           <span class="challenger-sep">&bull;</span>
@@ -1379,23 +1549,75 @@
           <span class="challenger-sep">&bull;</span>
           <span class="challenger-item">Hopper</span>
           <span class="challenger-sep">&bull;</span>
-          <span class="challenger-item">Aura Frames</span>
-          <span class="challenger-sep">&bull;</span>
           <span class="challenger-item">Lime</span>
-          <span class="challenger-sep">&bull;</span>
-          <span class="challenger-item">Bungalow</span>
-          <span class="challenger-sep">&bull;</span>
-          <span class="challenger-item">Piaggio Fast Forward</span>
         </div>
       </div>
 
-      <!-- BODY 2: CLOSE TO HOME (LOCAL MAJORITY) -->
+      <!-- BODY 2: LOCAL WORK SPLIT (West Coast & East Coast) -->
+
+      <!-- Regional Group 1: West Coast (Santa Barbara) -->
       <h3 class="work-subheading">
-        <span>Close to Home: The Triangle</span>
-        <span class="badge">Raleigh / Durham / Chapel Hill</span>
+        <span>West Coast</span>
+        <span class="badge">Santa Barbara</span>
       </h3>
-      <p style="font-size:0.98rem; color:var(--text-muted); margin-bottom:24px; max-width:760px; text-wrap: pretty;">
-        The heart of our studio today. Deep community roots, cultural intimacy, and boots-on-the-ground production across RDU's most iconic&nbsp;brands.
+      <p class="region-subhead-text">
+        Boutique hospitality, specialty craft, and design-led lifestyle brands on the Central Coast.
+      </p>
+
+      <div class="local-gallery-grid">
+        <!-- Brand 1: Hotel Californian -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Hotel Californian visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Hotel Californian</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Hotel Californian</h4>
+              <span class="gallery-client-cat">Luxury Hospitality</span>
+            </div>
+            <p class="gallery-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [Copy placeholder awaiting real asset]</p>
+          </div>
+        </article>
+
+        <!-- Brand 2: Handlebar Coffee -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Handlebar Coffee visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Handlebar Coffee</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Handlebar Coffee</h4>
+              <span class="gallery-client-cat">Artisan Roastery &amp; Café</span>
+            </div>
+            <p class="gallery-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [Copy placeholder awaiting real asset]</p>
+          </div>
+        </article>
+
+        <!-- Brand 3: Parker Clay -->
+        <article class="gallery-item">
+          <div class="media-placeholder" aria-label="Parker Clay visual placeholder">
+            <div class="placeholder-mark">[Work visual]</div>
+            <div class="placeholder-title">Parker Clay</div>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-client-header">
+              <h4 class="gallery-client-name">Parker Clay</h4>
+              <span class="gallery-client-cat">Sustainable Leather Goods</span>
+            </div>
+            <p class="gallery-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [Copy placeholder awaiting real asset]</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Regional Group 2: East Coast (North Carolina) -->
+      <h3 class="work-subheading">
+        <span>East Coast</span>
+        <span class="badge">North Carolina</span>
+      </h3>
+      <p class="region-subhead-text">
+        The heart of our studio today. Deep community roots, culinary icons, and high-touch regional brand strategy across the Triangle.
       </p>
 
       <div class="local-gallery-grid">
@@ -1414,18 +1636,18 @@
           </div>
         </article>
 
-        <!-- Brand 2: Boulted Bread -->
+        <!-- Brand 2: Dr. Russo Dentistry -->
         <article class="gallery-item">
-          <div class="media-placeholder" aria-label="Boulted Bread social campaign visual placeholder">
+          <div class="media-placeholder" aria-label="Dr. Russo Dentistry visual placeholder">
             <div class="placeholder-mark">[Work visual]</div>
-            <div class="placeholder-title">Boulted Bread</div>
+            <div class="placeholder-title">Dr. Russo Dentistry</div>
           </div>
           <div class="gallery-content">
             <div class="gallery-client-header">
-              <h4 class="gallery-client-name">Boulted Bread</h4>
-              <span class="gallery-client-cat">Artisan Bakery</span>
+              <h4 class="gallery-client-name">Dr. Russo Dentistry</h4>
+              <span class="gallery-client-cat">Healthcare / Practice</span>
             </div>
-            <p class="gallery-desc">Beloved craft bakery. Daily publishing rhythm, flour-dusted process capture, and authentic morning community building.</p>
+            <p class="gallery-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [Copy placeholder awaiting real asset]</p>
           </div>
         </article>
 
@@ -1441,51 +1663,6 @@
               <span class="gallery-client-cat">QSR Brand Strategy</span>
             </div>
             <p class="gallery-desc">High-touch regional social execution and localized community storytelling for the nation's premier quick-service brand.</p>
-          </div>
-        </article>
-
-        <!-- Brand 4: A Place At The Table -->
-        <article class="gallery-item">
-          <div class="media-placeholder" aria-label="A Place At The Table campaign visual placeholder">
-            <div class="placeholder-mark">[Work visual]</div>
-            <div class="placeholder-title">A Place At The Table</div>
-          </div>
-          <div class="gallery-content">
-            <div class="gallery-client-header">
-              <h4 class="gallery-client-name">A Place At The Table</h4>
-              <span class="gallery-client-cat">Nonprofit Café</span>
-            </div>
-            <p class="gallery-desc">Downtown Raleigh's pay-what-you-can café. Mission-driven documentary social capture driving volunteer enrollment and donations.</p>
-          </div>
-        </article>
-
-        <!-- Brand 5: SkinPharm -->
-        <article class="gallery-item">
-          <div class="media-placeholder" aria-label="SkinPharm campaign visual placeholder">
-            <div class="placeholder-mark">[Work visual]</div>
-            <div class="placeholder-title">SkinPharm</div>
-          </div>
-          <div class="gallery-content">
-            <div class="gallery-client-header">
-              <h4 class="gallery-client-name">SkinPharm</h4>
-              <span class="gallery-client-cat">Beauty &amp; Aesthetics</span>
-            </div>
-            <p class="gallery-desc">Modern cosmetic dermatology and skincare. High-aesthetic clinical storytelling and creator-led Reels.</p>
-          </div>
-        </article>
-
-        <!-- Brand 6: Church on Morgan -->
-        <article class="gallery-item">
-          <div class="media-placeholder" aria-label="Church on Morgan campaign visual placeholder">
-            <div class="placeholder-mark">[Work visual]</div>
-            <div class="placeholder-title">Church on Morgan</div>
-          </div>
-          <div class="gallery-content">
-            <div class="gallery-client-header">
-              <h4 class="gallery-client-name">Church on Morgan</h4>
-              <span class="gallery-client-cat">Community &amp; Faith</span>
-            </div>
-            <p class="gallery-desc">Contemporary downtown gathering space. Human-centric weekend event photography and warm community outreach.</p>
           </div>
         </article>
       </div>
@@ -1565,7 +1742,7 @@
           A bicoastal leadership team with a blend of in-house and agency experience.
         </p>
         <p class="crew-framing">
-          Brain, heart, and muscle — strategy (brain), community (heart), and production (muscle).
+          No strategy department, no creative department. Everyone here owns both.
         </p>
       </div>
 
@@ -1575,7 +1752,7 @@
           <div class="crew-avatar">PH</div>
           <div class="crew-card-body">
             <h4>Patrick Hill</h4>
-            <div class="department">Paid Growth</div>
+            <div class="department">Growth</div>
           </div>
         </div>
         <!-- 2. Shelby Spencer -->
@@ -1591,7 +1768,7 @@
           <div class="crew-avatar">DS</div>
           <div class="crew-card-body">
             <h4>Doug Smith</h4>
-            <div class="department">Creative</div>
+            <div class="department">Content</div>
           </div>
         </div>
         <!-- 4. Shay Stifelman -->
@@ -1599,7 +1776,7 @@
           <div class="crew-avatar">SS</div>
           <div class="crew-card-body">
             <h4>Shay Stifelman</h4>
-            <div class="department">Creative</div>
+            <div class="department">Content</div>
           </div>
         </div>
         <!-- 5. Molly Edwards -->
@@ -1610,12 +1787,12 @@
             <div class="department">Production</div>
           </div>
         </div>
-        <!-- 6. Maggie Lytle -->
+        <!-- 6. Becca Dougal -->
         <div class="crew-card">
-          <div class="crew-avatar">ML</div>
+          <div class="crew-avatar">BD</div>
           <div class="crew-card-body">
-            <h4>Maggie Lytle</h4>
-            <div class="department">Production</div>
+            <h4>Becca Dougal</h4>
+            <div class="department">Channel</div>
           </div>
         </div>
         <!-- 7. Maggie Mae -->
@@ -1660,7 +1837,10 @@
           <span>&copy; 2026 Camp Digital LLC. All rights reserved.</span>
         </div>
         <div class="footer-links">
-          <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener noreferrer">@camp_digital</a>
+          <a href="https://www.instagram.com/camp_digital/" target="_blank" rel="noopener" class="footer-ig-link" aria-label="Camp Digital on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="18" cy="6" r="1" fill="currentColor"></circle></svg>
+            <span>@camp_digital</span>
+          </a>
           <a href="#top">&uarr; Top</a>
         </div>
       </footer>
