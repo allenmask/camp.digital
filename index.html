@@ -139,6 +139,187 @@
       box-shadow: var(--focus-ring);
     }
 
+    .view-toggle-item.view-toggle-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .toggle-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      background: rgba(151, 75, 57, 0.11);
+      color: var(--rust);
+      line-height: 1.2;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .view-toggle-item:hover .toggle-badge {
+      background: rgba(151, 75, 57, 0.20);
+      color: var(--rust);
+    }
+
+    .badge-short { display: none; }
+    @media (max-width: 480px) {
+      .badge-full { display: none; }
+      .badge-short { display: inline; }
+      .toggle-badge { padding: 2px 5px; font-size: 0.56rem; }
+    }
+
+    .btn-badge-soon {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      background: rgba(151, 75, 57, 0.15);
+      color: var(--rust);
+      margin-left: 6px;
+      line-height: 1.2;
+      vertical-align: middle;
+    }
+
+    /* ── COMING SOON ANNOUNCEMENT BANNER (SLIDE-DOWN) ── */
+    .coming-soon-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--ink);
+      color: var(--cream);
+      box-shadow: 0 8px 30px rgba(29, 36, 33, 0.25);
+      border-bottom: 1px solid rgba(249, 249, 240, 0.12);
+      transform: translateY(-100%);
+      transition: transform 0.35s var(--ease);
+      pointer-events: auto;
+    }
+
+    .coming-soon-banner.visible {
+      transform: translateY(0);
+    }
+
+    .banner-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 11px clamp(16px, 3.5vw, 36px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+
+    .banner-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .banner-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--rust);
+      color: #FFFFFF;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .banner-msg {
+      margin: 0;
+      color: rgba(249, 249, 240, 0.88);
+      line-height: 1.35;
+    }
+
+    .banner-msg strong {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .banner-btn {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .banner-btn-preview {
+      background: rgba(249, 249, 240, 0.15);
+      color: var(--cream);
+      border: 1px solid rgba(249, 249, 240, 0.25);
+    }
+
+    .banner-btn-preview:hover {
+      background: rgba(249, 249, 240, 0.28);
+      color: #FFFFFF;
+    }
+
+    .banner-btn-contact {
+      color: rgba(249, 249, 240, 0.72);
+      text-decoration: none;
+    }
+    .banner-btn-contact:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    .banner-close {
+      background: none;
+      border: none;
+      color: rgba(249, 249, 240, 0.6);
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s ease;
+    }
+
+    .banner-close:hover {
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 860px) {
+      .banner-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 18px;
+      }
+      .banner-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
     /* Standalone Perpetual Mail Icon */
     .mail-icon-btn {
       background: none;
@@ -739,10 +920,13 @@
       </svg>
     </a>
 
-    <!-- Segmented View Toggle (TL;DR active vs Full Site) -->
+    <!-- Segmented View Toggle (TL;DR active vs Full Site with Coming Soon label) -->
     <nav class="view-toggle" aria-label="Site view selection">
       <span class="view-toggle-item active" aria-current="page">TL;DR</span>
-      <a href="studio.html" class="view-toggle-item">Full Site</a>
+      <a href="studio.html" class="view-toggle-item view-toggle-soon" id="toggleFullSite" aria-label="Full Site (Coming Soon)">
+        <span>Full Site</span>
+        <span class="toggle-badge"><span class="badge-full">Coming Soon</span><span class="badge-short">Soon</span></span>
+      </a>
     </nav>
 
     <!-- Standalone Mail Trigger -->
@@ -753,6 +937,23 @@
       </svg>
     </a>
   </header>
+
+  <!-- Coming Soon Announcement Banner (Slides down when Full Site is requested) -->
+  <aside class="coming-soon-banner" id="comingSoonBanner" aria-hidden="true" role="status">
+    <div class="banner-inner">
+      <div class="banner-left">
+        <span class="banner-tag">Coming Soon</span>
+        <p class="banner-msg">
+          <strong>Full Studio Site in Review</strong> &mdash; We’re fine-tuning the complete studio experience with our team.
+        </p>
+      </div>
+      <div class="banner-actions">
+        <a href="mailto:hello@camp.digital" class="banner-btn banner-btn-contact">hello@camp.digital</a>
+        <a href="studio.html?preview=team" class="banner-btn banner-btn-preview" title="Team Review">Preview Draft &rarr;</a>
+        <button type="button" class="banner-close" id="btnCloseBanner" aria-label="Close notification">&times;</button>
+      </div>
+    </div>
+  </aside>
 
   <!-- Central Viewport Stage -->
   <main class="stage" id="mainStage">
@@ -771,8 +972,9 @@
             <span>Offerings</span>
             <span class="arrow">&darr;</span>
           </button>
-          <a href="studio.html" class="action-btn btn-ghost">
+          <a href="studio.html" class="action-btn btn-ghost" id="btnHomeFullStudio">
             <span>Full Studio</span>
+            <span class="btn-badge-soon">Soon</span>
             <span class="arrow">&rarr;</span>
           </a>
         </div>
@@ -844,8 +1046,9 @@
               <span class="arrow">&uarr;</span>
               <span>home</span>
             </button>
-            <a href="studio.html" class="action-btn btn-primary">
+            <a href="studio.html" class="action-btn btn-primary" id="btnOfferingsFullStudio">
               <span>explore full studio</span>
+              <span class="btn-badge-soon">Soon</span>
               <span class="arrow">&rarr;</span>
             </a>
           </div>
@@ -972,6 +1175,43 @@
           }
         }
       }, { passive: true });
+
+      // ── COMING SOON BANNER INTERACTION ──
+      const comingSoonBanner = document.getElementById('comingSoonBanner');
+      const toggleFullSite = document.getElementById('toggleFullSite');
+      const btnCloseBanner = document.getElementById('btnCloseBanner');
+      const btnHomeFullStudio = document.getElementById('btnHomeFullStudio');
+      const btnOfferingsFullStudio = document.getElementById('btnOfferingsFullStudio');
+
+      function openComingSoonBanner(e) {
+        if (e) e.preventDefault();
+        if (comingSoonBanner) {
+          comingSoonBanner.classList.add('visible');
+          comingSoonBanner.setAttribute('aria-hidden', 'false');
+        }
+      }
+
+      function closeComingSoonBanner() {
+        if (comingSoonBanner) {
+          comingSoonBanner.classList.remove('visible');
+          comingSoonBanner.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      if (toggleFullSite) toggleFullSite.addEventListener('click', openComingSoonBanner);
+      if (btnHomeFullStudio) btnHomeFullStudio.addEventListener('click', openComingSoonBanner);
+      if (btnOfferingsFullStudio) btnOfferingsFullStudio.addEventListener('click', openComingSoonBanner);
+      if (btnCloseBanner) btnCloseBanner.addEventListener('click', closeComingSoonBanner);
+
+      if (window.location.hash === '#coming-soon') {
+        openComingSoonBanner();
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && comingSoonBanner && comingSoonBanner.classList.contains('visible')) {
+          closeComingSoonBanner();
+        }
+      });
     })();
   </script>
 </body>

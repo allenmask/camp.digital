@@ -122,6 +122,260 @@
       color: var(--text-primary);
       font-weight: 700;
       box-shadow: 0 1px 3px rgba(29, 36, 33, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      background: rgba(151, 75, 57, 0.11);
+      color: var(--rust);
+      line-height: 1.2;
+    }
+
+    .badge-short { display: none; }
+    @media (max-width: 480px) {
+      .badge-full { display: none; }
+      .badge-short { display: inline; }
+      .toggle-badge { padding: 2px 5px; font-size: 0.56rem; }
+    }
+
+    /* ── COMING SOON GATE & TEAM PREVIEW CONTROLS ── */
+    body.gate-active .page-wrap {
+      display: none !important;
+    }
+
+    body:not(.gate-active) .studio-coming-soon-gate {
+      display: none !important;
+    }
+
+    /* Full-Viewport Holding Gate */
+    .studio-coming-soon-gate {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 10vh, 120px) 24px 60px;
+      background-color: var(--surface);
+      position: relative;
+      z-index: 10;
+    }
+
+    .gate-card {
+      max-width: 660px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .gate-flag {
+      width: 58px;
+      height: 44px;
+      margin-bottom: 24px;
+    }
+
+    .gate-flag svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .gate-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(151, 75, 57, 0.12);
+      color: var(--rust);
+      margin-bottom: 20px;
+    }
+
+    .gate-title {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+
+    .gate-title .brand-heavy {
+      font-weight: 900;
+    }
+
+    .gate-lead {
+      font-size: clamp(1.05rem, 2.2vw, 1.22rem);
+      line-height: 1.45;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .gate-sub {
+      font-size: 0.94rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 34px;
+    }
+
+    .gate-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    .gate-team-preview {
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gate-team-hint {
+      font-size: 0.76rem;
+      color: var(--text-faint);
+    }
+
+    .btn-team-preview {
+      background: none;
+      border: 1px dashed var(--border-medium);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-team-preview:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: rgba(29, 36, 33, 0.04);
+    }
+
+    /* Sticky Team Preview Banner (shown only when preview is active) */
+    .team-preview-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 120;
+      background: #1D2421;
+      color: #F9F9F0;
+      padding: 9px clamp(16px, 3.5vw, 36px);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.78rem;
+      border-bottom: 1px solid rgba(249, 249, 240, 0.15);
+    }
+
+    body:not(.gate-active) .team-preview-bar {
+      display: flex;
+    }
+
+    .preview-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .preview-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--rust);
+      color: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .preview-bar-text {
+      color: rgba(249, 249, 240, 0.88);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .preview-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .preview-bar-link {
+      color: rgba(249, 249, 240, 0.85);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .preview-bar-link:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    .btn-preview-lock {
+      background: rgba(249, 249, 240, 0.12);
+      border: 1px solid rgba(249, 249, 240, 0.25);
+      color: #F9F9F0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-preview-lock:hover {
+      background: rgba(249, 249, 240, 0.22);
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 768px) {
+      .team-preview-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 16px;
+      }
+      .preview-bar-right {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     .view-toggle-item:hover:not(.active) {
@@ -1345,7 +1599,19 @@
     }
   </style>
 </head>
-<body id="top">
+<body id="top" class="gate-active">
+
+  <!-- Sticky Team Preview Bar (visible only in team preview mode) -->
+  <aside class="team-preview-bar" id="teamPreviewBar" aria-label="Team preview status">
+    <div class="preview-bar-left">
+      <span class="preview-tag">Team Preview</span>
+      <span class="preview-bar-text">You are reviewing the Full Studio draft. Public visitors see the Coming Soon holding screen.</span>
+    </div>
+    <div class="preview-bar-right">
+      <a href="index.html" class="preview-bar-link">&larr; Return to TL;DR</a>
+      <button type="button" class="btn-preview-lock" id="btnLockPreview">Exit Preview</button>
+    </div>
+  </aside>
 
   <!-- Top Utility Header: Flag | View Toggle | Mail -->
   <header class="site-header">
@@ -1360,10 +1626,13 @@
       </svg>
     </a>
 
-    <!-- View Toggle: TL;DR vs Full Site (active) -->
+    <!-- View Toggle: TL;DR vs Full Site (active, with Coming Soon / Draft badge) -->
     <nav class="view-toggle" aria-label="Site view selection">
       <a href="index.html" class="view-toggle-item">TL;DR</a>
-      <span class="view-toggle-item active" aria-current="page">Full Site</span>
+      <span class="view-toggle-item active" aria-current="page">
+        <span>Full Site</span>
+        <span class="toggle-badge" id="toggleSiteBadge"><span class="badge-full">Coming Soon</span><span class="badge-short">Soon</span></span>
+      </span>
     </nav>
 
     <!-- Standalone Mail Trigger -->
@@ -1374,6 +1643,45 @@
       </svg>
     </a>
   </header>
+
+  <!-- Coming Soon Holding Gate (shields full site until team unlock or preview) -->
+  <section class="studio-coming-soon-gate" id="comingSoonGate" aria-label="Coming Soon notice">
+    <div class="gate-card">
+      <div class="gate-flag" aria-hidden="true">
+        <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 71.58 44.94 L 1.80 55.03 C 0.85 55.17 0.00 54.43 0.00 53.48 L 0.00 1.69 C 0.00 0.74 0.85 0.00 1.80 0.14 L 71.21 10.18 C 72.59 10.38 73.04 12.14 71.94 12.99 L 56.09 25.09 C 55.31 25.69 55.27 26.85 56.00 27.51 L 72.40 42.21 C 73.40 43.10 72.90 44.74 71.58 44.94 Z" 
+                fill="#1D2421" stroke="rgba(29,36,33,0.18)" stroke-width="1.2" stroke-linejoin="round" />
+          <path d="M 24.2 23.4 C 22.9 20.8 20.4 19.3 17.2 19.3 C 12.1 19.3 8.3 23.2 8.3 28.5 C 8.3 33.8 12.1 37.7 17.2 37.7 C 20.4 37.7 22.9 36.2 24.2 33.6 L 20.4 32.0 C 19.6 33.4 18.3 34.1 17.1 34.1 C 14.2 34.1 12.2 31.8 12.2 28.5 C 12.2 25.2 14.2 22.9 17.1 22.9 C 18.3 22.9 19.6 23.6 20.4 25.0 Z" 
+                fill="#F9F9F0" />
+          <path d="M 45.3 13.0 H 41.6 V 20.4 C 40.2 19.5 38.5 19.1 36.5 19.1 C 31.4 19.1 27.6 23.0 27.6 28.5 C 27.6 34.0 31.4 37.9 36.5 37.9 C 38.5 37.9 40.2 37.5 41.6 36.6 V 37.5 H 45.3 Z M 36.5 34.3 C 33.6 34.3 31.5 31.9 31.5 28.5 C 31.5 25.1 33.6 22.7 36.5 22.7 C 39.4 22.7 41.6 25.1 41.6 28.5 C 41.6 31.9 39.4 34.3 36.5 34.3 Z" 
+                fill="#F9F9F0" />
+        </svg>
+      </div>
+      <div class="gate-badge">Coming Soon</div>
+      <h1 class="gate-title">We are the mighty <br /><span class="brand-heavy">Camp Digital.</span></h1>
+      <p class="gate-lead">
+        The full studio site is currently under review as our team finalizes copy, offerings, and casework.
+      </p>
+      <p class="gate-sub">
+        In the meantime, explore our condensed TL;DR interactive deck or reach out directly to work together.
+      </p>
+      <div class="gate-actions">
+        <a href="index.html" class="btn btn-primary">
+          <span>Explore TL;DR Deck</span>
+          <span>&rarr;</span>
+        </a>
+        <a href="mailto:hello@camp.digital" class="btn btn-secondary">
+          <span>hello@camp.digital</span>
+        </a>
+      </div>
+      <div class="gate-team-preview">
+        <span class="gate-team-hint">Camp Digital Team Member?</span>
+        <button type="button" class="btn-team-preview" id="btnTeamUnlock">
+          Enter Team Preview Mode &rarr;
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- Page Wrapper -->
   <div class="page-wrap">
@@ -1867,5 +2175,58 @@
 
   </div>
 
+  <script>
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasPreviewParam = urlParams.has('preview') || window.location.hash === '#preview';
+      const storedPreview = localStorage.getItem('camp_studio_preview') === 'true';
+
+      const body = document.body;
+      const btnUnlock = document.getElementById('btnTeamUnlock');
+      const btnLock = document.getElementById('btnLockPreview');
+      const toggleSiteBadge = document.getElementById('toggleSiteBadge');
+
+      function updatePreviewState(active) {
+        if (active) {
+          body.classList.remove('gate-active');
+          localStorage.setItem('camp_studio_preview', 'true');
+          if (toggleSiteBadge) {
+            toggleSiteBadge.innerHTML = '<span class="badge-full">Draft Preview</span><span class="badge-short">Draft</span>';
+            toggleSiteBadge.style.background = 'rgba(29, 36, 33, 0.08)';
+            toggleSiteBadge.style.color = 'var(--ink)';
+          }
+        } else {
+          body.classList.add('gate-active');
+          localStorage.removeItem('camp_studio_preview');
+          if (toggleSiteBadge) {
+            toggleSiteBadge.innerHTML = '<span class="badge-full">Coming Soon</span><span class="badge-short">Soon</span>';
+            toggleSiteBadge.style.background = 'rgba(151, 75, 57, 0.11)';
+            toggleSiteBadge.style.color = 'var(--rust)';
+          }
+        }
+      }
+
+      // Check if preview should be active initially
+      if (hasPreviewParam || storedPreview) {
+        updatePreviewState(true);
+      } else {
+        updatePreviewState(false);
+      }
+
+      if (btnUnlock) {
+        btnUnlock.addEventListener('click', function () {
+          updatePreviewState(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      if (btnLock) {
+        btnLock.addEventListener('click', function () {
+          updatePreviewState(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
