@@ -149,12 +149,8 @@
       .toggle-badge { padding: 2px 5px; font-size: 0.56rem; }
     }
 
-    /* ── COMING SOON GATE & TEAM PREVIEW CONTROLS ── */
-    body.gate-active .page-wrap {
-      display: none !important;
-    }
-
-    body:not(.gate-active) .studio-coming-soon-gate {
+    /* ── UNDER CONSTRUCTION / COMING SOON GATE ── */
+    .page-wrap {
       display: none !important;
     }
 
@@ -241,141 +237,31 @@
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 44px;
+      margin-bottom: 36px;
     }
 
-    .gate-team-preview {
-      padding-top: 24px;
-      border-top: 1px solid var(--border-subtle);
+    .gate-logos {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      max-width: 600px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    .gate-team-hint {
-      font-size: 0.76rem;
-      color: var(--text-faint);
-    }
-
-    .btn-team-preview {
-      background: none;
-      border: 1px dashed var(--border-medium);
-      color: var(--text-muted);
+    .gate-logos-label {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-team-preview:hover {
-      border-color: var(--ink);
-      color: var(--ink);
-      background: rgba(29, 36, 33, 0.04);
-    }
-
-    /* Sticky Team Preview Banner (shown only when preview is active) */
-    .team-preview-bar {
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 120;
-      background: #1D2421;
-      color: #F9F9F0;
-      padding: 9px clamp(16px, 3.5vw, 36px);
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      font-size: 0.78rem;
-      border-bottom: 1px solid rgba(249, 249, 240, 0.15);
-    }
-
-    body:not(.gate-active) .team-preview-bar {
-      display: flex;
-    }
-
-    .preview-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .preview-tag {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      font-weight: 700;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      background: var(--rust);
-      color: #FFFFFF;
-      padding: 3px 8px;
-      border-radius: var(--radius-full);
-      white-space: nowrap;
-      flex-shrink: 0;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      margin-bottom: 16px;
     }
 
-    .preview-bar-text {
-      color: rgba(249, 249, 240, 0.88);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .preview-bar-right {
+    .gate-logos-grid {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
-      flex-shrink: 0;
-    }
-
-    .preview-bar-link {
-      color: rgba(249, 249, 240, 0.85);
-      text-decoration: none;
-      font-size: 0.76rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .preview-bar-link:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
-    }
-
-    .btn-preview-lock {
-      background: rgba(249, 249, 240, 0.12);
-      border: 1px solid rgba(249, 249, 240, 0.25);
-      color: #F9F9F0;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 11px;
-      border-radius: var(--radius-full);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .btn-preview-lock:hover {
-      background: rgba(249, 249, 240, 0.22);
-      color: #FFFFFF;
-    }
-
-    @media (max-width: 768px) {
-      .team-preview-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 10px 16px;
-      }
-      .preview-bar-right {
-        width: 100%;
-        justify-content: space-between;
-      }
+      justify-content: center;
+      gap: clamp(16px, 3.5vw, 28px);
     }
 
     .view-toggle-item:hover:not(.active) {
@@ -642,6 +528,11 @@
     .logo-item[title="American Express"] svg {
       max-height: 20px;
       max-width: 76px;
+    }
+
+    .logo-item[title="Affirm"] svg {
+      max-height: 18px;
+      max-width: 68px;
     }
 
     .brand-heavy {
@@ -1601,18 +1492,6 @@
 </head>
 <body id="top" class="gate-active">
 
-  <!-- Sticky Team Preview Bar (visible only in team preview mode) -->
-  <aside class="team-preview-bar" id="teamPreviewBar" aria-label="Team preview status">
-    <div class="preview-bar-left">
-      <span class="preview-tag">Team Preview</span>
-      <span class="preview-bar-text">You are reviewing the Full Studio draft. Public visitors see the Coming Soon holding screen.</span>
-    </div>
-    <div class="preview-bar-right">
-      <a href="index.html" class="preview-bar-link">&larr; Return to TL;DR</a>
-      <button type="button" class="btn-preview-lock" id="btnLockPreview">Exit Preview</button>
-    </div>
-  </aside>
-
   <!-- Top Utility Header: Flag | View Toggle | Mail -->
   <header class="site-header">
     <a href="#top" class="flag-icon-btn" aria-label="Camp Digital home">
@@ -1626,12 +1505,12 @@
       </svg>
     </a>
 
-    <!-- View Toggle: TL;DR vs Full Site (active, with Coming Soon / Draft badge) -->
+    <!-- View Toggle: TL;DR vs Full Site (active, with Under Construction badge) -->
     <nav class="view-toggle" aria-label="Site view selection">
       <a href="index.html" class="view-toggle-item">TL;DR</a>
       <span class="view-toggle-item active" aria-current="page">
         <span>Full Site</span>
-        <span class="toggle-badge" id="toggleSiteBadge"><span class="badge-full">Coming Soon</span><span class="badge-short">Soon</span></span>
+        <span class="toggle-badge"><span class="badge-full">Under Construction</span><span class="badge-short">Soon</span></span>
       </span>
     </nav>
 
@@ -1644,8 +1523,8 @@
     </a>
   </header>
 
-  <!-- Coming Soon Holding Gate (shields full site until team unlock or preview) -->
-  <section class="studio-coming-soon-gate" id="comingSoonGate" aria-label="Coming Soon notice">
+  <!-- Under Construction Holding Gate (permanently shields full site) -->
+  <section class="studio-coming-soon-gate" id="comingSoonGate" aria-label="Under construction notice">
     <div class="gate-card">
       <div class="gate-flag" aria-hidden="true">
         <svg viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1657,10 +1536,10 @@
                 fill="#F9F9F0" />
         </svg>
       </div>
-      <div class="gate-badge">Coming Soon</div>
+      <div class="gate-badge">Under Construction</div>
       <h1 class="gate-title">We are the mighty <br /><span class="brand-heavy">Camp Digital.</span></h1>
       <p class="gate-lead">
-        The full studio site is currently under review as our team finalizes copy, offerings, and casework.
+        The full studio site is currently under construction as we prepare our expanded experience.
       </p>
       <p class="gate-sub">
         In the meantime, explore our condensed TL;DR interactive deck or reach out directly to work together.
@@ -1674,11 +1553,40 @@
           <span>hello@camp.digital</span>
         </a>
       </div>
-      <div class="gate-team-preview">
-        <span class="gate-team-hint">Camp Digital Team Member?</span>
-        <button type="button" class="btn-team-preview" id="btnTeamUnlock">
-          Enter Team Preview Mode &rarr;
-        </button>
+
+      <!-- Client Credential Strip in Gate -->
+      <div class="gate-logos" aria-label="Trusted by global icons">
+        <div class="gate-logos-label">trusted by global icons</div>
+        <div class="gate-logos-grid">
+          <!-- Nike -->
+          <div class="logo-item" title="Nike">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg>
+          </div>
+          <!-- Spotify -->
+          <div class="logo-item" title="Spotify">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <!-- Affirm -->
+          <div class="logo-item" title="Affirm">
+            <svg viewBox="0 0 428.55 171" role="img" aria-label="Affirm"><path fill-rule="evenodd" d="M28.1,156.27c-5.3,0-7.95-2.61-7.95-6.91,0-7.97,8.91-10.69,25.18-12.42,0,10.66-7.21,19.32-17.24,19.32h0ZM35.12,96.32c-11.62,0-25,5.48-32.26,11.26l6.63,13.95c5.82-5.33,15.24-9.88,23.73-9.88s12.52,2.7,12.52,8.13c0,3.66-2.95,5.51-8.53,6.23-20.85,2.71-37.21,8.46-37.21,24.54,0,12.74,9.08,20.45,23.25,20.45,10.11,0,19.12-5.62,23.4-13.04v10.96h18.85v-45.94c0-18.97-13.19-26.67-30.38-26.67h0Z"/><path fill-rule="evenodd" d="M224.4,98.39v70.53h20.17v-33.99c0-16.15,9.78-20.89,16.6-20.89,2.67,0,6.26.77,8.63,2.55l3.67-18.65c-3.11-1.33-6.37-1.63-9.04-1.63-10.37,0-16.89,4.59-21.19,13.93v-11.86h-18.84"/><path fill-rule="evenodd" d="M367,96.32c-10.67,0-18.65,6.31-22.79,12.38-3.85-7.85-12.02-12.38-21.8-12.38-10.67,0-18.05,5.93-21.46,12.74v-10.67h-19.44v70.53h20.18v-36.3c0-13.04,6.83-19.29,13.2-19.29,5.77,0,11.07,3.73,11.07,13.36v42.23h20.16v-36.3c0-13.19,6.66-19.29,13.33-19.29,5.33,0,10.96,3.88,10.96,13.22v42.38h20.16v-48.75c0-15.86-10.67-23.86-23.56-23.86"/><path fill-rule="evenodd" d="M175.28,98.39h-18.28v-7.17c0-9.33,5.33-12,9.92-12,5.08,0,9.03,2.25,9.03,2.25l6.22-14.22s-6.3-4.12-17.77-4.12c-12.89,0-27.56,7.26-27.56,30.08v5.19h-30.6v-7.17c0-9.33,5.33-12,9.92-12,2.61,0,6.12.6,9.03,2.25l6.22-14.22c-3.71-2.18-9.68-4.12-17.77-4.12-12.89,0-27.56,7.26-27.56,30.08v5.19h-11.71v15.56h11.71v54.98h20.16v-54.98h30.6v54.98h20.16v-54.98h18.28v-15.56"/><rect x="187.32" y="98.39" width="20.14" height="70.53"/><path fill-rule="evenodd" d="M188.06,86.4h19.73c11.51-36.19,50.56-67.96,97.03-67.96,56.48,0,105.29,43,105.29,109.94,0,15.02-1.94,28.58-5.63,40.55h19.15l.19-.66c3.14-12.35,4.74-25.77,4.74-39.89C428.55,53.73,374.16,0,304.82,0c-54.46,0-102.99,37.8-116.76,86.4h0Z"/></svg>
+          </div>
+          <!-- The New York Times -->
+          <div class="logo-item" title="The New York Times">
+            <svg viewBox="0 0 24 24" role="img" aria-label="The New York Times"><path d="M21.272,14.815h-0.098c-0.747,2.049-2.335,3.681-4.363,4.483v-4.483l2.444-2.182l-2.444-2.182V7.397 c2.138,0.006,3.885-1.703,3.927-3.84c0-2.629-2.509-3.556-3.927-3.556c-0.367-0.007-0.734,0.033-1.091,0.12v0.131h0.556 c0.801-0.141,1.565,0.394,1.706,1.195C17.99,1.491,17.996,1.537,18,1.583c-0.033,0.789-0.7,1.401-1.488,1.367 c-0.02-0.001-0.041-0.002-0.061-0.004c-2.444,0-5.323-1.985-8.454-1.985C5.547,0.83,3.448,2.692,3.284,5.139 C3.208,6.671,4.258,8.031,5.76,8.346v-0.12C5.301,7.931,5.041,7.407,5.084,6.862c0.074-1.015,0.957-1.779,1.973-1.705 C7.068,5.159,7.08,5.16,7.091,5.161c2.629,0,6.872,2.182,9.501,2.182h0.098v3.142l-2.444,2.182l2.444,2.182v4.549 c-0.978,0.322-2.003,0.481-3.033,0.469c-1.673,0.084-3.318-0.456-4.614-1.516l4.429-1.985V7.451l-6.196,2.727 c0.592-1.75,1.895-3.168,3.589-3.905V6.175c-4.516,1.004-8.138,4.243-8.138,8.705c0,5.193,4.025,9.12,9.818,9.12 c6.011,0,8.727-4.363,8.727-8.814V14.815z M8.858,18.186c-1.363-1.362-2.091-3.235-2.007-5.16c-0.016-0.88,0.109-1.756,0.371-2.596 l2.051-0.938v8.476L8.858,18.186z"/></svg>
+          </div>
+          <!-- American Express -->
+          <div class="logo-item" title="American Express">
+            <svg viewBox="0 8.7 24 7.8" role="img" aria-label="American Express"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.082.106.082.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg>
+          </div>
+          <!-- Airbnb -->
+          <div class="logo-item" title="Airbnb">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Airbnb"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>
+          </div>
+          <!-- StubHub -->
+          <div class="logo-item" title="StubHub">
+            <svg viewBox="3.1 10.1 17.5 3.8" role="img" aria-label="StubHub"><path d="M4.535 10.246h.053c.823 0 1.25.304 1.275.892v.045h-.516l-.006-.04c-.027-.26-.273-.386-.753-.386h-.045c-.48.008-.717.152-.717.434v.08c.005.055.03.102.07.136.052.048.117.087.19.11l1.204.403-.007-.005.01.004c.18.057.34.163.46.306.108.138.175.313.175.502v.117c0 .287-.14.54-.36.695-.235.18-.575.268-.997.268s-.75-.093-.99-.268v-.002c-.218-.155-.36-.41-.36-.7v-.07h.516v.05c0 .146.063.255.21.346s.358.137.628.137.49-.048.637-.136.22-.2.22-.346v-.072c0-.167-.098-.277-.3-.344L3.935 12c-.195-.062-.35-.157-.45-.28-.1-.12-.16-.274-.16-.444v-.084c0-.616.403-.935 1.21-.943zm8.292.08h.518v1.448h1.588v-1.447h.52v3.47h-.522v-1.52h-1.585v1.52h-.518v-3.47zm-6.495.007h.5v.945h.535v.51h-.535v.89c0 .208.056.37.168.487l-.002.004c.087.09.202.15.334.17h.035v.485l-.047-.004h-.004c-.265-.016-.504-.13-.68-.308-.203-.21-.305-.492-.305-.834v-2.346zm11.913 0h.5v1.12c.155-.157.367-.24.633-.24.755 0 1.14.395 1.142 1.175v.283c0 .342-.103.624-.305.835s-.486.316-.836.316-.628-.105-.83-.315-.306-.494-.306-.834v-2.337zm-8.084.002h.5v1.12c.156-.16.368-.243.634-.243.76 0 1.14.396 1.144 1.176v.283c0 .342-.105.624-.307.835s-.483.316-.833.316-.627-.105-.83-.315-.307-.494-.307-.834v-2.335zm-2.395.945h.492v1.367c0 .258.04.442.113.545.07.095.204.146.387.146h.016c.185 0 .31-.047.385-.146s.115-.287.115-.545H9.27V11.28h.49v1.367c0 .417-.08.72-.23.902-.146.173-.385.264-.71.272h-.115c-.325-.008-.564-.098-.71-.273-.156-.18-.23-.486-.23-.903V11.28zm8.077 0h.492v1.367c0 .258.04.442.115.545.07.095.2.146.384.146h.025c.18 0 .306-.05.378-.146.075-.104.115-.287.115-.545h-.004V11.28h.49v1.367c0 .417-.083.728-.23.902s-.384.264-.71.272h-.12c-.324-.008-.563-.098-.71-.273-.155-.18-.228-.486-.228-.903V11.28zm-4.548.422c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.062.366.17.486s.26.182.464.182c.203 0 .357-.056.47-.18s.17-.28.17-.488v-.283c0-.247-.056-.423-.163-.53s-.266-.16-.476-.16zm8.083 0c-.207 0-.37.05-.473.156s-.16.285-.16.53v.288c0 .208.06.366.166.486s.267.182.467.182.355-.06.47-.18.17-.285.17-.488v-.283c0-.247-.056-.423-.163-.53s-.267-.16-.477-.16z"/></svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2175,58 +2083,6 @@
 
   </div>
 
-  <script>
-    (function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const hasPreviewParam = urlParams.has('preview') || window.location.hash === '#preview';
-      const storedPreview = localStorage.getItem('camp_studio_preview') === 'true';
 
-      const body = document.body;
-      const btnUnlock = document.getElementById('btnTeamUnlock');
-      const btnLock = document.getElementById('btnLockPreview');
-      const toggleSiteBadge = document.getElementById('toggleSiteBadge');
-
-      function updatePreviewState(active) {
-        if (active) {
-          body.classList.remove('gate-active');
-          localStorage.setItem('camp_studio_preview', 'true');
-          if (toggleSiteBadge) {
-            toggleSiteBadge.innerHTML = '<span class="badge-full">Draft Preview</span><span class="badge-short">Draft</span>';
-            toggleSiteBadge.style.background = 'rgba(29, 36, 33, 0.08)';
-            toggleSiteBadge.style.color = 'var(--ink)';
-          }
-        } else {
-          body.classList.add('gate-active');
-          localStorage.removeItem('camp_studio_preview');
-          if (toggleSiteBadge) {
-            toggleSiteBadge.innerHTML = '<span class="badge-full">Coming Soon</span><span class="badge-short">Soon</span>';
-            toggleSiteBadge.style.background = 'rgba(151, 75, 57, 0.11)';
-            toggleSiteBadge.style.color = 'var(--rust)';
-          }
-        }
-      }
-
-      // Check if preview should be active initially
-      if (hasPreviewParam || storedPreview) {
-        updatePreviewState(true);
-      } else {
-        updatePreviewState(false);
-      }
-
-      if (btnUnlock) {
-        btnUnlock.addEventListener('click', function () {
-          updatePreviewState(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      if (btnLock) {
-        btnLock.addEventListener('click', function () {
-          updatePreviewState(false);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
